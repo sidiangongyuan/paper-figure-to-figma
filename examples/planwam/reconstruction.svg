@@ -1,0 +1,815 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1452" height="514" viewBox="0 0 1452 514" fill="none">
+<title>Editable reconstruction of PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving — Figure 1</title><desc>Source: https://arxiv.org/abs/2610.11382. Body typography adjusted to Times New Roman. RGB input/output crops remain images; labels and diagram objects are editable.</desc><g id="planwam-figure-1">
+<rect width="1452" height="513.333" fill="white" />
+<g id="Panel separators">
+<g id="canvas-0001" clip-path="url(#clip0_12_2)" data-figure-node="canvas-0001" data-kind="svg">
+<path id="Vector" d="M30.6667 206.667H1432" stroke="#A6A6A6" stroke-width="3.73333" stroke-linejoin="round" stroke-dasharray="6.67 4" />
+</g>
+<g id="canvas-0002" clip-path="url(#clip1_12_2)" data-figure-node="canvas-0002" data-kind="svg">
+<path id="Vector_2" d="M529.333 21.3333V474.667" stroke="#A6A6A6" stroke-width="3.73333" stroke-linejoin="round" stroke-dasharray="6.67 4" />
+</g>
+</g>
+<g id="Panel (a)">
+<text id="a-0003" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="21.3333" font-weight="bold" letter-spacing="0em" data-figure-node="a-0003" data-kind="text"><tspan x="32" y="36.4779">(a)  Pixel reconstruction-based</tspan></text>
+<rect id="a-0004" x="33.3333" y="76" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="a-0004" data-kind="rect" />
+<rect id="a-0005" x="36" y="78.6667" width="72" height="48" fill="url(#pattern0_12_2)" data-figure-node="a-0005" data-kind="image" />
+<rect id="a-0006" x="40" y="81.3333" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="a-0006" data-kind="rect" />
+<rect id="a-0007" x="42.6667" y="84" width="72" height="48" fill="url(#pattern1_12_2)" data-figure-node="a-0007" data-kind="image" />
+<rect id="a-0008" x="46.6667" y="86.6667" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="a-0008" data-kind="rect" />
+<rect id="a-0009" x="49.3333" y="89.3333" width="72" height="48" fill="url(#pattern2_12_2)" data-figure-node="a-0009" data-kind="image" />
+<text id="a-0010" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="a-0010" data-kind="text"><tspan x="33.9591" y="164.888">History Video</tspan></text>
+<rect id="a-0011" x="146.667" y="73.3333" width="96" height="96" rx="9.33333" fill="#FBEFEF" stroke="#C43C63" stroke-width="1.06667" data-figure-node="a-0011" data-kind="rect" />
+<rect id="a-0012" x="152" y="80" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0012" data-kind="rect" />
+<rect id="a-0013" x="173.866" y="80" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0013" data-kind="rect" />
+<rect id="a-0014" x="195.733" y="80" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0014" data-kind="rect" />
+<rect id="a-0015" x="217.6" y="80" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0015" data-kind="rect" />
+<rect id="a-0016" x="152" y="101.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0016" data-kind="rect" />
+<rect id="a-0017" x="173.866" y="101.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0017" data-kind="rect" />
+<rect id="a-0018" x="195.733" y="101.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0018" data-kind="rect" />
+<rect id="a-0019" x="217.6" y="101.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0019" data-kind="rect" />
+<rect id="a-0020" x="152" y="123.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0020" data-kind="rect" />
+<rect id="a-0021" x="173.866" y="123.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0021" data-kind="rect" />
+<rect id="a-0022" x="195.733" y="123.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0022" data-kind="rect" />
+<rect id="a-0023" x="217.6" y="123.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0023" data-kind="rect" />
+<rect id="a-0024" x="152" y="145.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0024" data-kind="rect" />
+<rect id="a-0025" x="173.866" y="145.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0025" data-kind="rect" />
+<rect id="a-0026" x="195.733" y="145.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0026" data-kind="rect" />
+<rect id="a-0027" x="217.6" y="145.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="a-0027" data-kind="rect" />
+<text id="a-0028" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="a-0028" data-kind="text"><tspan x="136.984" y="191.555">History Contexts</tspan></text>
+<rect id="a-0029" x="264" y="72" width="130.667" height="40" fill="white" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="a-0029" data-kind="rect" />
+<rect id="a-0030" x="265.333" y="73.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0030" data-kind="rect" />
+<rect id="a-0031" x="286.667" y="73.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0031" data-kind="rect" />
+<rect id="a-0032" x="308" y="73.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0032" data-kind="rect" />
+<rect id="a-0033" x="329.333" y="73.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0033" data-kind="rect" />
+<rect id="a-0034" x="350.667" y="73.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0034" data-kind="rect" />
+<rect id="a-0035" x="372" y="73.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0035" data-kind="rect" />
+<rect id="a-0036" x="276" y="84" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0036" data-kind="rect" />
+<rect id="a-0037" x="297.333" y="84" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0037" data-kind="rect" />
+<rect id="a-0038" x="318.667" y="84" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0038" data-kind="rect" />
+<rect id="a-0039" x="340" y="84" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0039" data-kind="rect" />
+<rect id="a-0040" x="361.333" y="84" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0040" data-kind="rect" />
+<rect id="a-0041" x="382.667" y="84" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0041" data-kind="rect" />
+<rect id="a-0042" x="265.333" y="94.6667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0042" data-kind="rect" />
+<rect id="a-0043" x="286.667" y="94.6667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0043" data-kind="rect" />
+<rect id="a-0044" x="308" y="94.6667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0044" data-kind="rect" />
+<rect id="a-0045" x="329.333" y="94.6667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0045" data-kind="rect" />
+<rect id="a-0046" x="350.667" y="94.6667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0046" data-kind="rect" />
+<rect id="a-0047" x="372" y="94.6667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="a-0047" data-kind="rect" />
+<rect id="a-0048" x="276" y="105.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="a-0048" data-kind="rect" />
+<rect id="a-0049" x="297.333" y="105.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="a-0049" data-kind="rect" />
+<rect id="a-0050" x="318.667" y="105.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="a-0050" data-kind="rect" />
+<rect id="a-0051" x="340" y="105.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="a-0051" data-kind="rect" />
+<rect id="a-0052" x="361.333" y="105.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="a-0052" data-kind="rect" />
+<rect id="a-0053" x="382.667" y="105.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="a-0053" data-kind="rect" />
+<text id="a-0054" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="a-0054" data-kind="text"><tspan x="305.72" y="88.8883">World
+</tspan><tspan x="306.693" y="108.302">model</tspan></text>
+<rect id="a-0055" x="264" y="132" width="130.667" height="40" fill="#DEEBF7" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="a-0055" data-kind="rect" />
+<text id="a-0056" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="a-0056" data-kind="text"><tspan x="299.939" y="156.888">Planner</tspan></text>
+<rect id="a-0057" x="428" y="74.6667" width="72" height="34.6667" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="a-0057" data-kind="rect" />
+<rect id="a-0058" x="430.667" y="77.3333" width="66.6667" height="29.3333" fill="url(#pattern3_12_2)" data-figure-node="a-0058" data-kind="image" />
+<rect id="a-0059" x="434.667" y="80" width="72" height="34.6667" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="a-0059" data-kind="rect" />
+<rect id="a-0060" x="437.333" y="82.6667" width="66.6667" height="29.3333" fill="url(#pattern4_12_2)" data-figure-node="a-0060" data-kind="image" />
+<rect id="a-0061" x="441.333" y="85.3333" width="72" height="34.6667" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="a-0061" data-kind="rect" />
+<rect id="a-0062" x="444" y="88" width="66.6667" height="29.3333" fill="url(#pattern5_12_2)" data-figure-node="a-0062" data-kind="image" />
+<text id="a-0063" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="a-0063" data-kind="text"><tspan x="425.336" y="67.555">Future Video</tspan></text>
+<g id="a-0064" data-figure-node="a-0064" data-kind="svg">
+<path id="Vector_3" d="M124 121.333H146.667" stroke="black" stroke-width="1.6" />
+<path id="Vector_4" d="M146.667 121.333L138.667 125.493V117.173L146.667 121.333Z" fill="black" />
+</g>
+<g id="a-0065" data-figure-node="a-0065" data-kind="svg">
+<path id="Vector_5" d="M242.667 92H264" stroke="black" stroke-width="1.6" />
+<path id="Vector_6" d="M264 92L256 96.16V87.84L264 92Z" fill="black" />
+</g>
+<g id="a-0066" data-figure-node="a-0066" data-kind="svg">
+<path id="Vector_7" d="M242.667 152H264" stroke="black" stroke-width="1.6" />
+<path id="Vector_8" d="M264 152L256 156.16V147.84L264 152Z" fill="black" />
+</g>
+<g id="a-0067" data-figure-node="a-0067" data-kind="svg">
+<path id="Vector_9" d="M394.667 92H418.667" stroke="black" stroke-width="1.6" />
+<path id="Vector_10" d="M418.667 92L410.667 96.16V87.84L418.667 92Z" fill="black" />
+</g>
+<g id="a-0068" data-figure-node="a-0068" data-kind="svg">
+<path id="Vector_11" d="M394.667 152H420" stroke="black" stroke-width="1.6" />
+<path id="Vector_12" d="M420 152L412 156.16V147.84L420 152Z" fill="black" />
+</g>
+<g id="a-0069" clip-path="url(#clip2_12_2)" data-figure-node="a-0069" data-kind="svg">
+<path id="Vector_13" d="M432 140C429.333 140.889 428 142.889 428 146C428 149.111 429.333 151.111 432 152L462.667 152.667C466.222 152.222 468.444 151.111 469.333 149.333V142.667C468.444 140 466.222 138.667 462.667 138.667L432 140Z" fill="url(#paint0_linear_12_2)" stroke="#89A7AE" stroke-width="0.733333" />
+<path id="Vector_14" d="M436 140L441.333 140.667L440 150.933L434.667 150.667C432.889 147.111 433.333 143.556 436 140ZM454.667 140H460C462.667 143.556 462.667 147.422 460 151.6L454.667 150.667V140Z" fill="url(#paint1_linear_12_2)" />
+<path id="Vector_15" d="M441.333 140.933H453.333V150.667H441.067L441.333 140.933Z" fill="#66BED7" />
+<path id="Vector_16" d="M438.667 138.667H454.667V140H438.667V138.667ZM438.667 152H454.667V153.333H438.667V152Z" fill="#20282D" />
+<path id="Vector_17" d="M458.667 137.333L461.333 138V140H458.667V137.333ZM458.667 151.333H461.333V154.667L458.667 153.333V151.333Z" fill="#5CA7B5" />
+<g id="Vector_18">
+<path d="M466.667 141.333L468.667 142.4L466.667 141.333ZM466.667 150L468.667 149.333L466.667 150Z" fill="black" />
+<path d="M466.667 141.333L468.667 142.4M466.667 150L468.667 149.333" stroke="#D9EDF1" stroke-width="1.33333" />
+</g>
+<g id="Vector_19">
+<path d="M432 141.333V149.333V141.333Z" fill="black" />
+<path d="M432 141.333V149.333" stroke="#6BC2DA" stroke-width="1.33333" />
+</g>
+</g>
+<g id="a-0070" clip-path="url(#clip3_12_2)" data-figure-node="a-0070" data-kind="svg">
+<path id="Vector_20" d="M470.667 145.333C498.4 145.333 513.333 154.667 513.333 166.667" stroke="#4C79CA" stroke-width="2.8" stroke-linejoin="round" />
+</g>
+<text id="a-0071" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="a-0071" data-kind="text"><tspan x="436.858" y="188.888">Trajectory</tspan></text>
+</g>
+<g id="Panel (b)">
+<text id="b-0072" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="21.3333" font-weight="bold" letter-spacing="0em" data-figure-node="b-0072" data-kind="text"><tspan x="540" y="36.4779">(b)  Latent prediction-based</tspan></text>
+<rect id="b-0073" x="549.333" y="81.3333" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="b-0073" data-kind="rect" />
+<rect id="b-0074" x="552" y="84" width="72" height="48" fill="url(#pattern6_12_2)" data-figure-node="b-0074" data-kind="image" />
+<rect id="b-0075" x="556" y="86.6667" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="b-0075" data-kind="rect" />
+<rect id="b-0076" x="558.667" y="89.3333" width="72" height="48" fill="url(#pattern7_12_2)" data-figure-node="b-0076" data-kind="image" />
+<rect id="b-0077" x="562.667" y="92" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="b-0077" data-kind="rect" />
+<rect id="b-0078" x="565.333" y="94.6667" width="72" height="48" fill="url(#pattern8_12_2)" data-figure-node="b-0078" data-kind="image" />
+<text id="b-0079" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="b-0079" data-kind="text"><tspan x="548.626" y="170.222">History Video</tspan></text>
+<rect id="b-0080" x="673.333" y="78.6667" width="96" height="96" rx="9.33333" fill="#FBEFEF" stroke="#C43C63" stroke-width="1.06667" data-figure-node="b-0080" data-kind="rect" />
+<rect id="b-0081" x="678.667" y="85.3333" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0081" data-kind="rect" />
+<rect id="b-0082" x="700.533" y="85.3333" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0082" data-kind="rect" />
+<rect id="b-0083" x="722.4" y="85.3333" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0083" data-kind="rect" />
+<rect id="b-0084" x="744.267" y="85.3333" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0084" data-kind="rect" />
+<rect id="b-0085" x="678.667" y="107.2" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0085" data-kind="rect" />
+<rect id="b-0086" x="700.533" y="107.2" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0086" data-kind="rect" />
+<rect id="b-0087" x="722.4" y="107.2" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0087" data-kind="rect" />
+<rect id="b-0088" x="744.267" y="107.2" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0088" data-kind="rect" />
+<rect id="b-0089" x="678.667" y="129.067" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0089" data-kind="rect" />
+<rect id="b-0090" x="700.533" y="129.067" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0090" data-kind="rect" />
+<rect id="b-0091" x="722.4" y="129.067" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0091" data-kind="rect" />
+<rect id="b-0092" x="744.267" y="129.067" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0092" data-kind="rect" />
+<rect id="b-0093" x="678.667" y="150.933" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0093" data-kind="rect" />
+<rect id="b-0094" x="700.533" y="150.933" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0094" data-kind="rect" />
+<rect id="b-0095" x="722.4" y="150.933" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0095" data-kind="rect" />
+<rect id="b-0096" x="744.267" y="150.933" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="b-0096" data-kind="rect" />
+<text id="b-0097" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="b-0097" data-kind="text"><tspan x="661.65" y="195.555">History Contexts</tspan></text>
+<rect id="b-0098" x="814.667" y="80" width="130.667" height="40" fill="white" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="b-0098" data-kind="rect" />
+<rect id="b-0099" x="816" y="81.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0099" data-kind="rect" />
+<rect id="b-0100" x="837.333" y="81.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0100" data-kind="rect" />
+<rect id="b-0101" x="858.667" y="81.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0101" data-kind="rect" />
+<rect id="b-0102" x="880" y="81.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0102" data-kind="rect" />
+<rect id="b-0103" x="901.333" y="81.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0103" data-kind="rect" />
+<rect id="b-0104" x="922.667" y="81.3333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0104" data-kind="rect" />
+<rect id="b-0105" x="826.667" y="92" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0105" data-kind="rect" />
+<rect id="b-0106" x="848" y="92" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0106" data-kind="rect" />
+<rect id="b-0107" x="869.333" y="92" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0107" data-kind="rect" />
+<rect id="b-0108" x="890.667" y="92" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0108" data-kind="rect" />
+<rect id="b-0109" x="912" y="92" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0109" data-kind="rect" />
+<rect id="b-0110" x="933.333" y="92" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0110" data-kind="rect" />
+<rect id="b-0111" x="816" y="102.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0111" data-kind="rect" />
+<rect id="b-0112" x="837.333" y="102.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0112" data-kind="rect" />
+<rect id="b-0113" x="858.667" y="102.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0113" data-kind="rect" />
+<rect id="b-0114" x="880" y="102.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0114" data-kind="rect" />
+<rect id="b-0115" x="901.333" y="102.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0115" data-kind="rect" />
+<rect id="b-0116" x="922.667" y="102.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="b-0116" data-kind="rect" />
+<rect id="b-0117" x="826.667" y="113.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="b-0117" data-kind="rect" />
+<rect id="b-0118" x="848" y="113.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="b-0118" data-kind="rect" />
+<rect id="b-0119" x="869.333" y="113.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="b-0119" data-kind="rect" />
+<rect id="b-0120" x="890.667" y="113.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="b-0120" data-kind="rect" />
+<rect id="b-0121" x="912" y="113.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="b-0121" data-kind="rect" />
+<rect id="b-0122" x="933.333" y="113.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="b-0122" data-kind="rect" />
+<text id="b-0123" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="b-0123" data-kind="text"><tspan x="856.387" y="96.8883">World
+</tspan><tspan x="857.36" y="116.302">model</tspan></text>
+<rect id="b-0124" x="814.667" y="138.667" width="130.667" height="40" fill="#DEEBF7" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="b-0124" data-kind="rect" />
+<text id="b-0125" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="b-0125" data-kind="text"><tspan x="850.606" y="163.555">Planner</tspan></text>
+<rect id="b-0126" x="976" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0126" data-kind="rect" />
+<rect id="b-0127" x="997.733" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0127" data-kind="rect" />
+<rect id="b-0128" x="1019.47" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0128" data-kind="rect" />
+<rect id="b-0129" x="1041.2" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0129" data-kind="rect" />
+<rect id="b-0130" x="976" y="100.4" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0130" data-kind="rect" />
+<rect id="b-0131" x="997.733" y="100.4" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0131" data-kind="rect" />
+<rect id="b-0132" x="1019.47" y="100.4" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0132" data-kind="rect" />
+<rect id="b-0133" x="1041.2" y="100.4" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0133" data-kind="rect" />
+<text id="b-0134" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="b-0134" data-kind="text"><tspan x="973.703" y="68.8883">Future Latent</tspan></text>
+<g id="b-0135" data-figure-node="b-0135" data-kind="svg">
+<path id="Vector_21" d="M640 125.333H670.667" stroke="black" stroke-width="1.6" />
+<path id="Vector_22" d="M670.667 125.333L662.667 129.493V121.173L670.667 125.333Z" fill="black" />
+</g>
+<g id="b-0136" data-figure-node="b-0136" data-kind="svg">
+<path id="Vector_23" d="M769.333 100H809.333" stroke="black" stroke-width="1.6" />
+<path id="Vector_24" d="M809.333 100L801.333 104.16V95.84L809.333 100Z" fill="black" />
+</g>
+<g id="b-0137" data-figure-node="b-0137" data-kind="svg">
+<path id="Vector_25" d="M769.333 157.333H809.333" stroke="black" stroke-width="1.6" />
+<path id="Vector_26" d="M809.333 157.333L801.333 161.493V153.173L809.333 157.333Z" fill="black" />
+</g>
+<g id="b-0138" data-figure-node="b-0138" data-kind="svg">
+<path id="Vector_27" d="M945.333 100H969.333" stroke="black" stroke-width="1.6" />
+<path id="Vector_28" d="M969.333 100L961.333 104.16V95.84L969.333 100Z" fill="black" />
+</g>
+<g id="b-0139" data-figure-node="b-0139" data-kind="svg">
+<path id="Vector_29" d="M945.333 157.333H969.333" stroke="black" stroke-width="1.6" />
+<path id="Vector_30" d="M969.333 157.333L961.333 161.493V153.173L969.333 157.333Z" fill="black" />
+</g>
+<g id="b-0140" clip-path="url(#clip4_12_2)" data-figure-node="b-0140" data-kind="svg">
+<path id="Vector_31" d="M981.333 148C978.667 148.889 977.333 150.889 977.333 154C977.333 157.111 978.667 159.111 981.333 160L1012 160.667C1015.56 160.222 1017.78 159.111 1018.67 157.333V150.667C1017.78 148 1015.56 146.667 1012 146.667L981.333 148Z" fill="url(#paint2_linear_12_2)" stroke="#89A7AE" stroke-width="0.733333" />
+<path id="Vector_32" d="M985.333 148L990.667 148.667L989.333 158.933L984 158.667C982.222 155.111 982.667 151.556 985.333 148ZM1004 148H1009.33C1012 151.556 1012 155.422 1009.33 159.6L1004 158.667V148Z" fill="url(#paint3_linear_12_2)" />
+<path id="Vector_33" d="M990.667 148.933H1002.67V158.667H990.4L990.667 148.933Z" fill="#66BED7" />
+<path id="Vector_34" d="M988 146.667H1004V148H988V146.667ZM988 160H1004V161.333H988V160Z" fill="#20282D" />
+<path id="Vector_35" d="M1008 145.333L1010.67 146V148H1008V145.333ZM1008 159.333H1010.67V162.667L1008 161.333V159.333Z" fill="#5CA7B5" />
+<g id="Vector_36">
+<path d="M1016 149.333L1018 150.4L1016 149.333ZM1016 158L1018 157.333L1016 158Z" fill="black" />
+<path d="M1016 149.333L1018 150.4M1016 158L1018 157.333" stroke="#D9EDF1" stroke-width="1.33333" />
+</g>
+<g id="Vector_37">
+<path d="M981.333 149.333V157.333V149.333Z" fill="black" />
+<path d="M981.333 149.333V157.333" stroke="#6BC2DA" stroke-width="1.33333" />
+</g>
+</g>
+<g id="b-0141" clip-path="url(#clip5_12_2)" data-figure-node="b-0141" data-kind="svg">
+<path id="Vector_38" d="M1020 153.333C1047.73 153.333 1062.67 162.667 1062.67 174.667" stroke="#4C79CA" stroke-width="2.8" stroke-linejoin="round" />
+</g>
+<text id="b-0142" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="b-0142" data-kind="text"><tspan x="986.191" y="196.888">Trajectory</tspan></text>
+<rect id="b-0143" x="1160" y="49.3333" width="253.333" height="148" fill="#F5F5F5" stroke="#999999" stroke-width="1.33333" stroke-dasharray="5.33 4" data-figure-node="b-0143" data-kind="rect" />
+<text id="b-0144" fill="#E00000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" letter-spacing="0em" data-figure-node="b-0144" data-kind="text"><tspan x="1072.43" y="89.0251">supervision</tspan></text>
+<g id="b-0145" data-figure-node="b-0145" data-kind="svg">
+<path id="Vector_39" d="M1077.33 100H1141.33" stroke="#E00000" stroke-width="1.46667" stroke-dasharray="2.67 2.27" />
+<path id="Vector_40" d="M1141.33 100L1134.67 103.467V96.5333L1141.33 100Z" fill="#E00000" />
+<path id="Vector_41" d="M1077.33 100L1084 96.5333V103.467L1077.33 100Z" fill="#E00000" />
+</g>
+<rect id="b-0146" x="1310.67" y="61.3333" width="69.3333" height="30.6667" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="b-0146" data-kind="rect" />
+<rect id="b-0147" x="1313.33" y="64" width="64" height="25.3333" fill="url(#pattern9_12_2)" data-figure-node="b-0147" data-kind="image" />
+<rect id="b-0148" x="1317.33" y="66.6667" width="69.3333" height="30.6667" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="b-0148" data-kind="rect" />
+<rect id="b-0149" x="1320" y="69.3333" width="64" height="25.3333" fill="url(#pattern10_12_2)" data-figure-node="b-0149" data-kind="image" />
+<rect id="b-0150" x="1324" y="72" width="69.3333" height="30.6667" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="b-0150" data-kind="rect" />
+<rect id="b-0151" x="1326.67" y="74.6667" width="64" height="25.3333" fill="url(#pattern11_12_2)" data-figure-node="b-0151" data-kind="image" />
+<text id="b-0152" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" letter-spacing="0em" data-figure-node="b-0152" data-kind="text"><tspan x="1313.49" y="121.025">Future Video</tspan></text>
+<rect id="b-0153" x="1178.67" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0153" data-kind="rect" />
+<rect id="b-0154" x="1200.53" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0154" data-kind="rect" />
+<rect id="b-0155" x="1222.4" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0155" data-kind="rect" />
+<rect id="b-0156" x="1244.27" y="78.6667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0156" data-kind="rect" />
+<rect id="b-0157" x="1178.67" y="100.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0157" data-kind="rect" />
+<rect id="b-0158" x="1200.53" y="100.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0158" data-kind="rect" />
+<rect id="b-0159" x="1222.4" y="100.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0159" data-kind="rect" />
+<rect id="b-0160" x="1244.27" y="100.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0160" data-kind="rect" />
+<rect id="b-dino-backplate" opacity="0.625" x="1185.33" y="85.3333" width="69.3333" height="26.6667" fill="white" data-figure-node="b-dino-backplate" data-kind="rect" />
+<text id="b-0161" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="b-0161" data-kind="text"><tspan x="1198.02" y="104.888">DINO</tspan></text>
+<rect id="b-0162" x="1178.67" y="150.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0162" data-kind="rect" />
+<rect id="b-0163" x="1200.53" y="150.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0163" data-kind="rect" />
+<rect id="b-0164" x="1222.4" y="150.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0164" data-kind="rect" />
+<rect id="b-0165" x="1244.27" y="150.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0165" data-kind="rect" />
+<rect id="b-0166" x="1178.67" y="172.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0166" data-kind="rect" />
+<rect id="b-0167" x="1200.53" y="172.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0167" data-kind="rect" />
+<rect id="b-0168" x="1222.4" y="172.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0168" data-kind="rect" />
+<rect id="b-0169" x="1244.27" y="172.533" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0169" data-kind="rect" />
+<rect id="b-jepa-backplate" opacity="0.625" x="1185.33" y="157.333" width="69.3333" height="26.6667" fill="white" data-figure-node="b-jepa-backplate" data-kind="rect" />
+<text id="b-0170" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="b-0170" data-kind="text"><tspan x="1199.63" y="176.888">JEPA</tspan></text>
+<rect id="b-0171" x="1304" y="152" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0171" data-kind="rect" />
+<rect id="b-0172" x="1325.87" y="152" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0172" data-kind="rect" />
+<rect id="b-0173" x="1347.73" y="152" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0173" data-kind="rect" />
+<rect id="b-0174" x="1369.6" y="152" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0174" data-kind="rect" />
+<rect id="b-0175" x="1304" y="173.867" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0175" data-kind="rect" />
+<rect id="b-0176" x="1325.87" y="173.867" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0176" data-kind="rect" />
+<rect id="b-0177" x="1347.73" y="173.867" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0177" data-kind="rect" />
+<rect id="b-0178" x="1369.6" y="173.867" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="b-0178" data-kind="rect" />
+<rect id="b-bev-backplate" opacity="0.625" x="1310.67" y="158.667" width="69.3333" height="26.6667" fill="white" data-figure-node="b-bev-backplate" data-kind="rect" />
+<text id="b-0179" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="b-0179" data-kind="text"><tspan x="1330.18" y="178.222">BEV</tspan></text>
+<g id="b-0180" data-figure-node="b-0180" data-kind="svg">
+<path id="Vector_42" d="M1300 97.3333H1269.33" stroke="#7436A7" stroke-width="1.66667" />
+<path id="Vector_43" d="M1269.33 97.3333L1277.33 93.1733V101.493L1269.33 97.3333Z" fill="#7436A7" />
+</g>
+<g id="b-0181" data-figure-node="b-0181" data-kind="svg">
+<path id="Vector_44" d="M1301.33 133.333L1270.67 156" stroke="#7436A7" stroke-width="1.66667" />
+<path id="Vector_45" d="M1270.67 156L1274.63 147.899L1279.57 154.59L1270.67 156Z" fill="#7436A7" />
+</g>
+<g id="b-0182" data-figure-node="b-0182" data-kind="svg">
+<path id="Vector_46" d="M1350.67 129.333V149.333" stroke="#7436A7" stroke-width="1.66667" />
+<path id="Vector_47" d="M1350.67 149.333L1346.51 141.333H1354.83L1350.67 149.333Z" fill="#7436A7" />
+</g>
+</g>
+<g id="Panel (c)">
+<text id="c-0183" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="21.3333" font-weight="bold" letter-spacing="0em" data-figure-node="c-0183" data-kind="text"><tspan x="28" y="239.145">(c)  Future-conditioned planning</tspan></text>
+<rect id="c-0184" x="26.6667" y="312" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="c-0184" data-kind="rect" />
+<rect id="c-0185" x="29.3333" y="314.667" width="72" height="48" fill="url(#pattern12_12_2)" data-figure-node="c-0185" data-kind="image" />
+<rect id="c-0186" x="33.3333" y="317.333" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="c-0186" data-kind="rect" />
+<rect id="c-0187" x="36" y="320" width="72" height="48" fill="url(#pattern13_12_2)" data-figure-node="c-0187" data-kind="image" />
+<rect id="c-0188" x="40" y="322.667" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="c-0188" data-kind="rect" />
+<rect id="c-0189" x="42.6667" y="325.333" width="72" height="48" fill="url(#pattern14_12_2)" data-figure-node="c-0189" data-kind="image" />
+<text id="c-0190" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="c-0190" data-kind="text"><tspan x="30.6256" y="400.888">History Video</tspan></text>
+<rect id="c-0191" x="140" y="309.333" width="96" height="96" rx="9.33333" fill="#FBEFEF" stroke="#C43C63" stroke-width="1.06667" data-figure-node="c-0191" data-kind="rect" />
+<rect id="c-0192" x="145.333" y="316" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0192" data-kind="rect" />
+<rect id="c-0193" x="167.2" y="316" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0193" data-kind="rect" />
+<rect id="c-0194" x="189.067" y="316" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0194" data-kind="rect" />
+<rect id="c-0195" x="210.933" y="316" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0195" data-kind="rect" />
+<rect id="c-0196" x="145.333" y="337.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0196" data-kind="rect" />
+<rect id="c-0197" x="167.2" y="337.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0197" data-kind="rect" />
+<rect id="c-0198" x="189.067" y="337.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0198" data-kind="rect" />
+<rect id="c-0199" x="210.933" y="337.867" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0199" data-kind="rect" />
+<rect id="c-0200" x="145.333" y="359.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0200" data-kind="rect" />
+<rect id="c-0201" x="167.2" y="359.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0201" data-kind="rect" />
+<rect id="c-0202" x="189.067" y="359.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0202" data-kind="rect" />
+<rect id="c-0203" x="210.933" y="359.733" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0203" data-kind="rect" />
+<rect id="c-0204" x="145.333" y="381.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0204" data-kind="rect" />
+<rect id="c-0205" x="167.2" y="381.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0205" data-kind="rect" />
+<rect id="c-0206" x="189.067" y="381.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0206" data-kind="rect" />
+<rect id="c-0207" x="210.933" y="381.6" width="17.3333" height="17.3333" rx="2.66667" fill="#F6CED3" stroke="#AC5995" stroke-width="1.13333" data-figure-node="c-0207" data-kind="rect" />
+<text id="c-0208" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="c-0208" data-kind="text"><tspan x="130.317" y="431.555">History Contexts</tspan></text>
+<rect id="c-0209" x="258.667" y="300" width="130.667" height="40" fill="white" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="c-0209" data-kind="rect" />
+<rect id="c-0210" x="260" y="301.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0210" data-kind="rect" />
+<rect id="c-0211" x="281.333" y="301.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0211" data-kind="rect" />
+<rect id="c-0212" x="302.667" y="301.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0212" data-kind="rect" />
+<rect id="c-0213" x="324" y="301.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0213" data-kind="rect" />
+<rect id="c-0214" x="345.333" y="301.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0214" data-kind="rect" />
+<rect id="c-0215" x="366.667" y="301.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0215" data-kind="rect" />
+<rect id="c-0216" x="270.667" y="312" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0216" data-kind="rect" />
+<rect id="c-0217" x="292" y="312" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0217" data-kind="rect" />
+<rect id="c-0218" x="313.333" y="312" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0218" data-kind="rect" />
+<rect id="c-0219" x="334.667" y="312" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0219" data-kind="rect" />
+<rect id="c-0220" x="356" y="312" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0220" data-kind="rect" />
+<rect id="c-0221" x="377.333" y="312" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0221" data-kind="rect" />
+<rect id="c-0222" x="260" y="322.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0222" data-kind="rect" />
+<rect id="c-0223" x="281.333" y="322.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0223" data-kind="rect" />
+<rect id="c-0224" x="302.667" y="322.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0224" data-kind="rect" />
+<rect id="c-0225" x="324" y="322.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0225" data-kind="rect" />
+<rect id="c-0226" x="345.333" y="322.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0226" data-kind="rect" />
+<rect id="c-0227" x="366.667" y="322.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="c-0227" data-kind="rect" />
+<rect id="c-0228" x="270.667" y="333.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="c-0228" data-kind="rect" />
+<rect id="c-0229" x="292" y="333.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="c-0229" data-kind="rect" />
+<rect id="c-0230" x="313.333" y="333.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="c-0230" data-kind="rect" />
+<rect id="c-0231" x="334.667" y="333.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="c-0231" data-kind="rect" />
+<rect id="c-0232" x="356" y="333.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="c-0232" data-kind="rect" />
+<rect id="c-0233" x="377.333" y="333.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="c-0233" data-kind="rect" />
+<text id="c-0234" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="c-0234" data-kind="text"><tspan x="300.387" y="316.888">World
+</tspan><tspan x="301.36" y="336.302">model</tspan></text>
+<rect id="c-0235" x="258.667" y="366.667" width="130.667" height="40" fill="#DEEBF7" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="c-0235" data-kind="rect" />
+<text id="c-0236" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="c-0236" data-kind="text"><tspan x="294.606" y="391.555">Planner</tspan></text>
+<rect id="c-0237" x="420" y="300" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0237" data-kind="rect" />
+<rect id="c-0238" x="441.733" y="300" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0238" data-kind="rect" />
+<rect id="c-0239" x="463.467" y="300" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0239" data-kind="rect" />
+<rect id="c-0240" x="485.2" y="300" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0240" data-kind="rect" />
+<rect id="c-0241" x="420" y="321.733" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0241" data-kind="rect" />
+<rect id="c-0242" x="441.733" y="321.733" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0242" data-kind="rect" />
+<rect id="c-0243" x="463.467" y="321.733" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0243" data-kind="rect" />
+<rect id="c-0244" x="485.2" y="321.733" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="c-0244" data-kind="rect" />
+<text id="c-0245" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="c-0245" data-kind="text"><tspan x="415.036" y="291.555">Future Latent</tspan></text>
+<g id="c-0246" data-figure-node="c-0246" data-kind="svg">
+<path id="Vector_48" d="M117.333 357.333H140" stroke="black" stroke-width="1.6" />
+<path id="Vector_49" d="M140 357.333L132 361.493V353.173L140 357.333Z" fill="black" />
+</g>
+<g id="c-0247" data-figure-node="c-0247" data-kind="svg">
+<path id="Vector_50" d="M236 320H258.667" stroke="black" stroke-width="1.6" />
+<path id="Vector_51" d="M258.667 320L250.667 324.16V315.84L258.667 320Z" fill="black" />
+</g>
+<g id="c-0248" data-figure-node="c-0248" data-kind="svg">
+<path id="Vector_52" d="M236 386.667H258.667" stroke="black" stroke-width="1.6" />
+<path id="Vector_53" d="M258.667 386.667L250.667 390.827V382.507L258.667 386.667Z" fill="black" />
+</g>
+<g id="c-0249" data-figure-node="c-0249" data-kind="svg">
+<path id="Vector_54" d="M389.333 320H412" stroke="black" stroke-width="1.6" />
+<path id="Vector_55" d="M412 320L404 324.16V315.84L412 320Z" fill="black" />
+</g>
+<g id="c-0250" data-figure-node="c-0250" data-kind="svg">
+<path id="Vector_56" d="M460 342.667V353.333H324V366.667" stroke="black" stroke-width="1.6" />
+<path id="Vector_57" d="M324 366.667L319.84 358.667H328.16L324 366.667Z" fill="black" />
+</g>
+<g id="c-0251" data-figure-node="c-0251" data-kind="svg">
+<path id="Vector_58" d="M389.333 386.667H412" stroke="black" stroke-width="1.6" />
+<path id="Vector_59" d="M412 386.667L404 390.827V382.507L412 386.667Z" fill="black" />
+</g>
+<g id="c-0252" clip-path="url(#clip6_12_2)" data-figure-node="c-0252" data-kind="svg">
+<path id="Vector_60" d="M425.333 376C422.667 376.889 421.333 378.889 421.333 382C421.333 385.111 422.667 387.111 425.333 388L456 388.667C459.555 388.222 461.778 387.111 462.667 385.333V378.667C461.778 376 459.555 374.667 456 374.667L425.333 376Z" fill="url(#paint4_linear_12_2)" stroke="#89A7AE" stroke-width="0.733333" />
+<path id="Vector_61" d="M429.333 376L434.667 376.667L433.333 386.933L428 386.667C426.222 383.111 426.667 379.556 429.333 376ZM448 376H453.333C456 379.556 456 383.422 453.333 387.6L448 386.667V376Z" fill="url(#paint5_linear_12_2)" />
+<path id="Vector_62" d="M434.667 376.933H446.667V386.667H434.4L434.667 376.933Z" fill="#66BED7" />
+<path id="Vector_63" d="M432 374.667H448V376H432V374.667ZM432 388H448V389.333H432V388Z" fill="#20282D" />
+<path id="Vector_64" d="M452 373.333L454.667 374V376H452V373.333ZM452 387.333H454.667V390.667L452 389.333V387.333Z" fill="#5CA7B5" />
+<g id="Vector_65">
+<path d="M460 377.333L462 378.4L460 377.333ZM460 386L462 385.333L460 386Z" fill="black" />
+<path d="M460 377.333L462 378.4M460 386L462 385.333" stroke="#D9EDF1" stroke-width="1.33333" />
+</g>
+<g id="Vector_66">
+<path d="M425.333 377.333V385.333V377.333Z" fill="black" />
+<path d="M425.333 377.333V385.333" stroke="#6BC2DA" stroke-width="1.33333" />
+</g>
+</g>
+<g id="c-0253" clip-path="url(#clip7_12_2)" data-figure-node="c-0253" data-kind="svg">
+<path id="Vector_67" d="M464 381.333C491.733 381.333 506.667 390.667 506.667 402.667" stroke="#4C79CA" stroke-width="2.8" stroke-linejoin="round" />
+</g>
+<text id="c-0254" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="c-0254" data-kind="text"><tspan x="430.191" y="424.888">Trajectory</tspan></text>
+</g>
+<g id="Panel (d)">
+<text id="d-0255" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="21.3333" font-weight="bold" letter-spacing="0em" data-figure-node="d-0255" data-kind="text"><tspan x="540" y="236.478">(d)  Ours</tspan></text>
+<rect id="d-0256" x="772" y="225.333" width="661.333" height="116" rx="13.3333" fill="#F4F7FC" stroke="#CBD5E8" stroke-width="1.2" stroke-dasharray="5.33 4" data-figure-node="d-0256" data-kind="rect" />
+<rect id="d-0257" x="772" y="361.333" width="661.333" height="122.667" rx="13.3333" fill="#FFFBF9" stroke="#ECD8CA" stroke-width="1.2" stroke-dasharray="5.33 4" data-figure-node="d-0257" data-kind="rect" />
+<text id="d-0258" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Comic Sans MS" font-size="18.6667" font-weight="bold" letter-spacing="0em" data-figure-node="d-0258" data-kind="text"><tspan x="1114.52" y="250.018">Prior Branch (Train &amp; Inference)</tspan></text>
+<text id="d-0259" fill="#984000" style="white-space: pre" xml:space="preserve" font-family="Comic Sans MS" font-size="18.6667" font-weight="bold" letter-spacing="0em" data-figure-node="d-0259" data-kind="text"><tspan x="1147.66" y="472.685">Posterior Branch (Train-only)</tspan></text>
+<g id="d-0260" clip-path="url(#clip8_12_2)" data-figure-node="d-0260" data-kind="svg">
+<path id="Vector_68" d="M760 350H818.667" stroke="#D6D6D6" stroke-width="2.66667" stroke-linejoin="round" />
+</g>
+<rect id="d-0261" x="546.667" y="298.667" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="d-0261" data-kind="rect" />
+<rect id="d-0262" x="549.333" y="301.333" width="72" height="48" fill="url(#pattern15_12_2)" data-figure-node="d-0262" data-kind="image" />
+<rect id="d-0263" x="553.333" y="304" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="d-0263" data-kind="rect" />
+<rect id="d-0264" x="556" y="306.667" width="72" height="48" fill="url(#pattern16_12_2)" data-figure-node="d-0264" data-kind="image" />
+<rect id="d-0265" x="560" y="309.333" width="77.3333" height="53.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="d-0265" data-kind="rect" />
+<rect id="d-0266" x="562.667" y="312" width="72" height="48" fill="url(#pattern17_12_2)" data-figure-node="d-0266" data-kind="image" />
+<text id="d-0267" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="d-0267" data-kind="text"><tspan x="545.959" y="387.555">History Video</tspan></text>
+<rect id="d-0268" x="661.333" y="286.667" width="97.3333" height="105.333" rx="9.33333" fill="#FBEFEF" stroke="#D65072" stroke-width="1.2" data-figure-node="d-0268" data-kind="rect" />
+<rect id="d-0269" x="736" y="304" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0269" data-kind="rect" />
+<rect id="d-0270" x="714.267" y="325.6" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0270" data-kind="rect" />
+<rect id="d-0271" x="736" y="325.6" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0271" data-kind="rect" />
+<rect id="d-0272" x="692.533" y="347.2" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0272" data-kind="rect" />
+<rect id="d-0273" x="714.267" y="347.2" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0273" data-kind="rect" />
+<rect id="d-0274" x="736" y="347.2" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0274" data-kind="rect" />
+<rect id="d-0275" x="670.8" y="368.8" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0275" data-kind="rect" />
+<rect id="d-0276" x="692.533" y="368.8" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0276" data-kind="rect" />
+<rect id="d-0277" x="714.267" y="368.8" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0277" data-kind="rect" />
+<rect id="d-0278" x="736" y="368.8" width="16.4" height="16.4" rx="2.66667" fill="#FADBDF" stroke="#B968AA" stroke-width="1.06667" data-figure-node="d-0278" data-kind="rect" />
+<g id="d-0279" data-figure-node="d-0279" data-kind="svg">
+<path id="Vector_69" d="M732 298.667C714.667 322.667 690.667 345.333 666.667 356" stroke="#ED6089" stroke-width="1.86667" />
+<path id="Vector_70" d="M666.667 356L672.28 348.947L675.667 356.547L666.667 356Z" fill="#ED6089" />
+</g>
+<text id="d-0280" fill="black" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="d-0280" data-kind="text"><tspan x="679.36" y="415.555">Compact
+</tspan><tspan x="651.65" y="434.968">History Contexts</tspan></text>
+<g id="d-0281" data-figure-node="d-0281" data-kind="svg">
+<path id="Vector_71" d="M637.333 345.333H660" stroke="black" stroke-width="1.6" />
+<path id="Vector_72" d="M660 345.333L652 349.493V341.173L660 345.333Z" fill="black" />
+</g>
+<text id="d-0282" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" letter-spacing="0em" data-figure-node="d-0282" data-kind="text"><tspan x="790.667" y="247.692">Learnable
+</tspan><tspan x="802.667" y="265.612">Query</tspan></text>
+<rect id="d-0283" x="865.333" y="246.667" width="17.3333" height="17.3333" rx="2.66667" fill="#F4F7FC" stroke="#7589B3" stroke-width="1.13333" stroke-dasharray="1.33 2.27" data-figure-node="d-0283" data-kind="rect" />
+<rect id="d-0284" x="887.067" y="246.667" width="17.3333" height="17.3333" rx="2.66667" fill="#F4F7FC" stroke="#7589B3" stroke-width="1.13333" stroke-dasharray="1.33 2.27" data-figure-node="d-0284" data-kind="rect" />
+<rect id="d-0285" x="908.8" y="246.667" width="17.3333" height="17.3333" rx="2.66667" fill="#F4F7FC" stroke="#7589B3" stroke-width="1.13333" stroke-dasharray="1.33 2.27" data-figure-node="d-0285" data-kind="rect" />
+<rect id="d-0286" x="930.533" y="246.667" width="17.3333" height="17.3333" rx="2.66667" fill="#F4F7FC" stroke="#7589B3" stroke-width="1.13333" stroke-dasharray="1.33 2.27" data-figure-node="d-0286" data-kind="rect" />
+<g id="d-0287" data-figure-node="d-0287" data-kind="svg">
+<path id="Vector_73" d="M906.667 264V281.333" stroke="#203C72" stroke-width="1.46667" />
+<path id="Vector_74" d="M906.667 281.333L902.507 273.333H910.827L906.667 281.333Z" fill="#203C72" />
+</g>
+<rect id="d-0288" x="817.333" y="284" width="141.333" height="40" fill="white" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="d-0288" data-kind="rect" />
+<rect id="d-0289" x="818.667" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0289" data-kind="rect" />
+<rect id="d-0290" x="840" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0290" data-kind="rect" />
+<rect id="d-0291" x="861.333" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0291" data-kind="rect" />
+<rect id="d-0292" x="882.667" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0292" data-kind="rect" />
+<rect id="d-0293" x="904" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0293" data-kind="rect" />
+<rect id="d-0294" x="925.333" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0294" data-kind="rect" />
+<rect id="d-0295" x="946.667" y="285.333" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0295" data-kind="rect" />
+<rect id="d-0296" x="829.333" y="296" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0296" data-kind="rect" />
+<rect id="d-0297" x="850.667" y="296" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0297" data-kind="rect" />
+<rect id="d-0298" x="872" y="296" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0298" data-kind="rect" />
+<rect id="d-0299" x="893.333" y="296" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0299" data-kind="rect" />
+<rect id="d-0300" x="914.667" y="296" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0300" data-kind="rect" />
+<rect id="d-0301" x="936" y="296" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0301" data-kind="rect" />
+<rect id="d-0302" x="818.667" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0302" data-kind="rect" />
+<rect id="d-0303" x="840" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0303" data-kind="rect" />
+<rect id="d-0304" x="861.333" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0304" data-kind="rect" />
+<rect id="d-0305" x="882.667" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0305" data-kind="rect" />
+<rect id="d-0306" x="904" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0306" data-kind="rect" />
+<rect id="d-0307" x="925.333" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0307" data-kind="rect" />
+<rect id="d-0308" x="946.667" y="306.667" width="10.6667" height="10.6667" fill="#DAE3F5" data-figure-node="d-0308" data-kind="rect" />
+<rect id="d-0309" x="829.333" y="317.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="d-0309" data-kind="rect" />
+<rect id="d-0310" x="850.667" y="317.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="d-0310" data-kind="rect" />
+<rect id="d-0311" x="872" y="317.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="d-0311" data-kind="rect" />
+<rect id="d-0312" x="893.333" y="317.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="d-0312" data-kind="rect" />
+<rect id="d-0313" x="914.667" y="317.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="d-0313" data-kind="rect" />
+<rect id="d-0314" x="936" y="317.333" width="10.6667" height="5.33333" fill="#DAE3F5" data-figure-node="d-0314" data-kind="rect" />
+<text id="d-0316" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="d-0316" data-kind="text"><tspan x="839.58" y="310.222">World model</tspan></text>
+<rect id="d-0317" x="817.333" y="376" width="141.333" height="40" fill="white" stroke="#C78647" stroke-width="1.2" data-figure-node="d-0317" data-kind="rect" />
+<rect id="d-0318" x="818.667" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0318" data-kind="rect" />
+<rect id="d-0319" x="840" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0319" data-kind="rect" />
+<rect id="d-0320" x="861.333" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0320" data-kind="rect" />
+<rect id="d-0321" x="882.667" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0321" data-kind="rect" />
+<rect id="d-0322" x="904" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0322" data-kind="rect" />
+<rect id="d-0323" x="925.333" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0323" data-kind="rect" />
+<rect id="d-0324" x="946.667" y="377.333" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0324" data-kind="rect" />
+<rect id="d-0325" x="829.333" y="388" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0325" data-kind="rect" />
+<rect id="d-0326" x="850.667" y="388" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0326" data-kind="rect" />
+<rect id="d-0327" x="872" y="388" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0327" data-kind="rect" />
+<rect id="d-0328" x="893.333" y="388" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0328" data-kind="rect" />
+<rect id="d-0329" x="914.667" y="388" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0329" data-kind="rect" />
+<rect id="d-0330" x="936" y="388" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0330" data-kind="rect" />
+<rect id="d-0331" x="818.667" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0331" data-kind="rect" />
+<rect id="d-0332" x="840" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0332" data-kind="rect" />
+<rect id="d-0333" x="861.333" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0333" data-kind="rect" />
+<rect id="d-0334" x="882.667" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0334" data-kind="rect" />
+<rect id="d-0335" x="904" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0335" data-kind="rect" />
+<rect id="d-0336" x="925.333" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0336" data-kind="rect" />
+<rect id="d-0337" x="946.667" y="398.667" width="10.6667" height="10.6667" fill="#F7D26B" data-figure-node="d-0337" data-kind="rect" />
+<rect id="d-0338" x="829.333" y="409.333" width="10.6667" height="5.33333" fill="#F7D26B" data-figure-node="d-0338" data-kind="rect" />
+<rect id="d-0339" x="850.667" y="409.333" width="10.6667" height="5.33333" fill="#F7D26B" data-figure-node="d-0339" data-kind="rect" />
+<rect id="d-0340" x="872" y="409.333" width="10.6667" height="5.33333" fill="#F7D26B" data-figure-node="d-0340" data-kind="rect" />
+<rect id="d-0341" x="893.333" y="409.333" width="10.6667" height="5.33333" fill="#F7D26B" data-figure-node="d-0341" data-kind="rect" />
+<rect id="d-0342" x="914.667" y="409.333" width="10.6667" height="5.33333" fill="#F7D26B" data-figure-node="d-0342" data-kind="rect" />
+<rect id="d-0343" x="936" y="409.333" width="10.6667" height="5.33333" fill="#F7D26B" data-figure-node="d-0343" data-kind="rect" />
+<text id="d-0345" fill="#984000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="d-0345" data-kind="text"><tspan x="839.58" y="402.222">World model</tspan></text>
+<g id="d-0346" data-figure-node="d-0346" data-kind="svg">
+<path id="Vector_75" d="M758.667 338.667H793.333V304H814.667" stroke="#203C72" stroke-width="1.6" />
+<path id="Vector_76" d="M814.667 304L806.667 308.16V299.84L814.667 304Z" fill="#203C72" />
+</g>
+<g id="d-0347" data-figure-node="d-0347" data-kind="svg">
+<path id="Vector_77" d="M758.667 361.333H793.333V397.333H814.667" stroke="#984000" stroke-width="1.6" />
+<path id="Vector_78" d="M814.667 397.333L806.667 401.493V393.173L814.667 397.333Z" fill="#984000" />
+</g>
+<text id="d-0348" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" letter-spacing="0em" data-figure-node="d-0348" data-kind="text"><tspan x="1015.1" y="246.358">Predicted
+</tspan><tspan x="1001.98" y="264.278">Future Latent</tspan></text>
+<rect id="d-0349" x="1002.67" y="278.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint6_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0349" data-kind="rect" />
+<rect id="d-0350" x="1026.8" y="278.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint7_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0350" data-kind="rect" />
+<rect id="d-0351" x="1050.93" y="278.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint8_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0351" data-kind="rect" />
+<rect id="d-0352" x="1075.07" y="278.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint9_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0352" data-kind="rect" />
+<rect id="d-0353" x="1002.67" y="302.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint10_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0353" data-kind="rect" />
+<rect id="d-0354" x="1026.8" y="302.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint11_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0354" data-kind="rect" />
+<rect id="d-0355" x="1050.93" y="302.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint12_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0355" data-kind="rect" />
+<rect id="d-0356" x="1075.07" y="302.667" width="17.3333" height="17.3333" rx="2.66667" fill="url(#paint13_linear_12_2)" stroke="#9575BC" stroke-width="1.13333" stroke-dasharray="1.33 1.87" data-figure-node="d-0356" data-kind="rect" />
+<rect id="d-0357" x="1002.67" y="378.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0357" data-kind="rect" />
+<rect id="d-0358" x="1026.8" y="378.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0358" data-kind="rect" />
+<rect id="d-0359" x="1050.93" y="378.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0359" data-kind="rect" />
+<rect id="d-0360" x="1075.07" y="378.667" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0360" data-kind="rect" />
+<rect id="d-0361" x="1002.67" y="402.8" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0361" data-kind="rect" />
+<rect id="d-0362" x="1026.8" y="402.8" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0362" data-kind="rect" />
+<rect id="d-0363" x="1050.93" y="402.8" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0363" data-kind="rect" />
+<rect id="d-0364" x="1075.07" y="402.8" width="17.3333" height="17.3333" rx="2.66667" fill="#C7B7E4" stroke="#9673BF" stroke-width="1.13333" data-figure-node="d-0364" data-kind="rect" />
+<g id="d-0365" data-figure-node="d-0365" data-kind="svg">
+<path id="Vector_79" d="M960 308H997.333" stroke="#203C72" stroke-width="1.6" />
+<path id="Vector_80" d="M997.333 308L989.333 312.16V303.84L997.333 308Z" fill="#203C72" />
+</g>
+<g id="d-0366" data-figure-node="d-0366" data-kind="svg">
+<path id="Vector_81" d="M960 394.667H997.333" stroke="#984000" stroke-width="1.6" />
+<path id="Vector_82" d="M997.333 394.667L989.333 398.827V390.507L997.333 394.667Z" fill="#984000" />
+</g>
+<rect id="d-0367" x="1134.67" y="288" width="141.333" height="40" fill="#DEEBF7" stroke="#6E9FD0" stroke-width="1.2" data-figure-node="d-0367" data-kind="rect" />
+<text id="d-0368" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="d-0368" data-kind="text"><tspan x="1175.94" y="312.888">Planner</tspan></text>
+<rect id="d-0369" x="1134.67" y="376" width="141.333" height="40" fill="#FFF1CA" stroke="#C88647" stroke-width="1.2" data-figure-node="d-0369" data-kind="rect" />
+<text id="d-0370" fill="#984000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" font-weight="bold" letter-spacing="0em" data-figure-node="d-0370" data-kind="text"><tspan x="1175.94" y="400.888">Planner</tspan></text>
+<g id="d-0371" data-figure-node="d-0371" data-kind="svg">
+<path id="Vector_83" d="M1100 308H1133.33" stroke="#203C72" stroke-width="1.6" />
+<path id="Vector_84" d="M1133.33 308L1125.33 312.16V303.84L1133.33 308Z" fill="#203C72" />
+</g>
+<g id="d-0372" data-figure-node="d-0372" data-kind="svg">
+<path id="Vector_85" d="M1100 396H1133.33" stroke="#984000" stroke-width="1.6" />
+<path id="Vector_86" d="M1133.33 396L1125.33 400.16V391.84L1133.33 396Z" fill="#984000" />
+</g>
+<g id="d-0373" data-figure-node="d-0373" data-kind="svg">
+<path id="Vector_87" d="M1280 308H1316" stroke="#203C72" stroke-width="1.6" />
+<path id="Vector_88" d="M1316 308L1308 312.16V303.84L1316 308Z" fill="#203C72" />
+</g>
+<g id="d-0374" data-figure-node="d-0374" data-kind="svg">
+<path id="Vector_89" d="M1280 396H1314.67" stroke="#984000" stroke-width="1.6" />
+<path id="Vector_90" d="M1314.67 396L1306.67 400.16V391.84L1314.67 396Z" fill="#984000" />
+</g>
+<g id="d-0375" data-figure-node="d-0375" data-kind="svg">
+<path id="Vector_91" d="M1011.33 325.333V374.667" stroke="#E00000" stroke-width="1.6" />
+<path id="Vector_92" d="M1011.33 374.667L1007.17 366.667H1015.49L1011.33 374.667Z" fill="#E00000" />
+<path id="Vector_93" d="M1011.33 325.333L1015.49 333.333H1007.17L1011.33 325.333Z" fill="#E00000" />
+</g>
+<g id="d-0376" data-figure-node="d-0376" data-kind="svg">
+<path id="Vector_94" d="M1035.47 325.333V374.667" stroke="#E00000" stroke-width="1.6" />
+<path id="Vector_95" d="M1035.47 374.667L1031.31 366.667H1039.63L1035.47 374.667Z" fill="#E00000" />
+<path id="Vector_96" d="M1035.47 325.333L1039.63 333.333H1031.31L1035.47 325.333Z" fill="#E00000" />
+</g>
+<g id="d-0377" data-figure-node="d-0377" data-kind="svg">
+<path id="Vector_97" d="M1059.6 325.333V374.667" stroke="#E00000" stroke-width="1.6" />
+<path id="Vector_98" d="M1059.6 374.667L1055.44 366.667H1063.76L1059.6 374.667Z" fill="#E00000" />
+<path id="Vector_99" d="M1059.6 325.333L1063.76 333.333H1055.44L1059.6 325.333Z" fill="#E00000" />
+</g>
+<g id="d-0378" data-figure-node="d-0378" data-kind="svg">
+<path id="Vector_100" d="M1083.73 325.333V374.667" stroke="#E00000" stroke-width="1.6" />
+<path id="Vector_101" d="M1083.73 374.667L1079.57 366.667H1087.89L1083.73 374.667Z" fill="#E00000" />
+<path id="Vector_102" d="M1083.73 325.333L1087.89 333.333H1079.57L1083.73 325.333Z" fill="#E00000" />
+</g>
+<text id="d-0379" fill="#203C72" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="d-0379" data-kind="text"><tspan x="1328.86" y="292.888">Trajectory</tspan></text>
+<g id="d-0380" clip-path="url(#clip9_12_2)" data-figure-node="d-0380" data-kind="svg">
+<path id="Vector_103" d="M1334.67 302.667C1332 303.556 1330.67 305.556 1330.67 308.667C1330.67 311.778 1332 313.778 1334.67 314.667L1365.33 315.333C1368.89 314.889 1371.11 313.778 1372 312V305.333C1371.11 302.667 1368.89 301.333 1365.33 301.333L1334.67 302.667Z" fill="url(#paint14_linear_12_2)" stroke="#89A7AE" stroke-width="0.733333" />
+<path id="Vector_104" d="M1338.67 302.667L1344 303.333L1342.67 313.6L1337.33 313.333C1335.56 309.778 1336 306.222 1338.67 302.667ZM1357.33 302.667H1362.67C1365.33 306.222 1365.33 310.089 1362.67 314.267L1357.33 313.333V302.667Z" fill="url(#paint15_linear_12_2)" />
+<path id="Vector_105" d="M1344 303.6H1356V313.333H1343.73L1344 303.6Z" fill="#66BED7" />
+<path id="Vector_106" d="M1341.33 301.333H1357.33V302.667H1341.33V301.333ZM1341.33 314.667H1357.33V316H1341.33V314.667Z" fill="#20282D" />
+<path id="Vector_107" d="M1361.33 300L1364 300.667V302.667H1361.33V300ZM1361.33 314H1364V317.333L1361.33 316V314Z" fill="#5CA7B5" />
+<g id="Vector_108">
+<path d="M1369.33 304L1371.33 305.067L1369.33 304ZM1369.33 312.667L1371.33 312L1369.33 312.667Z" fill="black" />
+<path d="M1369.33 304L1371.33 305.067M1369.33 312.667L1371.33 312" stroke="#D9EDF1" stroke-width="1.33333" />
+</g>
+<g id="Vector_109">
+<path d="M1334.67 304V312V304Z" fill="black" />
+<path d="M1334.67 304V312" stroke="#6BC2DA" stroke-width="1.33333" />
+</g>
+</g>
+<g id="d-0381" clip-path="url(#clip10_12_2)" data-figure-node="d-0381" data-kind="svg">
+<path id="Vector_110" d="M1372 308C1400 308 1412 318.667 1412 329.333" stroke="#4C79CA" stroke-width="2.8" stroke-linejoin="round" />
+</g>
+<text id="d-0382" fill="#984000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="d-0382" data-kind="text"><tspan x="1328.86" y="420.888">Trajectory</tspan></text>
+<g id="d-0383" clip-path="url(#clip11_12_2)" data-figure-node="d-0383" data-kind="svg">
+<path id="Vector_111" d="M1334.67 381.333C1332 382.222 1330.67 384.222 1330.67 387.333C1330.67 390.444 1332 392.444 1334.67 393.333L1365.33 394C1368.89 393.556 1371.11 392.444 1372 390.667V384C1371.11 381.333 1368.89 380 1365.33 380L1334.67 381.333Z" fill="url(#paint16_linear_12_2)" stroke="#89A7AE" stroke-width="0.733333" />
+<path id="Vector_112" d="M1338.67 381.333L1344 382L1342.67 392.267L1337.33 392C1335.56 388.444 1336 384.889 1338.67 381.333ZM1357.33 381.333H1362.67C1365.33 384.889 1365.33 388.756 1362.67 392.933L1357.33 392V381.333Z" fill="url(#paint17_linear_12_2)" />
+<path id="Vector_113" d="M1344 382.267H1356V392H1343.73L1344 382.267Z" fill="#66BED7" />
+<path id="Vector_114" d="M1341.33 380H1357.33V381.333H1341.33V380ZM1341.33 393.333H1357.33V394.667H1341.33V393.333Z" fill="#20282D" />
+<path id="Vector_115" d="M1361.33 378.667L1364 379.333V381.333H1361.33V378.667ZM1361.33 392.667H1364V396L1361.33 394.667V392.667Z" fill="#5CA7B5" />
+<g id="Vector_116">
+<path d="M1369.33 382.667L1371.33 383.733L1369.33 382.667ZM1369.33 391.333L1371.33 390.667L1369.33 391.333Z" fill="black" />
+<path d="M1369.33 382.667L1371.33 383.733M1369.33 391.333L1371.33 390.667" stroke="#D9EDF1" stroke-width="1.33333" />
+</g>
+<g id="Vector_117">
+<path d="M1334.67 382.667V390.667V382.667Z" fill="black" />
+<path d="M1334.67 382.667V390.667" stroke="#6BC2DA" stroke-width="1.33333" />
+</g>
+</g>
+<g id="d-0384" clip-path="url(#clip12_12_2)" data-figure-node="d-0384" data-kind="svg">
+<path id="Vector_118" d="M1372 386.667C1400 386.667 1412 397.333 1412 408" stroke="#4C79CA" stroke-width="2.8" stroke-linejoin="round" />
+</g>
+<rect id="d-0385" x="860" y="436" width="69.3333" height="29.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="d-0385" data-kind="rect" />
+<rect id="d-0386" x="862.667" y="438.667" width="64" height="24" fill="url(#pattern18_12_2)" data-figure-node="d-0386" data-kind="image" />
+<rect id="d-0387" x="866.667" y="441.333" width="69.3333" height="29.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="d-0387" data-kind="rect" />
+<rect id="d-0388" x="869.333" y="444" width="64" height="24" fill="url(#pattern19_12_2)" data-figure-node="d-0388" data-kind="image" />
+<rect id="d-0389" x="873.333" y="446.667" width="69.3333" height="29.3333" fill="#DDDDDD" stroke="#C4C4C4" stroke-width="0.933333" data-figure-node="d-0389" data-kind="rect" />
+<rect id="d-0390" x="876" y="449.333" width="64" height="24" fill="url(#pattern20_12_2)" data-figure-node="d-0390" data-kind="image" />
+<text id="d-0391" fill="#984000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="17.3333" letter-spacing="0em" data-figure-node="d-0391" data-kind="text"><tspan x="804.027" y="454.222">Future
+</tspan><tspan x="805.99" y="473.635">Video</tspan></text>
+<g id="d-0392" data-figure-node="d-0392" data-kind="svg">
+<path id="Vector_119" d="M905.333 434.667V417.333" stroke="#984000" stroke-width="1.6" />
+<path id="Vector_120" d="M905.333 417.333L909.493 425.333H901.173L905.333 417.333Z" fill="#984000" />
+</g>
+<text id="d-0393" fill="#984000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" letter-spacing="0em" data-figure-node="d-0393" data-kind="text"><tspan x="1009.54" y="439.692">Plan-shaped
+</tspan><tspan x="1005.32" y="457.612">Future Latent</tspan></text>
+<text id="d-0394" fill="#E00000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" letter-spacing="0em" data-figure-node="d-0394" data-kind="text"><tspan x="1143.29" y="437.025">Plan task supervision</tspan></text>
+<g id="d-0395" data-figure-node="d-0395" data-kind="svg">
+<path id="Vector_121" d="M1358.67 421.333V450.667H1101.33" stroke="#E00000" stroke-width="1.53333" stroke-dasharray="1.73 2.4" />
+<path id="Vector_122" d="M1101.33 450.667L1109.33 446.507V454.827L1101.33 450.667Z" fill="#E00000" />
+</g>
+<g id="d-0396" data-figure-node="d-0396" data-kind="svg">
+<path id="Vector_123" d="M546.667 462.667H596" stroke="#E00000" stroke-width="1.66667" />
+<path id="Vector_124" d="M596 462.667L588 466.827V458.507L596 462.667Z" fill="#E00000" />
+<path id="Vector_125" d="M546.667 462.667L554.667 458.507V466.827L546.667 462.667Z" fill="#E00000" />
+</g>
+<text id="d-0397" fill="#E00000" style="white-space: pre" xml:space="preserve" font-family="Times New Roman" font-size="16" font-weight="bold" letter-spacing="0em" data-figure-node="d-0397" data-kind="text"><tspan x="606.667" y="466.358">Latent distillation</tspan></text>
+</g>
+</g>
+<defs>
+<pattern id="pattern0_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern1_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern2_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern3_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.0494071 0 -0.0681818)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern4_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.0494071 0 -0.0681818)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern5_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.0494071 0 -0.0681818)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern6_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern7_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern8_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern9_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.0549199 0 -0.131579)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern10_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.0549199 0 -0.131579)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern11_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.0549199 0 -0.131579)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern12_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern13_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern14_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern15_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern16_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern17_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0215054 0 0 0.0322581 -0.0698925 0)" href="#image0_12_2" />
+</pattern>
+<pattern id="pattern18_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.057971 0 -0.166667)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern19_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.057971 0 -0.166667)" href="#image1_12_2" />
+</pattern>
+<pattern id="pattern20_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use transform="matrix(0.0217391 0 0 0.057971 0 -0.166667)" href="#image1_12_2" />
+</pattern>
+<linearGradient id="paint0_linear_12_2" x1="428" y1="138.667" x2="428" y2="152.667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#80D0E3" />
+<stop offset="0.5" stop-color="#3397BD" />
+<stop offset="1" stop-color="#23738E" />
+</linearGradient>
+<linearGradient id="paint1_linear_12_2" x1="433.6" y1="140" x2="433.6" y2="151.6" gradientUnits="userSpaceOnUse">
+<stop stop-color="#161D24" />
+<stop offset="0.55" stop-color="#39434C" />
+<stop offset="1" stop-color="#14191E" />
+</linearGradient>
+<linearGradient id="paint2_linear_12_2" x1="977.333" y1="146.667" x2="977.333" y2="160.667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#80D0E3" />
+<stop offset="0.5" stop-color="#3397BD" />
+<stop offset="1" stop-color="#23738E" />
+</linearGradient>
+<linearGradient id="paint3_linear_12_2" x1="982.933" y1="148" x2="982.933" y2="159.6" gradientUnits="userSpaceOnUse">
+<stop stop-color="#161D24" />
+<stop offset="0.55" stop-color="#39434C" />
+<stop offset="1" stop-color="#14191E" />
+</linearGradient>
+<linearGradient id="paint4_linear_12_2" x1="421.333" y1="374.667" x2="421.333" y2="388.667" gradientUnits="userSpaceOnUse">
+<stop stop-color="#80D0E3" />
+<stop offset="0.5" stop-color="#3397BD" />
+<stop offset="1" stop-color="#23738E" />
+</linearGradient>
+<linearGradient id="paint5_linear_12_2" x1="426.933" y1="376" x2="426.933" y2="387.6" gradientUnits="userSpaceOnUse">
+<stop stop-color="#161D24" />
+<stop offset="0.55" stop-color="#39434C" />
+<stop offset="1" stop-color="#14191E" />
+</linearGradient>
+<linearGradient id="paint6_linear_12_2" x1="1011.33" y1="278.667" x2="1011.33" y2="296" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A99BD0" />
+<stop offset="1" stop-color="#C8C2E2" />
+</linearGradient>
+<linearGradient id="paint7_linear_12_2" x1="1035.47" y1="278.667" x2="1035.47" y2="296" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A99BD0" />
+<stop offset="1" stop-color="#C8C2E2" />
+</linearGradient>
+<linearGradient id="paint8_linear_12_2" x1="1059.6" y1="278.667" x2="1059.6" y2="296" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A99BD0" />
+<stop offset="1" stop-color="#C8C2E2" />
+</linearGradient>
+<linearGradient id="paint9_linear_12_2" x1="1083.73" y1="278.667" x2="1083.73" y2="296" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A99BD0" />
+<stop offset="1" stop-color="#C8C2E2" />
+</linearGradient>
+<linearGradient id="paint10_linear_12_2" x1="1011.33" y1="302.667" x2="1011.33" y2="320" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D6D1EA" />
+<stop offset="1" stop-color="#F2F4FA" />
+</linearGradient>
+<linearGradient id="paint11_linear_12_2" x1="1035.47" y1="302.667" x2="1035.47" y2="320" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D6D1EA" />
+<stop offset="1" stop-color="#F2F4FA" />
+</linearGradient>
+<linearGradient id="paint12_linear_12_2" x1="1059.6" y1="302.667" x2="1059.6" y2="320" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D6D1EA" />
+<stop offset="1" stop-color="#F2F4FA" />
+</linearGradient>
+<linearGradient id="paint13_linear_12_2" x1="1083.73" y1="302.667" x2="1083.73" y2="320" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D6D1EA" />
+<stop offset="1" stop-color="#F2F4FA" />
+</linearGradient>
+<linearGradient id="paint14_linear_12_2" x1="1330.67" y1="301.333" x2="1330.67" y2="315.333" gradientUnits="userSpaceOnUse">
+<stop stop-color="#80D0E3" />
+<stop offset="0.5" stop-color="#3397BD" />
+<stop offset="1" stop-color="#23738E" />
+</linearGradient>
+<linearGradient id="paint15_linear_12_2" x1="1336.27" y1="302.667" x2="1336.27" y2="314.267" gradientUnits="userSpaceOnUse">
+<stop stop-color="#161D24" />
+<stop offset="0.55" stop-color="#39434C" />
+<stop offset="1" stop-color="#14191E" />
+</linearGradient>
+<linearGradient id="paint16_linear_12_2" x1="1330.67" y1="380" x2="1330.67" y2="394" gradientUnits="userSpaceOnUse">
+<stop stop-color="#80D0E3" />
+<stop offset="0.5" stop-color="#3397BD" />
+<stop offset="1" stop-color="#23738E" />
+</linearGradient>
+<linearGradient id="paint17_linear_12_2" x1="1336.27" y1="381.333" x2="1336.27" y2="392.933" gradientUnits="userSpaceOnUse">
+<stop stop-color="#161D24" />
+<stop offset="0.55" stop-color="#39434C" />
+<stop offset="1" stop-color="#14191E" />
+</linearGradient>
+<clipPath id="clip0_12_2">
+<rect width="1401.33" height="4" fill="white" transform="translate(30.6667 205.333)" />
+</clipPath>
+<clipPath id="clip1_12_2">
+<rect width="5.33333" height="453.333" fill="white" transform="translate(526.667 21.3333)" />
+</clipPath>
+<clipPath id="clip2_12_2">
+<rect width="44" height="17.3333" fill="white" transform="translate(428 137.333)" />
+</clipPath>
+<clipPath id="clip3_12_2">
+<rect width="45.3333" height="25.3333" fill="white" transform="translate(470.667 145.333)" />
+</clipPath>
+<clipPath id="clip4_12_2">
+<rect width="44" height="17.3333" fill="white" transform="translate(977.333 145.333)" />
+</clipPath>
+<clipPath id="clip5_12_2">
+<rect width="45.3333" height="25.3333" fill="white" transform="translate(1020 153.333)" />
+</clipPath>
+<clipPath id="clip6_12_2">
+<rect width="44" height="17.3333" fill="white" transform="translate(421.333 373.333)" />
+</clipPath>
+<clipPath id="clip7_12_2">
+<rect width="45.3333" height="25.3333" fill="white" transform="translate(464 381.333)" />
+</clipPath>
+<clipPath id="clip8_12_2">
+<rect width="58.6667" height="1.33333" fill="white" transform="translate(760 349.333)" />
+</clipPath>
+<clipPath id="clip9_12_2">
+<rect width="42.6667" height="17.3333" fill="white" transform="translate(1330.67 300)" />
+</clipPath>
+<clipPath id="clip10_12_2">
+<rect width="44" height="26.6667" fill="white" transform="translate(1372 308)" />
+</clipPath>
+<clipPath id="clip11_12_2">
+<rect width="42.6667" height="17.3333" fill="white" transform="translate(1330.67 378.667)" />
+</clipPath>
+<clipPath id="clip12_12_2">
+<rect width="44" height="26.6667" fill="white" transform="translate(1372 386.667)" />
+</clipPath>
+<image id="image0_12_2" width="53" height="31" preserveAspectRatio="none" href="data:image/png;base64,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" />
+<image id="image1_12_2" width="46" height="23" preserveAspectRatio="none" href="data:image/png;base64,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" />
+</defs>
+</svg>

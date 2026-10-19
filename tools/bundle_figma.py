@@ -12,6 +12,7 @@ def main():
     parser.add_argument('output',type=Path)
     parser.add_argument('--image-hashes',type=Path,help='JSON object mapping asset IDs to hashes returned by upload_assets')
     parser.add_argument('--panel',action='append',help='Include only this panel; repeat for several panels')
+    parser.add_argument('--node-range',help='Zero-based START:END slice after panel filtering; end is exclusive')
     parser.add_argument('--root-id',help='Append to this existing frame after inspecting it')
     parser.add_argument('--name',default='Research figure — Editable reconstruction')
     args=parser.parse_args()
@@ -19,16 +20,29 @@ def main():
     validate_scene(scene)
     options={'name':args.name,'imageHashes':json.loads(args.image_hashes.read_text(encoding='utf-8')) if args.image_hashes else {},
              'allowedRasterIds':[n['id'] for n in scene['nodes'] if n['type']=='image']}
+    if not isinstance(options['imageHashes'],dict):
+        parser.error('Image hash mapping must be a JSON object')
     if args.root_id:
         options['rootId']=args.root_id
     # Keep descriptors for the common validator, without putting image bytes in MCP code.
     scene['assets']={key:{'role':asset['role'],'mime':asset.get('mime','image/png'),'data':''}
                      for key,asset in scene.get('assets',{}).items()}
     if args.panel:
-        options['partial']=True
         scene['nodes']=[n for n in scene['nodes'] if n.get('panel','canvas') in args.panel]
         if not scene['nodes']:
             parser.error('Selected panels contain no nodes')
+    if args.node_range:
+        try:
+            start,end=(int(v) for v in args.node_range.split(':'))
+            if start<0 or end<=start:
+                raise ValueError()
+        except ValueError:
+            parser.error('--node-range must be START:END with 0 <= START < END')
+        scene['nodes']=scene['nodes'][start:end]
+        if not scene['nodes']:
+            parser.error('Selected node range contains no nodes')
+    if args.panel or args.node_range:
+        options['partial']=True
         included={n['id'] for n in scene['nodes']}
         features=[]
         for feature in scene.get('visualFeatures',[]):
@@ -43,11 +57,13 @@ def main():
     for n in scene['nodes']:
         if n['type']=='image' and n['asset'] not in options['imageHashes']:
             parser.error('Missing uploaded image hash: '+n['asset'])
+        if n['type']=='image' and (not isinstance(options['imageHashes'][n['asset']],str) or not options['imageHashes'][n['asset']].strip()):
+            parser.error('Image hash must be a non-empty string for asset: '+n['asset']+'. Extract the imageHash field from the upload response.')
     code=Path(__file__).with_name('scene_validate.js').read_text(encoding='utf-8')+'\n'
     code+=Path(__file__).with_name('figma_import.js').read_text(encoding='utf-8')
     code+='\nreturn await importFigureScene('+json.dumps(scene,ensure_ascii=False,separators=(',',':'))+','+json.dumps(options,ensure_ascii=False)+');\n'
     if len(code)>50000:
-        parser.error(f'Bundle has {len(code)} characters. Split with --panel, then append using --root-id.')
+        parser.error(f'Bundle has {len(code)} characters. Split with --panel or --node-range START:END, then append using the latest --root-id.')
     args.output.write_text(code,encoding='utf-8')
     print(json.dumps({'characters':len(code),'nodes':len(scene['nodes']),'output':str(args.output)}))
 

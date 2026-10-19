@@ -72,6 +72,7 @@ test('hidden bitmap SVGs and non-RGB raster roles are rejected before canvas mut
 test('approved image references need real uploaded hashes',async()=>{
   const s=setup();s.scene.nodes[0]={...s.scene.nodes[0],type:'image',role:'input_rgb',asset:'a'};s.scene.assets={a:{role:'input_rgb',crop:[0,0,10,10]}};
   await assert.rejects(s.run(s.scene),/a/);assert.equal(s.page.children.length,0);
+  await assert.rejects(s.run(s.scene,{imageHashes:{a:{imageHash:'nested-upload-response'}}}));assert.equal(s.page.children.length,0);
   const result=await s.run(s.scene,{imageHashes:{a:'already-uploaded'}});assert.equal(result.audit.bitmapNodes,1);
 });
 test('missing font fails before replacing an existing figure',async()=>{

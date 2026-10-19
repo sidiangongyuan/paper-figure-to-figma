@@ -1,40 +1,48 @@
-# Codex 本地用户：上传整图并调用仓库 Skill
+# 用 Codex，把参考图带进 Figma
 
 ## 第一次准备
 
-1. 下载/克隆此仓库到本地，在 Codex 中把 **paper-figure-to-figma 这个仓库目录** 打开为项目，并新建对话。Skill 随仓库保存在 `.agents/skills/paper-figure-to-figma/SKILL.md`，无需另外复制到用户全局目录。
-2. 准备完整参考图。原始生图提示词与 VLM API Key 不需要。Codex 使用当前对话模型读图，不会借用另一个网站的会员账号。
-3. Skill 默认自行发现并调用已连接的 Figma 写入工具，**不需要另外输入 `@Figma`，也不需要用户手动调用 Figma 的其他 Skill**。已有目标文件时附上链接；继续项目时复用已记录的目标，新项目没有目标时按工具能力创建新的 Design 文件。首次未连接或授权过期时才需要完成账号连接/重新授权；只有读取能力的连接不能建图。缺少连接时仍会准备本地项目与 SVG，可使用 [同一仓库插件导入](WEB_QUICKSTART.md)。使用已连接的 MCP 不必先安装仓库的本地导入插件。
+1. 下载并解压仓库，在 Codex 中打开 **paper-figure-to-figma** 这个文件夹，并新建对话。
+2. 准备完整参考图。可以是 AI 生成的图，也可以是已有科研图。
+3. 已有目标 Figma Design 文件时，附上链接。首次使用按提示连接 Figma 账号。
 
-Codex 的官方仓库技能位置为 `.agents/skills`（[官方说明](https://learn.chatgpt.com/docs/build-skills)）。若当前版本/已有对话尚未发现新 Skill，直接要求读取下列文件并遵照执行即可，不要把未加载误认为已经运行。
-
-## 每张图发送这一段
-
-上传完整参考图，然后发送：
+## 上传图片，发送这一句
 
 ```text
-使用 $paper-figure-to-figma，按本仓库流程复现我上传的整张科研图。
-请生成可编辑文字、模块、箭头和矢量图标；只有输入RGB和输出结果可以使用图片。
-正文默认 Times New Roman，编辑字号默认至少16，可放大画布。
-请检查渐变、半透明白底、曲线和全部分区，实际渲染后逐区复核。
-请自行查找并调用可用的 Figma 工具完成建图、预览复核和导出。
-若连接或授权确实不可用，继续完成项目文件和SVG，并说明具体缺少的步骤。
-目标 Figma 文件：<有则填链接，没有则删掉这行>
+使用 $paper-figure-to-figma 复现这张整图，
+完成 Figma 绘制、预览复核和导出。
 ```
 
-Skill 未显示时的启动语：
+Skill 自行发现和调用已连接的 Figma 工具，也会自行加载绘图需要的操作指引。继续同一项目时复用原画板；新项目按工具能力创建独立文件。
+
+不需要另外添加 `@Figma`。真正缺少连接或授权失效时，会明确提示需要处理的步骤，同时继续准备可导入的项目文件和 SVG。
+
+## 先试附带样例
+
+仓库已经准备好这次的 PlanWAM 完整样例，可以发送：
 
 ```text
-请先读取本仓库 .agents/skills/paper-figure-to-figma/SKILL.md，
-按其中流程完成我上传的整张图；不要只介绍流程。
+使用 $paper-figure-to-figma，打开 examples/planwam/planwam.scene.json，
+把完整样例写入 Figma，检查并导出预览。
 ```
 
-不要求用户运行工具命令。Codex 负责读图、写 scene、处理 RGB、校验、自行调用 Figma 写入、查看导出预览并修正。Skill 会先发现工具，不能仅因未加 `@Figma` 或初始列表未展示工具就要求手动导入。真正缺少连接/授权时，才明确给出剩余步骤。
+图片来源：**[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)**，Figure 1。样例中正文采用 Times New Roman，小车为矢量重绘。[完整说明](../examples/planwam/README.md)。
 
-已连接工具的自动调用由 Skill 指令负责；Skill 不会自动代替账号登录、授予文件权限或更改 Codex 的连接配置。流程与工具的配合方式见 [OpenAI 官方说明](https://developers.openai.com/plugins/build/skills)。
+## 下次继续
 
-## 继续网页项目 / 后续修订
+提供上次保存的项目文件、原图和当前预览，指出需要修改的地方。Codex 会保留项目中的对应关系，更新画板并重新检查结果。输出默认保存在 `local-outputs/<project-id>/`，研究材料留在本地。
 
-同时提供此前保存的 `.scene.json`、原图和当前预览；让 Codex 保留 projectId 与逻辑节点ID，修正具体问题。结果位于 `local-outputs/<project-id>/`，默认不会提交到 GitHub。导出的项目文件也能重新交给插件继续使用。
+<details><summary>如果当前对话没有显示这个 Skill</summary>
 
-最终收到：实际创建的 Figma 画板链接（如已连接）、可移交项目文件、SVG、预览与可用的 PDF 导出，以及剩余差异。更新可能替换原生节点ID，逻辑ID保留；手工改过的画板先备份。不要把结构检查等同于视觉还原，也不要在不知道最终印刷尺寸时宣称字号已满足论文要求。
+发送：
+
+```text
+请读取本仓库 .agents/skills/paper-figure-to-figma/SKILL.md，
+按其中流程完成我上传的整张科研图。
+```
+
+仓库 Skill 位于 `.agents/skills`，见 [OpenAI 官方说明](https://learn.chatgpt.com/docs/build-skills)。首次账号授权与文件权限仍由对应连接处理。
+
+</details>
+
+最终会交付实际创建的 Figma 画板、可移交项目文件、SVG、可用的 PDF 与预览，以及需要继续检查的差异。手工改过的画板先保留副本。放进论文后，按最终尺寸检查实际字号与可读性。

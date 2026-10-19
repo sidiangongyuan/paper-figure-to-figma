@@ -1,0 +1,27 @@
+{
+  "title": "PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving",
+  "paperUrl": "https://arxiv.org/abs/2610.11382",
+  "figure": "Figure 1",
+  "referenceSize": {
+    "width": 1089,
+    "height": 385
+  },
+  "canvas": {
+    "width": 1452.0,
+    "height": 513.3333333333333
+  },
+  "elements": 398,
+  "textLayers": 43,
+  "vectorObjects": 334,
+  "rgbLayers": 21,
+  "distinctRgbAssets": 2,
+  "gradients": 8,
+  "minimumEditorFontSize": 16.0,
+  "nativeExport": true,
+  "notes": [
+    "Car icon is a manually redrawn vector approximation; original vector asset is unavailable.",
+    "RGB video crops come from a low-resolution reference; original dataset images would improve print quality.",
+    "Pixel-level fidelity is not certified. Inspect text, cross-panel links and trajectory details.",
+    "Typography intentionally follows the user preference rather than copying source fonts. Final paper-size legibility is not yet checked."
+  ]
+}

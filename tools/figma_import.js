@@ -18,7 +18,7 @@ async function importFigureScene(scene, options = {}) {
   const available = new Set((await figma.listAvailableFontsAsync()).map(f => JSON.stringify(f.fontName)));
   for (const [key] of fonts) if (!available.has(key)) throw new Error("字体不可用，请安装或明确替换: " + key);
   await Promise.all([...fonts.values()].map(f => figma.loadFontAsync(f)));
-  for (const n of scene.nodes.filter(n => n.type === "image")) if (!options.imageHashes?.[n.asset]) throw new Error("缺少已上传图片: " + n.asset);
+  for (const n of scene.nodes.filter(n => n.type === "image")) if (typeof options.imageHashes?.[n.asset] !== "string" || !options.imageHashes[n.asset].trim()) throw new Error("缺少有效的已上传图片标识: " + n.asset);
   const rgb = hex => ({r:parseInt(hex.slice(1,3),16)/255,g:parseInt(hex.slice(3,5),16)/255,b:parseInt(hex.slice(5,7),16)/255});
   const paint = c => {
     if (!c || c === "none") return [];

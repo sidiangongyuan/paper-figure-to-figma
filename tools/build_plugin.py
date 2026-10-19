@@ -1,5 +1,6 @@
 """Build the dependency-free plugin; end users use the committed built files."""
 import argparse
+import base64
 import json
 from pathlib import Path
 
@@ -11,8 +12,9 @@ def build(check=False):
     code = '\n'.join(read(p) for p in ('tools/scene_validate.js','tools/figma_import.js','figma-plugin/controller.js'))
     # Escape '<' so model instructions/SVG examples cannot terminate a script tag.
     packed = json.dumps({'build':read('prompts/01-reconstruct.md'),'review':read('prompts/02-review.md'),
-                         'example':json.loads(read('examples/minimal.scene.json'))},ensure_ascii=False).replace('<','\\u003c')
-    ui = read('figma-plugin/ui.template.html').replace('/*__PACK__*/', 'const PACK = '+packed+';').replace('/*__VALIDATOR__*/',read('tools/scene_validate.js'))
+                         'example':json.loads(read('examples/planwam/planwam.scene.json')),
+                         'referenceImage':'data:image/png;base64,'+base64.b64encode((ROOT/'examples/planwam/reference.png').read_bytes()).decode('ascii')},ensure_ascii=False).replace('<','\\u003c')
+    ui = read('figma-plugin/ui.template.html').replace('/*__PACK__*/', 'const PACK = '+packed+';').replace('/*__VALIDATOR__*/',read('tools/scene_validate.js')).replace('/*__UI_STYLES__*/',read('figma-plugin/ui.css')).replace('/*__UI_APP__*/',read('figma-plugin/ui.js'))
     for name, content in [('code.js',code),('ui.html',ui)]:
         path = ROOT / 'figma-plugin' / name
         if check:

@@ -1,18 +1,44 @@
-# 从这里开始
+# 开始第一张图
 
-使用前准备：**一张清晰的完整科研参考图、一个能看图的模型账号、一个 Figma 账号。** 原来的生图提示词、VLM API Key 都不需要。原始 RGB / 输出结果图片、原始 SVG 图标有则提供，没有也可以先做。
+**准备一张完整参考图、你常用的看图模型，以及 Figma。** 工具包已经附带插件、操作指令和 PlanWAM 完整样例。
 
-| 你在哪里使用模型 | 第一步 | 每张图怎么做 |
-| --- | --- | --- |
-| ChatGPT / Gemini 等网页对话 | [安装仓库附带的本地 Figma 插件](docs/WEB_QUICKSTART.md) | 插件复制指令 → 网页上传整图 → 模型输出文件 → 插件导入 → 对照修订 → 导出 |
-| Codex 本地 | [在 Codex 打开本仓库并调用 Skill](docs/CODEX_QUICKSTART.md) | 上传整图并调用 Skill → 自行发现和调用 Figma 工具、绘制、复核与导出；不需要另加 `@Figma`。真正缺少连接时才转为文件导入 |
+## 先看效果
 
-这是同一套工具包的两个入口：**插件负责在 Figma 里执行；Skill 指导 Codex 执行；固定指令让网页模型输出同一种项目文件。** 你只用其中适合自己的入口，不必两套都学。两边可通过保存的 `.scene.json` 继续同一个项目。
+下载并解压仓库，双击 **`demo/index.html`**。
 
-第一次建议先用插件的「加载入门示例」验证安装。它会生成两个带原生文字的模块和矢量箭头，不需要任何模型。
+在演示中拖动分界线，对照原图与重建结果；点右侧图层，试着改文字、配色或曲线。点击「下载当前 SVG」可以保存刚改好的版本。演示支持离线打开。
 
-完成一张图的交付包括：Figma 中的可编辑图层、项目文件、可编辑 SVG、可选文字转曲 SVG、预览 PNG 与 PDF。正文默认 Times New Roman，编辑字号默认至少16；只有输入 RGB 和输出结果保留图片。论文排版后的实际字号与可读性需另验收。
+![从参考图到可编辑图层的流程回放](assets/workflow.gif)
 
-当前是本地开发插件原型：仓库已附带可运行的预构建文件，用户无需安装 Node.js 或自己编译；**首次安装使用 Figma 桌面版**。它还没有发布到 Figma Community，不能承诺只用两个网页就能安装运行。网页模型只分析并输出文件，不会直接遥控本地 Figma。
+## 选一种使用方式
 
-模型仍可能漏画或画错。必须把实际导出的预览与原图逐区对比，再修订；结构检查通过不等于达到1:1。
+### 使用网页模型
+
+![下载、安装和第一次生成的四步示意](assets/install-guide.svg)
+
+1. 在 GitHub 点击 **Code → Download ZIP**，解压后保留完整文件夹。
+2. 在 Figma 桌面版打开一个 Design 文件。通过 **Plugins → Development → Import plugin from manifest…**，选择 `figma-plugin/manifest.json`，随后运行插件。
+3. 点 **体验 PlanWAM 示例 → 生成到 Figma**，检查生成的文字与模块。
+4. 开始自己的图：选择完整参考图，复制绘图指令发给模型；将返回的绘图文件导入插件，对照修改后导出。
+
+[详细网页教程 →](docs/WEB_QUICKSTART.md)
+
+### 使用 Codex
+
+1. 在 Codex 中打开解压后的 **paper-figure-to-figma** 文件夹。
+2. 上传完整参考图，发送：
+
+```text
+使用 $paper-figure-to-figma 复现这张整图，
+完成 Figma 绘制、预览复核和导出。
+```
+
+Skill 会自行查找和调用可用的 Figma 工具。已有 Design 文件时附上链接；第一次按提示连接账号即可。
+
+[详细 Codex 教程 →](docs/CODEX_QUICKSTART.md)
+
+## 带走什么
+
+Figma 可编辑图层、SVG、PDF、预览图片和下次可以继续使用的项目文件。正文默认 Times New Roman，编辑字号至少16px；论文排版后按最终尺寸检查可读性。
+
+示例图片来源：**[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)**，Figure 1。字体调整、矢量重绘等细节见 [样例说明](examples/planwam/README.md)。
