@@ -11,9 +11,11 @@ An early-stage workflow project for reconstructing AI-generated and existing res
 | Entry point | One-time setup | Per figure |
 | --- | --- | --- |
 | Web visual-model chat | Download the repository ZIP; import `figma-plugin/manifest.json` in Figma Desktop | Select reference → copy built-in instructions to your model → import returned scene JSON → compare previews and revise → export |
-| Local Codex | Open this repository as a project; use `$paper-figure-to-figma` | Attach the full reference; the agent authors and validates a scene, writes to Figma if a write connection exists, and reviews exports |
+| Local Codex | Open this repository as a project; use `$paper-figure-to-figma` | Attach the full reference; the skill discovers and calls connected Figma tools, draws, reviews and exports without a separate `@Figma` mention |
 
 No VLM API key or original image-generation prompt is required. The model does the image analysis; the kit executes its scene. Web users do not need Python, Node.js, or a build step. The local development plugin requires Figma Desktop and is not yet published to Community. The Codex skill does not provide a Figma connection: without one, the agent can deliver the scene for manual import through the same plugin.
+
+The skill uses available Figma tools by default, loading deferred tools and the relevant Figma execution guidance itself. Users do not have to invoke those tools or prerequisite skills separately. Existing project targets are reused; new Design files are created within the requested scope when supported. Account login, expired authorization and unresolved destination selection can still require user action.
 
 Both routes use the same scene files, logical IDs, rendering rules and JS validation. Save the resolved `.scene.json` to move between them. Full reimports rebuild managed nodes and can overwrite manual edits; duplicate the artwork first and select the intended update target if several copies share a project ID. Project JSON records the authored scene, not arbitrary later Figma edits.
 

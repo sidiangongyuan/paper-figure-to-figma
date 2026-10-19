@@ -5,7 +5,7 @@
 | 你在哪里使用模型 | 第一步 | 每张图怎么做 |
 | --- | --- | --- |
 | ChatGPT / Gemini 等网页对话 | [安装仓库附带的本地 Figma 插件](docs/WEB_QUICKSTART.md) | 插件复制指令 → 网页上传整图 → 模型输出文件 → 插件导入 → 对照修订 → 导出 |
-| Codex 本地 | [在 Codex 打开本仓库并调用 Skill](docs/CODEX_QUICKSTART.md) | 上传整图并说“用本仓库流程复现” → Codex 分析、绘制、复核；有 Figma 写入连接时自动写入，否则交给同一插件导入 |
+| Codex 本地 | [在 Codex 打开本仓库并调用 Skill](docs/CODEX_QUICKSTART.md) | 上传整图并调用 Skill → 自行发现和调用 Figma 工具、绘制、复核与导出；不需要另加 `@Figma`。真正缺少连接时才转为文件导入 |
 
 这是同一套工具包的两个入口：**插件负责在 Figma 里执行；Skill 指导 Codex 执行；固定指令让网页模型输出同一种项目文件。** 你只用其中适合自己的入口，不必两套都学。两边可通过保存的 `.scene.json` 继续同一个项目。
 
