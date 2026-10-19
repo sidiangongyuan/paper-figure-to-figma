@@ -1,0 +1,23 @@
+# Local credentials and machine settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Reference images, working outputs, and logs stay local by default
+local-inputs/
+local-outputs/
+artifacts/
+logs/
+*.log
+
+# Tool environments
+.venv/
+venv/
+__pycache__/
+node_modules/
