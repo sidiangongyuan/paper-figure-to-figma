@@ -8,6 +8,8 @@ An early-stage workflow project for reconstructing AI-generated research figures
 
 Start from an AI-generated reference image, preserve its intended appearance as closely as practical, and produce a figure that can be edited in Figma and prepared for a paper. Visual fidelity, vector representation, useful editability, and scientific correctness will be evaluated separately.
 
+The agreed input is the generated image together with its original generation prompt. The image guides visual reconstruction; the prompt helps interpretation. Conflicts are reported for review before corrections.
+
 ## Project documents
 
 - [Decision log](docs/decisions.md): confirmed requirements, open decisions, and the current interview step.
