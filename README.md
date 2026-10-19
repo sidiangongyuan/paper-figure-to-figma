@@ -18,6 +18,7 @@ Provide the full reference image. The planned workflow analyzes the global layou
 - [Reference project notes](docs/reference-project.md): relevant mechanisms and limits of Image To Slice.
 - [Workflow proposal](docs/workflow-proposal.md): a draft kit for web-based visual-model conversations, Figma reconstruction, and review.
 - [First full-figure pilot](docs/pilot-01.md): executed steps, structural checks, exports, and known differences.
+- [Visual review and corrections](docs/visual-review.md): missed gradients, label backing, curve geometry, and the revised typography defaults.
 
 ## Getting started
 
@@ -30,6 +31,8 @@ python -m unittest discover -s tools -p "test_*.py" -v
 ```
 
 These tools execute an authored scene; they do not extract a scene from an image. Run the generated script through Figma MCP `use_figma` after selecting a Design file. For raster assets, upload them using `upload_assets` and pass an asset-ID-to-image-hash JSON file with `--image-hashes`. Split large scenes with repeated `--panel` arguments, then use `--root-id` to append to the inspected target frame. Preserve Figma skill prerequisites when using MCP tools. Importing SVG manually does not establish that Figma text remains editable.
+
+Typography defaults to Times New Roman, with Times New Roman or Comic for headings. Scene validation defaults to a minimum editor font size of 16; a per-figure `typographyPolicy` can record an explicit exception. The final printed font size requires a separate check after paper scaling. Rectangles support linear-gradient fills and opacity. An optional `visualFeatures` inventory checks required gradients, translucent label backing and curves; this inventory must itself be reviewed against the reference because it cannot discover omissions automatically.
 
 The intended workflow must work with existing web-chat visual-model subscriptions and must not require a VLM API key. The first version uses manual uploads, downloads, or copy-paste between web chat and reconstruction tools; the tools handle reconstruction and validation.
 

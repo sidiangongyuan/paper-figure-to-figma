@@ -12,7 +12,7 @@ async function importFigureScene(scene, options) {
   const available = await figma.listAvailableFontsAsync();
   const fontKeys = new Set(available.map(f => JSON.stringify(f.fontName)));
   const requested = [...new Map(scene.nodes.filter(n => n.type === "text").map(n => {
-    const font = {family: n.family || "Arial", style: n.weight || "Regular"};
+    const font = {family: n.family || "Times New Roman", style: n.weight || "Regular"};
     return [JSON.stringify(font), font];
   })).values()];
   for (const font of requested) {
@@ -23,7 +23,15 @@ async function importFigureScene(scene, options) {
     const h = hex.replace("#", "");
     return {r:parseInt(h.slice(0,2),16)/255,g:parseInt(h.slice(2,4),16)/255,b:parseInt(h.slice(4,6),16)/255};
   };
-  const paint = color => !color || color === "none" ? [] : [{type:"SOLID",color:rgb(color)}];
+  const paint = color => {
+    if (!color || color === "none") return [];
+    if (typeof color === "object") {
+      if (color.type !== "linear") throw new Error("Unsupported gradient type");
+      return [{type:"GRADIENT_LINEAR",gradientTransform:color.direction === "horizontal" ? [[1,0,0],[0,1,0]] : [[0,1,0],[-1,0,1]],
+        gradientStops:color.stops.map(s=>({position:s.offset,color:{...rgb(s.color),a:s.opacity ?? 1}}))}];
+    }
+    return [{type:"SOLID",color:rgb(color)}];
+  };
   // Validate every image reference before creating anything on canvas.
   for (const n of scene.nodes.filter(n => n.type === "image")) {
     if (!["input_rgb", "output_result"].includes(n.role)) throw new Error("Unapproved raster role: " + n.id);
@@ -66,7 +74,7 @@ async function importFigureScene(scene, options) {
       if (n.dash) node.dashPattern=n.dash.split(/[ ,]+/).map(Number);
     } else if (n.type === "text") {
       node=figma.createText();
-      node.fontName={family:n.family || "Arial",style:n.weight || "Regular"};
+      node.fontName={family:n.family || "Times New Roman",style:n.weight || "Regular"};
       node.fontSize=n.size; node.lineHeight={unit:"PIXELS",value:n.lineHeight || n.size*1.12};
       node.fills=paint(n.color || "#000000");
       node.characters=n.text;
@@ -79,6 +87,7 @@ async function importFigureScene(scene, options) {
       for (const child of node.findAll(() => true)) created.push(child.id);
     } else throw new Error("Unsupported scene type: " + n.type);
     created.push(node.id); node.name=n.id+" · "+n.name;
+    node.opacity=n.opacity ?? 1;
     parent.appendChild(node); node.x=n.x-parent.x; node.y=n.y-parent.y;
     nodeMap[n.id]=node.id;
   }
