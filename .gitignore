@@ -21,3 +21,6 @@ logs/
 venv/
 __pycache__/
 node_modules/
+.playwright-cli/
+.playwright/
+output/playwright/

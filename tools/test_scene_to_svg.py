@@ -77,6 +77,13 @@ class SceneContractTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_scene(self.scene)
 
+    def test_unresolved_crop_validates_but_cannot_be_exported_as_fake_image(self):
+        self.scene['assets']['rgb']={'role':'input_rgb','crop':[1,2,11,12]}
+        self.scene['nodes'][0].update(type='image',asset='rgb',role='input_rgb')
+        validate_scene(self.scene)
+        with self.assertRaisesRegex(ValueError,'prepare_scene'):
+            render_scene(self.scene)
+
 
 if __name__=='__main__':
     unittest.main()

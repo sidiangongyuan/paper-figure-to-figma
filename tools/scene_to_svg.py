@@ -62,8 +62,14 @@ def validate_scene(scene):
             asset=scene['assets'][n['asset']]
             if n.get('role') not in RASTER_ROLES or asset.get('role')!=n['role']:
                 raise ValueError(f'Raster outside approved roles: {n["id"]}')
-            if asset['mime'] not in {'image/png','image/jpeg'}:
-                raise ValueError('Only PNG/JPEG raster assets are allowed')
+            if 'data' in asset:
+                if asset.get('mime') not in {'image/png','image/jpeg'}:
+                    raise ValueError('Only PNG/JPEG raster assets are allowed')
+            else:
+                crop=asset.get('crop',[])
+                if (len(crop)!=4 or not all(isinstance(v,(int,float)) and math.isfinite(v) for v in crop)
+                        or crop[0]<0 or crop[1]<0 or crop[2]<=crop[0] or crop[3]<=crop[1]):
+                    raise ValueError('Asset needs data or crop:[left,top,right,bottom]')
         if n['type']=='svg':
             root=ET.fromstring(n['svg'])
             for el in root.iter():
@@ -140,13 +146,15 @@ def render_scene(scene):
             tx=x if align=='left' else x+w if align=='right' else x+w/2
             anchor='start' if align=='left' else 'end' if align=='right' else 'middle'
             ty=y+n['size']*.88
-            weight=700 if n.get('weight')=='Bold' else 400
-            ta=attrs(x=tx,y=ty,fill=n.get('color','#000000'),font_family=n.get('family','Times New Roman'),font_size=n['size'],font_weight=weight,text_anchor=anchor)
+            weight=700 if 'Bold' in n.get('weight','') else 400
+            ta=attrs(x=tx,y=ty,fill=n.get('color','#000000'),font_family=n.get('family','Times New Roman'),font_size=n['size'],font_weight=weight,font_style='italic' if 'Italic' in n.get('weight','') else None,text_anchor=anchor,opacity=n.get('opacity'))
             spans=''.join(f'<tspan x="{tx}" dy="{0 if i==0 else n.get("lineHeight",n["size"]*1.12)}">{escape(line)}</tspan>' for i,line in enumerate(n['text'].split('\n')))
             out.append(f'<text {common} {ta}>{spans}</text>')
         elif n['type']=='image':
             a=scene['assets'][n['asset']]
-            out.append(f'<image {common} '+attrs(x=x,y=y,width=w,height=h,preserveAspectRatio='none',data_raster_role=n['role'],href=f'data:{a["mime"]};base64,{a["data"]}')+'/>')
+            if 'data' not in a:
+                raise ValueError('Unresolved image crop; run tools/prepare_scene.py with --reference first')
+            out.append(f'<image {common} '+attrs(x=x,y=y,width=w,height=h,preserveAspectRatio='none',data_raster_role=n['role'],opacity=n.get('opacity'),href=f'data:{a["mime"]};base64,{a["data"]}')+'/>')
         elif n['type']=='svg':
             sub=ET.fromstring(n['svg'])
             vb=list(map(float,sub.get('viewBox',f'0 0 {w} {h}').split()))
@@ -156,6 +164,8 @@ def render_scene(scene):
             for key in ('width','height','viewBox','x','y'):
                 sub.attrib.pop(key,None)
             sub.set('transform',f'translate({x} {y}) scale({w/vb[2]} {h/vb[3]}) translate({-vb[0]} {-vb[1]})'); sub.set('id',n['id'])
+            if 'opacity' in n:
+                sub.set('opacity',str(n['opacity']))
             # Namespace every paint server ID so repeated icons remain independent.
             id_map={el.attrib['id']:n['id']+'-'+el.attrib['id'] for el in sub.iter() if 'id' in el.attrib and el is not sub}
             for el in sub.iter():
