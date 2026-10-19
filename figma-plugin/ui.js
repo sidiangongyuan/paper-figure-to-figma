@@ -11,7 +11,7 @@ function showPage(name) {
 function projectInfo(scene) {
   const texts=scene.nodes.filter(n=>n.type==='text').length;
   $("project-info").hidden=false;$("project-name").textContent=scene.name || "绘图文件已就绪";
-  $("project-summary").textContent=texts+" 处文字可直接编辑 · 完整图层已准备好";
+  $("project-summary").textContent=texts+" 个文字图层";
 }
 function setBusy(value) { busy = value; document.querySelectorAll("button,input,textarea").forEach(el => el.disabled = value); }
 function fail(error) {
@@ -94,7 +94,7 @@ $("reference").onchange = async () => {
     const img = await loadImage(file); referenceImage = img;
     $("reference-preview").src = img.src; $("reference-preview").hidden = false;
     $("reference-info").textContent = file.name + " · " + img.naturalWidth + " × " + img.naturalHeight;
-    $("prompt").value = promptText(); status("参考图已就绪。请把同一张原图和重建指令发给网页模型。");
+    $("prompt").value = promptText(); status("参考图已选择。复制指令后与原图一起发给网页模型。");
   } catch (e) { fail(e); }
 };
 $("copy-build").onclick = () => copy(promptText());
@@ -102,13 +102,13 @@ $("copy-review").onclick = () => copy(PACK.review + (lastError ? "\n插件报告
 $("example").onclick = () => {
   replacements.clear(); const example = structuredClone(PACK.example); example.projectId = "planwam-example";
   $("scene").value = JSON.stringify(example,null,2); renderAssets(example); projectInfo(example); lastError = "";$("error-details").hidden=true;
-  showPage('build');status("PlanWAM 示例已准备好。点击「生成到 Figma」，查看完整四分区与可编辑图层。","success");
+  showPage('build');status("示例已加载，点击「生成到 Figma」。","success");
 };
 $("scene-file").onchange = async () => {
   try { const file = $("scene-file").files[0]; if (file) { $("scene").value = await file.text(); replacements.clear(); const scene = readScene(); renderAssets(scene); projectInfo(scene);$("error-details").hidden=true;status("绘图文件已打开，可以生成到 Figma。"); } } catch (e) { fail(e); }
 };
 $("validate").onclick = () => {
-  try { const scene = readScene(); validateFigureScene(scene); renderAssets(scene); projectInfo(scene);lastError = "";$("error-details").hidden=true;status("绘图文件已准备好。生成后，请把实际效果与原图放在一起检查。", "success"); } catch (e) { fail(e); }
+  try { const scene = readScene(); validateFigureScene(scene); renderAssets(scene); projectInfo(scene);lastError = "";$("error-details").hidden=true;status("绘图文件检查通过。", "success"); } catch (e) { fail(e); }
 };
 $("import").onclick = async () => {
   if (busy) return;
@@ -116,7 +116,7 @@ $("import").onclick = async () => {
   catch (e) { setBusy(false); fail(e); }
 };
 $("save").onclick = async () => {
-  try { const scene = await resolveAssets(readScene()); download(JSON.stringify(scene,null,2),"application/json",scene.projectId+".scene.json"); status("项目文件已准备下载，含已处理的 RGB 素材，可用于网页 / Codex 继续修改。"); } catch (e) { fail(e); }
+  try { const scene = await resolveAssets(readScene()); download(JSON.stringify(scene,null,2),"application/json",scene.projectId+".scene.json"); status("项目文件已下载。"); } catch (e) { fail(e); }
 };
 document.querySelectorAll("[data-export]").forEach(button => button.onclick = () => {
   if (busy) return; setBusy(true); status("正在从 Figma 导出…"); parent.postMessage({pluginMessage:{type:"export",format:button.dataset.export}},"*");
@@ -128,11 +128,11 @@ window.onmessage = event => {
   if (m.type === "error") return fail(new Error(m.message));
   if (m.type === "imported") {
     lastError = ""; const a = m.result.audit;$("error-details").hidden=true;showPage('finish');
-    status((m.result.status === "updated" ? "画板已更新。" : "画板已生成。") + " " + a.texts + " 处文字可直接编辑，模块与连线已分别保留。\n下载预览，与原图逐处对照。", "success");
+    status((m.result.status === "updated" ? "画板已更新。" : "画板已生成。") + " " + a.texts + " 个文字图层。请下载预览对照原图。", "success");
   } else if (m.type === "exported") {
     const raw = atob(m.base64), bytes = Uint8Array.from(raw,c => c.charCodeAt(0));
     const ext = m.format.includes("svg") ? "svg" : m.format;
     const mime = ext === "svg" ? "image/svg+xml" : ext === "png" ? "image/png" : "application/pdf";
-    download(bytes,mime,"figure-"+m.format+"."+ext); status("导出已准备下载。请检查全图、局部细节和最终论文尺寸。");
+    download(bytes,mime,"figure-"+m.format+"."+ext); status("导出文件已下载。");
   }
 };

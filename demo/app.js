@@ -6,7 +6,7 @@ const initialView='0 0 1452 514';
 const getSvg=()=>$('drawing').querySelector('svg');
 const modelNode=id=>scene.nodes.find(n=>n.id===id);
 const viewNode=id=>$('drawing').querySelector('[data-figure-node="'+id+'"]');
-const captions=['从完整参考图开始。','为文字、模块与连线建立独立图层。','原图与重建结果，放在一起看。','换个名字，调个颜色，下载你的版本。'];
+const captions=['完整参考图','文字、模块与连线图层','原图与重建对照','编辑与下载'];
 function toast(message){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,3500);}
 function stopReplay(){timers.forEach(clearTimeout);timers=[];playing=false;$('studio').classList.remove('is-playing');$('replay').innerHTML='<span aria-hidden="true">▷</span> 播放流程';$('replay').setAttribute('aria-label','播放流程回放');}
 function markStep(index){document.querySelectorAll('[data-step]').forEach(b=>{const active=Number(b.dataset.step)===index;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});$('canvas-caption').textContent=captions[index];}
@@ -70,7 +70,7 @@ function changeCurve(amount){
   drawSelection();
 }
 function download(content,type,name){const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}
-function exportSvg(){const svg=getSvg().cloneNode(true);svg.setAttribute('viewBox',initialView);svg.setAttribute('width','1452');svg.setAttribute('height','514');for(const e of svg.querySelectorAll('[data-figure-node]')){e.removeAttribute('data-figure-node');e.removeAttribute('data-kind');}download(new XMLSerializer().serializeToString(svg),'image/svg+xml','planwam-editable.svg');toast('SVG 已准备好，保留可编辑文字与矢量。');}
+function exportSvg(){const svg=getSvg().cloneNode(true);svg.setAttribute('viewBox',initialView);svg.setAttribute('width','1452');svg.setAttribute('height','514');for(const e of svg.querySelectorAll('[data-figure-node]')){e.removeAttribute('data-figure-node');e.removeAttribute('data-kind');}download(new XMLSerializer().serializeToString(svg),'image/svg+xml','planwam-editable.svg');toast('SVG 已下载。');}
 function resetEdits(){stopReplay();scene=structuredClone(SHOWCASE.scene);$('drawing').innerHTML=originalFigure;curveBaseline=null;$('curve-bend').value=0;selected='d-0368';selectLayer(selected,{zoom:false});resetView();toast('已恢复 PlanWAM 示例。');}
 function replay(){
   if(playing){stopReplay();return;}
@@ -81,7 +81,7 @@ function replay(){
   for(let i=0;i<=12;i++)timers.push(setTimeout(()=>setComparison(12+i*6),3800+i*80));
   timers.push(setTimeout(()=>setStage(3),5500));
   const text='My planner';for(let i=0;i<=text.length;i++)timers.push(setTimeout(()=>applyText(text.slice(0,i)),6400+i*90));
-  timers.push(setTimeout(()=>{stopReplay();$('canvas-caption').textContent='文字已改好。下载 SVG，或恢复示例继续体验。';},7800));
+  timers.push(setTimeout(()=>{stopReplay();$('canvas-caption').textContent='文字已修改，可下载 SVG。';},7800));
 }
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{stopReplay();setView(b.dataset.view);markStep(b.dataset.view==='original'?0:b.dataset.view==='compare'?2:3);if(b.dataset.view==='edit')selectLayer(selected);});
 document.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>{stopReplay();setStage(Number(b.dataset.step));});
@@ -100,12 +100,12 @@ $('curve-bend').oninput=e=>{stopReplay();changeCurve(e.target.value);};
 $('reset-view').onclick=()=>{resetView();drawSelection();};
 $('reset-edits').onclick=resetEdits;
 $('download-svg').onclick=exportSvg;
-$('download-project').onclick=()=>{download(JSON.stringify(scene,null,2),'application/json','planwam.scene.json');toast('项目文件已准备好，可在插件或 Codex 中继续。');};
+$('download-project').onclick=()=>{download(JSON.stringify(scene,null,2),'application/json','planwam.scene.json');toast('绘图文件已下载。');};
 $('replay').onclick=replay;
 $('hero-play').onclick=()=>{setTimeout(replay,450);};
 $('copy-codex').onclick=async()=>{
   const text='使用 $paper-figure-to-figma 复现我上传的整张科研图，完成 Figma 绘制、预览复核和导出。';
-  try{await navigator.clipboard.writeText(text);toast('已复制。上传参考图后，把这句话发给 Codex。');}
+  try{await navigator.clipboard.writeText(text);toast('指令已复制。');}
   catch(_){$('copy-text').value=text;$('copy-dialog').showModal();$('copy-text').select();}
 };
 window.addEventListener('resize',()=>{if($('studio').dataset.mode==='edit')drawSelection();});

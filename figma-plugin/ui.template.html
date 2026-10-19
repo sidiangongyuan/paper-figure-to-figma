@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paper Figure to Figma</title><style>/*__UI_STYLES__*/</style></head>
 <body>
-<header class="header"><a class="brand" href="#" aria-label="Paper Figure to Figma"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M7 10V6h16l6 6v18H7V18M22 6v7h7M3 17h16m-5-5 5 5-5 5"/></svg><span>Paper Figure<small>to Figma</small></span></a><span class="header-note">FOR YOUR NEXT PAPER</span></header>
+<header class="header"><a class="brand" href="#" aria-label="Paper Figure to Figma"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M7 10V6h16l6 6v18H7V18M22 6v7h7M3 17h16m-5-5 5 5-5 5"/></svg><span>Paper Figure<small>to Figma</small></span></a></header>
 <main>
-  <div class="intro"><p class="eyebrow">EVERY DETAIL, STILL YOURS.</p><h1>把参考图，带进 Figma。</h1><p>文字、模块与箭头，接着改。</p></div>
+  <div class="intro"><h1>科研图重建</h1></div>
   <nav class="steps" aria-label="绘图步骤"><button data-page="prepare" aria-current="step"><span>1</span>准备图片</button><button data-page="build"><span>2</span>生成图层</button><button data-page="finish"><span>3</span>检查与导出</button></nav>
 
   <section data-panel="prepare">
-    <div class="sample-card"><div class="sample-heading"><span class="eyebrow">TRY A REAL FIGURE</span><span class="sample-badge">完整示例</span></div><h2>从这张 PlanWAM 开始。</h2><div class="sample-preview"><img id="example-preview" alt="PlanWAM 论文 Figure 1 完整四分区参考图"></div><div class="sample-bottom"><p>43 处文字 · 独立模块与连线</p><button id="example">体验 PlanWAM 示例 <span>↗</span></button></div><p class="source">图片来源：<a href="https://arxiv.org/abs/2610.11382" target="_blank" rel="noreferrer">PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving</a> · Figure 1</p></div>
-    <div class="section-label"><h2>或者，带上自己的图。</h2><span>PNG · JPG · WEBP</span></div>
-    <label class="upload-zone" for="reference"><span class="upload-icon">↥</span><strong>选择完整参考图</strong><small>清晰的整图，更容易还原布局与细节。</small><input id="reference" type="file" accept="image/png,image/jpeg,image/webp"></label>
-    <div id="reference-info" class="file-info">准备好原图，就可以开始。</div><img id="reference-preview" class="reference-preview" alt="选中的完整参考图" hidden>
-    <button id="copy-build" class="primary wide">复制绘图指令 <span>⧉</span></button><p class="help">把同一张原图和指令，一起发给你常用的网页模型。</p>
+    <div class="sample-card"><div class="sample-heading"><h2>PlanWAM 示例</h2><span class="sample-badge">完整四分区</span></div><div class="sample-preview"><img id="example-preview" alt="PlanWAM 论文 Figure 1 完整四分区参考图"></div><div class="sample-bottom"><p>43 个文字层</p><button id="example">加载 PlanWAM 示例 <span>↗</span></button></div><p class="source">图片来源：<a href="https://arxiv.org/abs/2610.11382" target="_blank" rel="noreferrer">PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving</a> · Figure 1</p></div>
+    <div class="section-label"><h2>参考图</h2><span>PNG · JPG · WEBP</span></div>
+    <label class="upload-zone" for="reference"><span class="upload-icon">↥</span><strong>选择完整参考图</strong><small>PNG、JPG 或 WEBP 完整图片</small><input id="reference" type="file" accept="image/png,image/jpeg,image/webp"></label>
+    <div id="reference-info" class="file-info"></div><img id="reference-preview" class="reference-preview" alt="选中的完整参考图" hidden>
+    <button id="copy-build" class="primary wide">复制绘图指令 <span>⧉</span></button><p class="help">将参考图和指令一起发给网页模型。</p>
     <details class="subtle-details"><summary>查看并手动复制指令</summary><textarea id="prompt" aria-label="绘图指令" readonly></textarea></details>
-    <button class="next-link" data-next="build">模型结果准备好了，下一步 <span>→</span></button>
+    <button class="next-link" data-next="build">导入模型结果 <span>→</span></button>
   </section>
 
   <section data-panel="build" hidden>
-    <div class="section-label"><h2>打开模型返回的绘图文件。</h2></div><p class="section-description">选中下载的文件，也可以展开下方区域，粘贴模型返回的完整绘图内容。</p>
+    <div class="section-label"><h2>导入绘图文件</h2></div><p class="section-description">打开模型返回的 .json 文件，或粘贴完整绘图内容。</p>
     <label class="file-picker" for="scene-file"><span>↥</span><strong>选择绘图文件</strong><small>.json</small><input id="scene-file" type="file" accept=".json,application/json"></label>
     <div id="project-info" class="project-info" hidden><span class="check-mark">✓</span><div><strong id="project-name"></strong><p id="project-summary"></p></div></div>
     <details class="subtle-details" id="paste-details"><summary>粘贴绘图内容</summary><textarea id="scene" spellcheck="false" aria-label="绘图内容" placeholder="粘贴模型返回的完整绘图内容"></textarea><button id="validate" class="secondary">检查绘图文件</button></details>
@@ -29,17 +29,17 @@
   </section>
 
   <section data-panel="finish" hidden>
-    <div class="finish-heading"><span class="finish-icon">✓</span><div><h2>把细节看一遍，再交付。</h2><p>整图与局部都值得多看一眼。</p></div></div>
-    <div class="review-card"><span class="eyebrow">A SECOND LOOK</span><h3>和原图放在一起看。</h3><p>检查文字、连线、渐变、白色打底与曲线。下载预览，连同原图和项目文件一起交给模型复核。</p><div class="row"><button data-export="png" class="secondary">下载对照预览 <span>↓</span></button><button id="copy-review" class="quiet-button">复制复核指令 <span>⧉</span></button></div></div>
-    <div class="section-label"><h2>保存你的版本。</h2><span>SVG / PDF 由 Figma 导出</span></div>
+    <div class="finish-heading"><span class="finish-icon">✓</span><div><h2>检查与导出</h2></div></div>
+    <div class="review-card"><h3>对照检查</h3><p>检查文字、连线、渐变、白色打底与曲线。下载预览，连同原图和项目文件一起交给模型复核。</p><div class="row"><button data-export="png" class="secondary">下载对照预览 <span>↓</span></button><button id="copy-review" class="quiet-button">复制复核指令 <span>⧉</span></button></div></div>
+    <div class="section-label"><h2>下载文件</h2><span>SVG / PDF 由 Figma 导出</span></div>
     <div class="export-grid"><button data-export="svg"><span class="format-icon">SVG</span><strong>继续编辑</strong><small>保留文字与矢量</small><span class="download-arrow">↓</span></button><button data-export="pdf"><span class="format-icon">PDF</span><strong>论文排版</strong><small>放进 LaTeX 或 Word</small><span class="download-arrow">↓</span></button><button data-export="outlined-svg"><span class="format-icon">SVG</span><strong>固定字体外观</strong><small>文字转换为轮廓</small><span class="download-arrow">↓</span></button><button id="save"><span class="format-icon">FILE</span><strong>保存项目</strong><small>下次接着修改</small><span class="download-arrow">↓</span></button></div>
     <p class="paper-note">正文默认 Times New Roman，编辑字号至少16。放进论文后，再确认实际字号、线宽与可读性。</p>
     <button class="next-link" data-next="build">← 返回绘图文件，继续修改</button>
   </section>
-  <div id="status" class="status" role="status" aria-live="polite">先体验示例，或带上自己的参考图。</div>
+  <div id="status" class="status" role="status" aria-live="polite">加载示例或选择参考图。</div>
   <details id="error-details" class="subtle-details" hidden><summary>查看修复详情</summary><pre id="error-detail"></pre></details>
 </main>
-<footer>YOUR FIGURE. YOUR NEXT REVISION.</footer>
+
 <script>/*__PACK__*/
 /*__VALIDATOR__*/
 /*__UI_APP__*/</script>

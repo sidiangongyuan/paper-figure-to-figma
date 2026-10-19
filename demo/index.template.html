@@ -2,40 +2,51 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="从一张科研参考图开始，在 Figma 里继续编辑。体验 PlanWAM 整图重建、对照与矢量编辑。">
+  <meta name="description" content="科研图重建工具：Figma 插件安装、Codex 使用和 SVG 编辑演示。">
   <meta name="theme-color" content="#f5f5ef">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='none' stroke='%23183d36' stroke-width='2' d='M7 10V6h16l6 6v18H7V18M22 6v7h7M3 17h16m-5-5 5 5-5 5'/%3E%3C/svg%3E">
-  <title>Paper Figure to Figma — 让每个想法，都能继续编辑</title>
+  <title>Paper Figure to Figma</title>
   <style>/*__STYLES__*/</style>
 </head>
 <body>
-<a class="skip" href="#demo">跳到效果演示</a>
+<a class="skip" href="#start">跳到 Quick Start</a>
 <header class="site-header wrap">
   <a class="brand" href="#" aria-label="Paper Figure to Figma 首页"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M7 10V6h16l6 6v18H7V18"/><path d="M22 6v7h7M3 17h16m-5-5 5 5-5 5"/></svg><span>Paper Figure<span class="brand-sub">to Figma</span></span></a>
-  <nav aria-label="主导航"><a href="#demo">效果演示</a><a href="#start">开始使用</a><a class="github-link" href="https://github.com/sidiangongyuan/paper-figure-to-figma" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></nav>
+  <nav aria-label="主导航"><a href="#start">Quick Start</a><a href="#demo">Demo</a><a class="github-link" href="https://github.com/sidiangongyuan/paper-figure-to-figma" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
 </header>
 <main>
   <section class="hero wrap">
-    <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> FOR YOUR NEXT PAPER</p>
-      <h1>从一张参考图，<br>到每个<span class="serif">可编辑的细节。</span></h1>
-      <p class="hero-description">把科研图带进 Figma，改文字、调配色、挪模块。<br class="desktop-break">沿用你熟悉的模型，准备下一篇论文的插图。</p>
-      <div class="hero-actions"><a class="button primary" href="#demo" id="hero-play">看一次完整过程 <span>↗</span></a><a class="button text-button" href="#start">开始第一张图 <span>→</span></a></div>
-      <div class="hero-tags"><span>可编辑文字</span><span>独立矢量图层</span><span>SVG · PDF</span></div>
+    <div class="hero-copy">
+      <h1>Paper Figure to Figma</h1>
+      <p class="hero-description">将科研参考图重建为可编辑的 Figma 图层，导出 SVG 或 PDF。</p>
+      <div class="hero-actions"><a class="button primary" href="https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip">下载 ZIP ↓</a><a class="button text-button" href="#demo" id="hero-play">播放 Demo ↗</a></div>
     </div>
-    <div class="hero-note" aria-hidden="true"><span class="note-rule"></span><p>把时间留给研究。<br>图，接着改就好。</p><span class="note-sign">A LITTLE MORE ROOM TO THINK.</span></div>
+  </section>
+  <section class="start-section wrap" id="start" aria-labelledby="start-heading">
+    <h2 id="start-heading">Quick Start</h2>
+    <div class="start-grid">
+      <article class="start-card"><h3>网页模型 + Figma 插件</h3><p class="section-description">准备 Figma 桌面版和支持看图的网页模型账号。</p>
+        <ol><li><span>1</span><div><strong>安装插件</strong><p>解压 ZIP。在 Figma 中打开 Plugins → Development → Import plugin from manifest…，选择 <code>figma-plugin/manifest.json</code>。</p></div></li><li><span>2</span><div><strong>运行样例</strong><p>运行 Paper Figure to Figma (local)，点击「加载 PlanWAM 示例 → 生成到 Figma」。</p></div></li><li><span>3</span><div><strong>重建参考图</strong><p>在插件中选图、复制指令，发给网页模型。导入返回的 .json 文件，对照修改后导出。</p></div></li></ol>
+        <a class="under-link" href="../docs/WEB_QUICKSTART.md">安装与使用详情 ↗</a>
+      </article>
+      <article class="start-card codex-card"><h3>Codex</h3><p class="section-description">仓库已包含所需 Skill。</p>
+        <ol><li><span>1</span><div><strong>打开仓库</strong><p>在 Codex 中打开解压后的文件夹，新建对话。</p></div></li><li><span>2</span><div><strong>上传参考图</strong><p>上传完整图片，发送下方指令。</p></div></li><li><span>3</span><div><strong>连接 Figma</strong><p>首次使用按提示连接账号。修改已有文件时附上 Design 链接。</p></div></li></ol>
+        <button class="button dark" id="copy-codex">复制 Codex 指令 ⧉</button><a class="under-link" href="../docs/CODEX_QUICKSTART.md">安装与使用详情 ↗</a>
+      </article>
+    </div>
   </section>
 
   <section class="showcase wrap" id="demo" aria-labelledby="demo-heading">
-    <div class="section-top"><div><p class="eyebrow">ONE FIGURE, ALL THE WAY THROUGH</p><h2 id="demo-heading">看看这张图，怎么变成图层。</h2></div><div class="replay-label"><span class="live-dot"></span> PlanWAM 示例回放</div></div>
+    <div class="section-top"><div><h2 id="demo-heading">Demo</h2></div><div class="replay-label"><span class="live-dot"></span> PlanWAM · Figure 1</div></div>
     <div class="studio" id="studio" data-mode="compare">
       <div class="studio-top"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="document-title">PlanWAM <span>/</span> Figure 1</div><span class="studio-badge">浏览器交互演示</span></div>
       <div class="studio-toolbar">
-        <div class="view-tabs" role="group" aria-label="显示方式"><button data-view="original" aria-pressed="false">参考原图</button><button data-view="compare" aria-pressed="true">拖动对照</button><button data-view="edit" aria-pressed="false">试着编辑 <span class="tiny-dot"></span></button></div>
+        <div class="view-tabs" role="group" aria-label="显示方式"><button data-view="original" aria-pressed="false">参考原图</button><button data-view="compare" aria-pressed="true">拖动对照</button><button data-view="edit" aria-pressed="false">编辑 <span class="tiny-dot"></span></button></div>
         <button class="small-button" id="replay" aria-label="播放流程回放"><span aria-hidden="true">▷</span> 播放流程</button>
       </div>
       <div class="studio-workspace">
         <div class="canvas-column">
-          <div class="canvas-heading"><span id="canvas-caption">原图与重建结果，放在一起看。</span><button id="reset-view" class="quiet-button" hidden>返回全图 ↗</button></div>
+          <div class="canvas-heading"><span id="canvas-caption">原图与重建对照</span><button id="reset-view" class="quiet-button" hidden>返回全图 ↗</button></div>
           <div class="artboard" id="artboard" tabindex="0" aria-label="完整四分区科研图预览">
             <div class="drawing-layer" id="drawing">/*__FIGURE__*/</div>
             <div class="reference-layer" id="reference-layer"><img src="/*__REFERENCE__*/" alt="PlanWAM 论文 Figure 1：四种未来建模范式的完整参考图" width="1089" height="385" draggable="false"></div>
@@ -44,41 +55,27 @@
             <div class="artboard-label before-label">参考原图</div><div class="artboard-label after-label">可编辑重建</div>
           </div>
           <label class="comparison-control" id="comparison-control"><span>原图</span><input id="comparison" type="range" min="0" max="100" value="46" aria-label="原图与重建结果的对照分界"><span>重建</span></label>
-          <div class="canvas-footer"><span id="canvas-hint">拖动分界线，放大检查两边的细节。</span><span class="canvas-scale">完整四分区 · 字体已调整</span></div>
+          <div class="canvas-footer"><span id="canvas-hint">拖动分界线对照细节。</span><span class="canvas-scale">完整四分区 · 字体已调整</span></div>
         </div>
         <aside class="inspector" id="inspector" aria-labelledby="inspector-title">
-          <div class="inspector-title"><span class="eyebrow">MAKE IT YOURS</span><h3 id="inspector-title">点一下，接着改。</h3><p>体验文字、配色与路径的独立编辑。</p></div>
+          <div class="inspector-title"><h3 id="inspector-title">编辑图层</h3></div>
           <div class="layer-list" role="group" aria-label="选择演示图层"><button data-select="d-0368" class="layer-row" aria-pressed="true"><span class="layer-icon">T</span><span>Planner<small>模块文字</small></span><span>↗</span></button><button data-select="d-0367" class="layer-row" aria-pressed="false"><span class="layer-icon">▢</span><span>Planner<small>模块底色</small></span><span>↗</span></button><button data-select="d-0349" class="layer-row" aria-pressed="false"><span class="layer-icon">◩</span><span>Future latent<small>渐变填色</small></span><span>↗</span></button><button data-select="d-0279" class="layer-row" aria-pressed="false"><span class="layer-icon">⌁</span><span>History contexts<small>曲线路径</small></span><span>↗</span></button></div>
-          <div class="edit-fields" id="text-fields"><label for="label-text">文字内容</label><input id="label-text" type="text" value="Planner" maxlength="26" autocomplete="off"><p class="field-note">输入你自己的模块名。</p></div>
+          <div class="edit-fields" id="text-fields"><label for="label-text">文字内容</label><input id="label-text" type="text" value="Planner" maxlength="26" autocomplete="off"></div>
           <div class="edit-fields" id="color-fields" hidden><label for="fill-color">填充颜色</label><div class="color-input"><input id="fill-color" type="color" value="#deebf7"><span id="color-value">#DEEBF7</span></div></div>
-          <div class="edit-fields" id="curve-fields" hidden><label for="curve-bend">曲线弧度</label><input id="curve-bend" type="range" min="-20" max="20" value="0"><p class="field-note">拖动滑块，观察贝塞尔路径。</p></div>
+          <div class="edit-fields" id="curve-fields" hidden><label for="curve-bend">曲线弧度</label><input id="curve-bend" type="range" min="-20" max="20" value="0"><p class="field-note">拖动滑块调整弧度。</p></div>
           <div class="inspector-actions"><button class="button primary full" id="download-svg">下载当前 SVG <span>↓</span></button><button class="quiet-button" id="reset-edits">恢复示例</button></div>
-          <p class="inspector-foot">这里的修改会进入下载的 SVG 和项目文件。</p>
+          <p class="inspector-foot">下载文件包含当前修改。</p>
         </aside>
       </div>
-      <div class="process-track" role="group" aria-label="选择流程阶段"><button data-step="0"><span>01</span><strong>带上参考图</strong><small>从完整布局开始</small></button><button data-step="1"><span>02</span><strong>建立图层</strong><small>文字、模块、箭头</small></button><button data-step="2" class="active" aria-pressed="true"><span>03</span><strong>对照与修订</strong><small>把细节逐个补齐</small></button><button data-step="3"><span>04</span><strong>继续编辑</strong><small>带进 Figma 与论文</small></button></div>
+      <div class="process-track" role="group" aria-label="选择流程阶段"><button data-step="0"><span>01</span><strong>参考图</strong><small>完整原图</small></button><button data-step="1"><span>02</span><strong>图层</strong><small>文字、形状、连线</small></button><button data-step="2" class="active" aria-pressed="true"><span>03</span><strong>对照</strong><small>检查重建差异</small></button><button data-step="3"><span>04</span><strong>编辑</strong><small>修改并下载</small></button></div>
     </div>
-    <div class="showcase-caption"><p>图片来源：<a href="https://arxiv.org/abs/2610.11382" target="_blank" rel="noreferrer">PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving</a> · Figure 1</p><p>本示例重建了完整四分区；正文采用 Times New Roman，小车图标为矢量重绘。回放展示已完成的重建步骤。</p></div>
+    <div class="demo-downloads"><button class="button secondary" id="download-project">下载绘图文件 ↓</button><a href="../examples/planwam/README.md">样例说明 ↗</a><span>播放流程使用预先重建的样例。</span></div>
+    <div class="showcase-caption"><p>图片来源：<a href="https://arxiv.org/abs/2610.11382" target="_blank" rel="noreferrer">PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving</a> · Figure 1</p><p>/*__TEXT_COUNT__*/ 个文字层 · /*__VECTOR_COUNT__*/ 个矢量对象。正文采用 Times New Roman，小车为矢量重绘。</p></div>
   </section>
-
-  <section class="benefits wrap" aria-labelledby="benefit-heading"><div class="benefit-intro"><p class="eyebrow">ROOM FOR THE NEXT REVISION</p><h2 id="benefit-heading">下一次改图，<br><span class="serif">轻一点。</span></h2><p>换个术语，调整模块，统一整篇论文的配色。<br>让每轮修改都有处可落。</p></div><div class="benefit-grid">
-    <article><span class="feature-number">01 / TEXT</span><h3>文字，直接改。</h3><p>保留文字内容、字体和字号，方便统一全篇风格。</p><div class="type-sample">Future <span>→</span> <em>Your idea</em></div></article>
-    <article><span class="feature-number">02 / DETAIL</span><h3>细节，留得住。</h3><p>渐变、浅色底板、曲线和虚线，都有各自的图层。</p><div class="token-sample" aria-hidden="true"><i></i><i></i><i></i><i></i><svg viewBox="0 0 100 25"><path d="M2 22 C25 22 60 5 94 5M87 1l8 4-8 5"/></svg></div></article>
-    <article><span class="feature-number">03 / HANDOFF</span><h3>带进你的工作流。</h3><p>继续在 Figma 排版，保存项目，导出 SVG 或 PDF。</p><div class="file-sample"><span>Figma</span><b>↗</b><span>.svg</span><span>.pdf</span></div></article>
-  </div></section>
-
-  <section class="case-section wrap" aria-labelledby="case-heading"><div class="section-top"><div><p class="eyebrow">A REAL FIGURE, OPEN TO INSPECTION</p><h2 id="case-heading">示例文件，也一起交给你。</h2></div><button class="button secondary" id="download-project">下载 PlanWAM 项目 <span>↓</span></button></div><div class="case-stats"><div><strong>/*__TEXT_COUNT__*/</strong><span>可编辑文字层</span></div><div><strong>/*__VECTOR_COUNT__*/</strong><span>独立矢量对象</span></div><div><strong>4</strong><span>完整分区</span></div><div><strong>16<span class="stat-unit">px+</span></strong><span>默认编辑字号</span></div></div><p class="case-note">图中的 RGB 输入与输出保留为图片。最终论文尺寸、缩放后的字号与可读性，在排版时再检查。<a href="../examples/planwam/README.md">查看示例说明 ↗</a></p></section>
-
-  <section class="start-section wrap" id="start" aria-labelledby="start-heading"><p class="eyebrow">YOUR FIRST FIGURE</p><h2 id="start-heading">选一种你顺手的方式。</h2><p class="section-description">准备一张清晰的完整参考图、一个看图模型账号和 Figma。<br>有原始 RGB 图片或 SVG 图标，也可以一起带上。</p><div class="start-grid">
-    <article class="start-card"><div class="start-card-top"><span class="route-symbol">↗</span><span class="route-label">CHATGPT · GEMINI · 网页模型</span></div><h3>在网页里聊，<br>在 Figma 里改。</h3><ol><li><span>1</span><div><strong>装好 Figma 插件</strong><p>下载并解压工具包，在 Figma 桌面版导入 <code>figma-plugin/manifest.json</code>。</p></div></li><li><span>2</span><div><strong>上传图片，发送指令</strong><p>插件中选原图并复制指令，和图片一起发给网页模型。</p></div></li><li><span>3</span><div><strong>打开结果，接着编辑</strong><p>把模型返回的绘图文件导入插件，对照修订后导出。</p></div></li></ol><a class="button primary" href="https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip">下载工具包 <span>↓</span></a><a class="under-link" href="../docs/WEB_QUICKSTART.md">安装图解与操作步骤 ↗</a></article>
-    <article class="start-card codex-card"><div class="start-card-top"><span class="route-symbol">⌘</span><span class="route-label">CODEX</span></div><h3>打开仓库，<br>把参考图交给它。</h3><ol><li><span>1</span><div><strong>在 Codex 打开仓库</strong><p>下载工具包，把解压后的项目文件夹添加到 Codex。</p></div></li><li><span>2</span><div><strong>上传图片，调用绘图流程</strong><p>复制下方的一句话，连同完整参考图一起发送。</p></div></li><li><span>3</span><div><strong>让 Codex 完成后续步骤</strong><p>Skill 自行调用已连接的 Figma 工具，绘制、复核并导出。首次使用按提示连接账号。</p></div></li></ol><button class="button dark" id="copy-codex">复制 Codex 启动语 <span>⧉</span></button><a class="under-link" href="../docs/CODEX_QUICKSTART.md">查看 Codex 上手教程 ↗</a></article>
-  </div><div class="first-run"><span>第一次打开？</span><p>先在插件里点「体验 PlanWAM 示例」，再点「生成到 Figma」。附带的绘图文件已经准备好。</p></div></section>
-
-  <section class="faq wrap" aria-labelledby="faq-heading"><h2 id="faq-heading">开始前，你可能想知道。</h2><div><details><summary>需要原来的生图提示词吗？</summary><p>完整参考图就可以开始。原始提示词、图注、准确文字清单都可以作为补充材料。</p></details><details><summary>我现在的网页会员可以用吗？</summary><p>可以使用支持图片理解、文字或文件输出的网页模型。把参考图和工具提供的指令一起发送，再将返回的绘图文件导入 Figma 插件。</p></details><details><summary>哪些部分可以继续编辑？</summary><p>文字、模块、箭头和图标分别保留。图标包含矢量路径，输入 RGB 和输出结果使用独立图片层。可以下载上方示例亲自检查。</p></details><details><summary>怎样判断已经适合放进论文？</summary><p>先对照整图和局部，检查内容、连线、配色与细节，再按论文最终尺寸确认实际字号和线宽。这个示例保留了字体调整与小车重绘等差异，便于检查。</p></details><details><summary>下载后需要编译吗？</summary><p>插件和演示都已随仓库准备好。双击 demo/index.html 打开演示；在 Figma 桌面版导入插件清单，按界面步骤开始。当前提供本地开发插件，Community 上架仍待后续安排。</p></details></div></section>
 </main>
-<footer class="site-footer wrap"><a class="brand" href="#">Paper Figure <span class="brand-sub">to Figma</span></a><p>让每个想法，都能继续编辑。</p><a href="https://github.com/sidiangongyuan/paper-figure-to-figma">GitHub ↗</a></footer>
+<footer class="site-footer wrap"><span>Paper Figure to Figma</span><a href="https://github.com/sidiangongyuan/paper-figure-to-figma">GitHub ↗</a></footer>
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
-<dialog id="copy-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button><h2>复制这句话，开始画图。</h2><p>选中下方文字，复制到 Codex。</p><textarea id="copy-text" readonly aria-label="Codex 启动语"></textarea><button class="button primary">完成</button></form></dialog>
+<dialog id="copy-dialog"><form method="dialog"><button class="dialog-close" aria-label="关闭">×</button><h2>Codex 指令</h2><p>复制后连同参考图发给 Codex。</p><textarea id="copy-text" readonly aria-label="Codex 指令"></textarea><button class="button primary">完成</button></form></dialog>
 <script>/*__DATA__*/</script>
 <script>/*__APP__*/</script>
 </body></html>

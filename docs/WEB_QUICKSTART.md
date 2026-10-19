@@ -1,56 +1,48 @@
-# 用网页模型，完成第一张可编辑科研图
+# 网页模型
 
-准备：完整参考图、支持看图与文字/文件输出的网页模型账号、Figma 桌面版。原来的生图提示词可以省略。原始 RGB、输出结果图片或 SVG 图标有则一起带上。
+准备：Figma 桌面版、支持看图与文字或文件输出的网页模型账号、完整参考图。可补充原始 RGB 图片、SVG 图标和准确文字清单。
 
-## 1. 打开工具包
+## 安装
 
-登录有仓库访问权限的 GitHub 账号，点击 **Code → Download ZIP** 并解压。完整保留文件夹，后面从这里打开插件。
+1. [下载 ZIP](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip) 并解压，保留完整文件夹。
+2. 在 **Figma 桌面版** 打开一个可编辑的 **Design** 文件。
+3. 打开 **Plugins → Development → Import plugin from manifest…**，选择 `figma-plugin/manifest.json`。
+4. 在 **Plugins → Development** 运行 **Paper Figure to Figma (local)**。
 
-想先看效果，双击 `demo/index.html`。这份交互演示支持离线打开。
+![插件安装步骤](../assets/install-guide.svg)
 
-## 2. 在 Figma 安装插件
+<details><summary>Figma 要求创建插件标识时</summary>
 
-![下载、导入清单与第一次生成的操作示意](../assets/install-guide.svg)
+通过 **Plugins → Development → New plugin → Figma design → Custom UI** 创建本地插件。将仓库 `figma-plugin/` 中的 `code.js` 和 `ui.html` 复制到新插件目录，保留 Figma 生成的清单及标识，确认清单中的 `main` 和 `ui` 分别指向这两个文件。
 
-1. 在 **Figma 桌面版** 打开一个可编辑的 **Design** 文件。
-2. 打开菜单 **Plugins → Development → Import plugin from manifest…**，选择工具包里的 `figma-plugin/manifest.json`。
-3. 在 **Plugins → Development** 运行 **Paper Figure to Figma (local)**。
-
-当前提供本地开发插件；官方开发安装方式使用桌面版。[Figma 官方说明](https://developers.figma.com/docs/plugins/plugin-quickstart-guide/)。
-
-<details><summary>如果 Figma 要求创建自己的插件标识</summary>
-
-在 **Plugins → Development → New plugin → Figma design → Custom UI** 创建一个本地插件。把工具包 `figma-plugin/` 中的 `code.js` 和 `ui.html` 复制到新插件目录；保留 Figma 为你生成的清单及标识，确认清单中的 main/ui 分别指向这两个文件。这里使用的是已经准备好的文件，无需编译。
+[Figma 官方安装说明](https://developers.figma.com/docs/plugins/plugin-quickstart-guide/)
 
 </details>
 
-## 3. 先体验 PlanWAM
+## 试用样例
 
-插件中点击 **体验 PlanWAM 示例**，再点 **生成到 Figma**。
+点击 **加载 PlanWAM 示例 → 生成到 Figma**。选中文字、模块或箭头即可编辑。
 
-完整四分区、43处文字和独立图形会进入画板。试着改一处 Planner 文字，选中一个模块或箭头，看看它们的编辑方式。
+![插件界面](../assets/plugin-preview.png)
 
-![插件的准备图片界面](../assets/plugin-preview.png)
+示例来源：[PlanWAM](https://arxiv.org/abs/2610.11382)，Figure 1。[样例文件与重建差异](../examples/planwam/README.md)。
 
-图片来源：**[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)**，Figure 1。[样例文件和重建差异](../examples/planwam/README.md)。
+## 使用
 
-## 4. 换成自己的图
+1. **准备图片：** 在插件第1步选择完整参考图，点击 **复制绘图指令**，将原图和指令一起发给网页模型。
+2. **导入结果：** 在第2步打开模型返回的 `.json` 文件。模型返回纯文字时，展开 **粘贴绘图内容**，粘贴完整内容。点击 **生成到 Figma**。
+3. **对照修改：** 在第3步下载预览、保存项目，将原图、预览、项目和复核指令发给模型。导入修订后的完整文件。
+4. **导出：** 下载 SVG 或 PDF，按论文最终尺寸检查字号、线宽和可读性。
 
-**准备图片。** 插件第1步选择完整原图，点击 **复制绘图指令**。到你的网页模型中，上传同一张图片，粘贴并发送指令。模型会返回一个完整的绘图文件，或可复制的绘图内容。
+输入和结果图片可在 **替换输入与结果图片** 中换成原始素材。
 
-**生成图层。** 到插件第2步选择模型返回的 `.json` 文件。模型只返回文字时，展开 **粘贴绘图内容**，放入完整内容并检查。需要换成数据集原图时，在素材区域选择对应图片。点击 **生成到 Figma**。
+## 继续修改
 
-**检查与导出。** 到第3步下载对照预览、保存项目文件，连同原图和复核指令一起发回模型。把修订后的完整文件再次导入。对照通过后，下载 SVG 或 PDF，放进论文排版。
+保存项目文件，下次重新打开。重新导入会更新同项目画板，手动编辑过的画板请先复制备份。项目文件保存模型生成的内容；Figma 中的手动修改保存在 Figma 文件及实际 SVG/PDF 导出中。
 
-## 遇到问题时
+## 常见问题
 
-- **绘图文件需要调整：** 复制复核指令，带上修复详情和原文件交给模型，打开修订后的完整文件再试。
-- **图片位置对不上：** 确认选择的是同一张原始参考图；将尺寸与裁剪问题交给模型修正。
-- **字体暂不可用：** 安装所需字体，或请模型替换为已安装字体。默认正文采用 Times New Roman。
-- **复杂图写不完：** 优先让支持文件输出的模型提供一个完整绘图文件，也可以把已有文件交给 Codex 继续。
-
-## 下次接着改
-
-在第3步保存项目文件，下次重新打开即可。重新导入会更新同项目画板；手动改过的画板先复制一份，并明确选中需要更新的原画板。
-
-项目文件记录模型与工具生成的绘图内容；Figma 后续的手动修改会出现在实际 SVG/PDF 导出里。正文编辑字号默认至少16px，排版后仍需按论文最终尺寸检查实际字号、线宽和可读性。
+- **绘图文件错误：** 将修复详情、复核指令和原文件交给模型，导入修订后的完整文件。
+- **图片位置错误：** 重新选择同一张原始参考图，让模型修正尺寸与裁剪坐标。
+- **缺少字体：** 安装所需字体，或让模型替换为已安装字体。
+- **模型输出不完整：** 使用文件输出，或将已有文件交给 Codex 继续处理。
