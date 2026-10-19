@@ -18,7 +18,7 @@ Start from an AI-generated reference image, preserve its intended appearance as 
 
 Read the decision log and supply representative figures for scope selection. Installation and execution instructions will be added when a minimal implementation exists. No API credentials, models, datasets, or external accounts are required to read these documents.
 
-The intended workflow must work with existing web-chat visual-model subscriptions and must not require a VLM API key. The handoff between chat and reconstruction tools is still being designed.
+The intended workflow must work with existing web-chat visual-model subscriptions and must not require a VLM API key. The first version uses manual uploads, downloads, or copy-paste between web chat and reconstruction tools; the tools handle reconstruction and validation.
 
 Reference inputs and generated outputs are kept in local-only directories by default. This repository does not contain the original chat transcript or reference images.
 
