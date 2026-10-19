@@ -2,7 +2,7 @@
 
 An early-stage workflow project for reconstructing AI-generated and existing research figures as editable vector artwork in Figma, with exports suitable for research papers.
 
-**Status:** requirements discovery. This repository currently contains planning documents; it has no runnable reconstruction tool or validated fidelity results yet.
+**Status:** early scene-execution prototype. One full reference figure has been rebuilt in Figma and exported. The repository includes a scene validator, SVG renderer, and Figma script bundler. It does not yet include an automatic image-to-scene model, a packaged local Figma plugin, or a validated general fidelity benchmark.
 
 ## Goal
 
@@ -17,10 +17,19 @@ Provide the full reference image. The planned workflow analyzes the global layou
 - [Decision log](docs/decisions.md): confirmed requirements, open decisions, and the current interview step.
 - [Reference project notes](docs/reference-project.md): relevant mechanisms and limits of Image To Slice.
 - [Workflow proposal](docs/workflow-proposal.md): a draft kit for web-based visual-model conversations, Figma reconstruction, and review.
+- [First full-figure pilot](docs/pilot-01.md): executed steps, structural checks, exports, and known differences.
 
 ## Getting started
 
-Read the decision log and supply representative figures for scope selection. Installation and execution instructions will be added when a minimal implementation exists. No API credentials, models, datasets, or external accounts are required to read these documents.
+The local scene tools need Python 3.10+ and use only the standard library. Run the synthetic example from the repository root:
+
+```text
+python tools/scene_to_svg.py examples/minimal.scene.json example.svg
+python tools/bundle_figma.py examples/minimal.scene.json example.figma.js
+python -m unittest discover -s tools -p "test_*.py" -v
+```
+
+These tools execute an authored scene; they do not extract a scene from an image. Run the generated script through Figma MCP `use_figma` after selecting a Design file. For raster assets, upload them using `upload_assets` and pass an asset-ID-to-image-hash JSON file with `--image-hashes`. Split large scenes with repeated `--panel` arguments, then use `--root-id` to append to the inspected target frame. Preserve Figma skill prerequisites when using MCP tools. Importing SVG manually does not establish that Figma text remains editable.
 
 The intended workflow must work with existing web-chat visual-model subscriptions and must not require a VLM API key. The first version uses manual uploads, downloads, or copy-paste between web chat and reconstruction tools; the tools handle reconstruction and validation.
 

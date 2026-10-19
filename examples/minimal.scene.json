@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "name": "Editable scene example",
+  "width": 420,
+  "height": 120,
+  "background": "#ffffff",
+  "assets": {},
+  "nodes": [
+    {"id":"module-a","panel":"main","type":"rect","name":"Encoder module","x":20,"y":35,"w":140,"h":50,"fill":"#deebf7","stroke":"#6e9fd0","sw":1,"r":5},
+    {"id":"label-a","panel":"main","type":"text","name":"Encoder label","x":25,"y":51,"w":130,"h":18,"text":"Encoder","size":16,"color":"#203c72","family":"Arial","weight":"Bold","align":"center"},
+    {"id":"arrow","panel":"main","type":"svg","name":"Feature connection","x":170,"y":50,"w":60,"h":20,"svg":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"60\" height=\"20\" viewBox=\"0 0 60 20\"><path d=\"M0 10H58\" stroke=\"#203c72\" stroke-width=\"1.5\"/><path d=\"M60 10L52 6V14Z\" fill=\"#203c72\"/></svg>"},
+    {"id":"module-b","panel":"main","type":"rect","name":"Planner module","x":240,"y":35,"w":160,"h":50,"fill":"#fff1ca","stroke":"#c78647","sw":1,"r":5},
+    {"id":"label-b","panel":"main","type":"text","name":"Planner label","x":245,"y":51,"w":150,"h":18,"text":"Planner","size":16,"color":"#984000","family":"Arial","weight":"Bold","align":"center"}
+  ]
+}
