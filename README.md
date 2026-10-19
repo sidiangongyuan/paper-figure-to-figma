@@ -4,6 +4,8 @@ An early-stage workflow project for reconstructing AI-generated and existing res
 
 **Status:** early scene-execution prototype. One full reference figure has been rebuilt in Figma and exported. The repository includes a scene validator, SVG renderer, and Figma script bundler. It does not yet include an automatic image-to-scene model, a packaged local Figma plugin, or a validated general fidelity benchmark.
 
+**Proposed delivery:** one toolkit with a Figma plugin, an agent skill, and a portable web-chat instruction pack. The manual web-chat and tool-connected agent routes should share scene files, assets, rendering rules, and validation. These entry points are not mutually exclusive products; the plugin and skill still need packaging and cross-route validation. A skill requires an actual Figma write-tool connection for automated writes.
+
 ## Goal
 
 Start from a research-figure image, preserve its intended appearance as closely as practical, and produce a figure that can be edited in Figma and prepared for a paper. Visual fidelity, vector representation, useful editability, and scientific correctness will be evaluated separately.
