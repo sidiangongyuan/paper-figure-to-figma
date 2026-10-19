@@ -1,14 +1,14 @@
 # Paper Figure to Figma
 
-An early-stage workflow project for reconstructing AI-generated research figures as editable vector artwork in Figma, with exports suitable for research papers.
+An early-stage workflow project for reconstructing AI-generated and existing research figures as editable vector artwork in Figma, with exports suitable for research papers.
 
 **Status:** requirements discovery. This repository currently contains planning documents; it has no runnable reconstruction tool or validated fidelity results yet.
 
 ## Goal
 
-Start from an AI-generated reference image, preserve its intended appearance as closely as practical, and produce a figure that can be edited in Figma and prepared for a paper. Visual fidelity, vector representation, useful editability, and scientific correctness will be evaluated separately.
+Start from a research-figure image, preserve its intended appearance as closely as practical, and produce a figure that can be edited in Figma and prepared for a paper. Visual fidelity, vector representation, useful editability, and scientific correctness will be evaluated separately.
 
-The agreed input is the generated image together with its original generation prompt. The image guides visual reconstruction; the prompt helps interpretation. Conflicts are reported for review before corrections.
+The reference image is the required input. Its original generation prompt, figure caption, or text list is optional. Image-only reconstruction must work for existing figures whose creation prompts are unavailable. The image guides visual reconstruction; optional materials help interpretation. Unclear content and conflicts are reported for review before corrections. The kit supplies its own reconstruction instructions for the web-chat model.
 
 ## Project documents
 
