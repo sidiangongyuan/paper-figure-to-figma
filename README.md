@@ -10,6 +10,8 @@ Start from a research-figure image, preserve its intended appearance as closely 
 
 The reference image is the required input. Its original generation prompt, figure caption, or text list is optional. Image-only reconstruction must work for existing figures whose creation prompts are unavailable. The image guides visual reconstruction; optional materials help interpretation. Unclear content and conflicts are reported for review before corrections. The kit supplies its own reconstruction instructions for the web-chat model.
 
+Provide the full reference image. The planned workflow analyzes the global layout before reconstructing regions in a shared coordinate system, then checks the complete editable figure. Region-level pilots are internal validation steps; users do not need to crop the input or select panel (d).
+
 ## Project documents
 
 - [Decision log](docs/decisions.md): confirmed requirements, open decisions, and the current interview step.
