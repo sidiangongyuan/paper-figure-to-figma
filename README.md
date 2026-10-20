@@ -33,6 +33,10 @@ The skill uses connected Figma tools automatically. Connect your Figma account w
 
 [Codex setup](docs/CODEX_QUICKSTART.md)
 
+### Prompt
+
+Open [web/index.html](web/index.html), choose a template and add your preferences. Copy the prompt and send it with the full reference image to Codex. [Usage and GitHub Pages](docs/PROMPT_PAGE.md).
+
 ## Demo
 
 Open **`demo/index.html`** in a browser. Compare the reference, edit text, fills and curves, and download the edited SVG. The demo works offline.

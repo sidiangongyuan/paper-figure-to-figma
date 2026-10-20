@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="选择复原方式，补充个性化要求，生成配合参考图使用的 Paper Figure to Figma 指令。">
+  <meta name="theme-color" content="#f5f5ef">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='5' width='22' height='22' rx='5' fill='%23176b50'/%3E%3Cpath d='M11 21V11h10M11 16h8' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <title>Prompt · Paper Figure to Figma</title>
+</head>
+<body>
+  <a class="skip" href="#preferences">跳到选项</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Paper Figure to Figma 首页">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="5" width="22" height="22" rx="5"/><path d="M11 21V11h10M11 16h8"/></svg>
+      <span>Paper Figure <span class="brand-tail">to Figma</span></span>
+    </a>
+    <a class="guide-link" href="https://github.com/sidiangongyuan/paper-figure-to-figma/blob/main/docs/CODEX_QUICKSTART.md" target="_blank" rel="noreferrer">安装与使用 <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="wrap">
+    <div class="intro">
+      <p class="eyebrow">PROMPT</p>
+      <h1>生成复原指令</h1>
+      <p>选择这次的要求，复制后连同完整参考图发给 Codex。</p>
+    </div>
+
+    <div class="workspace">
+      <form id="preferences" class="preferences" novalidate>
+        <div class="section-heading"><h2>本次需求</h2><button id="reset" class="text-button" type="reset">恢复默认</button></div>
+        <fieldset class="templates">
+          <legend>任务模板</legend>
+          <div class="template-options">
+            <label><input type="radio" name="task" value="restore" checked><span>忠实复原</span></label>
+            <label><input type="radio" name="task" value="modify"><span>按要求修改</span></label>
+            <label><input type="radio" name="task" value="layout"><span>优化排版</span></label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="changes">补充要求 <span class="optional">选填</span></label>
+          <textarea id="changes" name="changes" rows="4" maxlength="4000" aria-describedby="changes-hint" placeholder="例如：把模块 A 改名为 Encoder；将图例移到右下角；保留所有箭头的方向。"></textarea>
+          <p class="field-hint" id="changes-hint">可以写想修改的位置，也可以写希望保留的细节。</p>
+        </div>
+
+        <div class="options-grid">
+          <div class="field">
+            <label for="font">字体</label>
+            <select id="font" name="font" aria-describedby="font-hint">
+              <option value="">Times New Roman</option>
+              <option value="original">沿用原图字体</option>
+              <option value="comic">Comic Sans MS（标题）</option>
+              <option value="custom">自定义…</option>
+            </select>
+            <p class="field-hint" id="font-hint">正文默认使用 Times New Roman。</p>
+            <div class="custom-field" id="font-custom-field" hidden>
+              <label for="font-custom">字体要求</label>
+              <input id="font-custom" name="fontCustom" type="text" placeholder="例如：标题 Arial，正文 Times New Roman" maxlength="200" disabled>
+            </div>
+          </div>
+          <div class="field">
+            <label for="color">配色</label>
+            <select id="color" name="color">
+              <option value="">保留原图</option>
+              <option value="accessible">色盲友好</option>
+              <option value="grayscale">适合灰度打印</option>
+              <option value="custom">自定义…</option>
+            </select>
+            <div class="custom-field" id="color-custom-field" hidden>
+              <label for="color-custom">配色要求</label>
+              <input id="color-custom" name="colorCustom" type="text" placeholder="例如：蓝绿配色，重点模块用橙色" maxlength="200" disabled>
+            </div>
+          </div>
+        </div>
+
+        <details class="more-options" id="more-options">
+          <summary>论文尺寸与交付 <span aria-hidden="true">+</span></summary>
+          <div class="more-content">
+            <div class="field">
+              <label for="paper-width">论文中的图宽 <span class="optional">mm · 选填</span></label>
+              <input id="paper-width" name="paperWidth" type="number" min="1" step="any" placeholder="例如：155" inputmode="decimal" aria-describedby="paper-hint">
+              <p class="field-hint" id="paper-hint">用于检查放进论文后的字号和线宽。</p>
+            </div>
+            <div class="field">
+              <label for="figma-url">Figma 目标文件 <span class="optional">选填</span></label>
+              <input id="figma-url" name="figmaUrl" type="url" placeholder="https://www.figma.com/design/…" autocomplete="off" spellcheck="false" aria-describedby="figma-hint">
+              <p class="field-hint" id="figma-hint" hidden>当前选择仅交付本地文件。</p>
+            </div>
+            <div class="field">
+              <label for="delivery">交付方式</label>
+              <select id="delivery" name="delivery">
+                <option value="">Skill 默认</option>
+                <option value="paper">Figma + SVG + PDF</option>
+                <option value="local">仅本地 SVG + PDF</option>
+              </select>
+            </div>
+          </div>
+        </details>
+      </form>
+
+      <aside class="output" aria-labelledby="output-heading">
+        <div class="section-heading"><h2 id="output-heading">Prompt</h2><span class="output-badge">配合原图使用</span></div>
+        <label class="sr-only" for="prompt">生成的 Prompt</label>
+        <textarea id="prompt" readonly spellcheck="false">使用 $paper-figure-to-figma，将附图还原为可编辑矢量图。</textarea>
+        <p class="default-note">未调整的选项沿用 Skill 默认设置。</p>
+        <button id="copy" class="copy-button" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 4V3H3v9h1"/></svg><span id="copy-label">复制 Prompt</span></button>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite">上传完整参考图，再粘贴这段指令。</p>
+      </aside>
+    </div>
+    <noscript><p class="noscript">启用浏览器 JavaScript 后即可调整选项和复制指令。</p></noscript>
+  </main>
+
+  <footer class="site-footer wrap"><span>Paper Figure to Figma</span><a href="https://github.com/sidiangongyuan/paper-figure-to-figma" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

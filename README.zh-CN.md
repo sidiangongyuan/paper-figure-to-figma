@@ -33,6 +33,10 @@ Skill 自动调用已连接的 Figma 工具。首次使用按提示连接账号�
 
 [Codex 安装与使用详情](docs/CODEX_QUICKSTART.md)
 
+### Prompt
+
+打开 [web/index.html](web/index.html)，选择模板并补充个性化要求。复制 Prompt，连同完整参考图发给 Codex。[使用与 GitHub Pages 部署](docs/PROMPT_PAGE.md)。
+
 ## Demo
 
 双击 **`demo/index.html`**。可离线对照原图、修改文字、配色和曲线，下载修改后的 SVG。

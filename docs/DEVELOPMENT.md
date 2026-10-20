@@ -9,6 +9,7 @@ User-facing entry points: [Start here](../START_HERE.md), [web](WEB_QUICKSTART.m
 - `prompts/`: shared model instructions and scene contract.
 - `examples/planwam/`: curated attributed example, reviewed native export and portable project.
 - `demo/`: self-contained interactive preview and its sources.
+- `web/`: dependency-free prompt generator; opens directly or deploys to GitHub Pages.
 - `tools/`: common validation, rendering, image preparation and builders.
 
 The UI and demo are dependency-free. Python3.10+ is sufficient for the builders. Node is used for JS checks. Pillow is optional for image crops and media authoring.
@@ -23,6 +24,7 @@ python tools/build_demo.py --check
 python -m unittest discover -s tools -p "test_*.py" -v
 node --test tools/test_figma_import.cjs
 node --check demo/app.js
+node --check web/app.js
 node --check figma-plugin/ui.js
 ```
 
