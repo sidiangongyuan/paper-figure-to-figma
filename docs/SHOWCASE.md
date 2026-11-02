@@ -1,23 +1,25 @@
 # Demo
 
-下载并解压仓库，双击 **`demo/index.html`**。演示支持离线使用。
+Download the repository and open **`demo/index.html`** in a browser. The demo works offline and uses a pre-built reconstruction of PlanWAM Figure 1.
 
-![原图对照与 SVG 编辑](../assets/workflow.gif)
+![Comparing the reference and editing the SVG](../assets/workflow.gif)
 
-## 操作
+## Controls
 
-1. 拖动分界线，对照原图与重建结果。
-2. 选择 **Planner 文字**，输入模块名。
-3. 选择模块底色或 **Future latent**，调整填色。
-4. 选择 **History contexts**，拖动弧度滑块。
-5. 下载 SVG 或绘图文件，保存修改。
+The demo interface is in Chinese; button labels are shown below with translations.
 
-播放按钮演示参考、图层、对照和编辑四个阶段，使用预先重建的样例。
+1. In the **拖动对照** (Compare) tab, drag the divider to compare the reference and the reconstruction.
+2. In the **编辑图层** (Layers) panel, select the **Planner** text layer and type a new module name.
+3. Select the **Planner** fill or **Future latent** and change its color.
+4. Select **History contexts** and drag the curvature slider.
+5. Click **下载当前 SVG** (Download SVG) or **下载绘图文件** (Download scene file) to save your edits; **恢复示例** (Reset) restores the original.
 
-在 Figma 中编辑：[Skill 安装与使用](CODEX_QUICKSTART.md)
+**▷ 播放流程** (Replay) walks through four stages: reference, layers, comparison and editing.
 
-## 示例
+To edit in Figma, see [Installation and Usage](CODEX_QUICKSTART.md).
 
-图片来源：**[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)**，Xu et al., 2026，Figure 1。
+## Source
 
-[参考图](../examples/planwam/reference.png) · [可编辑 SVG](../examples/planwam/reconstruction.svg) · [绘图文件](../examples/planwam/planwam.scene.json) · [样例说明](../examples/planwam/README.md)
+Figure 1 of **[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)**, Xu et al., 2026.
+
+[Reference](../examples/planwam/reference.png) · [Editable SVG](../examples/planwam/reconstruction.svg) · [Scene file](../examples/planwam/planwam.scene.json) · [Example notes](../examples/planwam/README.md)

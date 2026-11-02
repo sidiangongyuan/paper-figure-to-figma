@@ -21,7 +21,7 @@ node --check web/app.js
 python tools/build_demo.py --check
 ```
 
-The Python and JavaScript tests cover scene contracts, gradients, curves, text, raster boundaries, partial updates, failed-update recovery, portable installation and backups. See [validation scope](entrypoint-validation.md) for live evidence and limits.
+The Python and JavaScript tests cover scene contracts, gradients, curves, text, raster boundaries, partial updates, failed-update recovery, portable installation and backups. Tests and node counts check execution correctness; visual fidelity is assessed through the whole-figure and detail review in [prompts/02-review.md](../prompts/02-review.md).
 
 ## Package
 

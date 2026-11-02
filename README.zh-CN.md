@@ -1,37 +1,86 @@
-# Paper Figure to Figma
+<div align="center">
 
-**高保真重建科研图，自由编辑每一步。**
+<a href="https://github.com/sidiangongyuan/paper-figure-to-figma">
+  <img src="assets/wordmark.svg" alt="Paper Figure to Figma" width="420">
+</a>
 
-**你需要的：** 一个支持看图、加载 Skill 和执行工具的 AI 助手，以及已授权写入的 Figma 连接。
+### 高保真重建科研图，自由编辑每一步。
 
-**你得到的：** 高质量、可继续编辑的科研矢量图，支持 SVG 和 PDF 导出。
+[![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0%20preview-e8a33d?style=flat-square)](#-路线图)
+[![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
+[![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](docs/DEVELOPMENT.md)
 
-[English](README.md) · [Quick Start](#quick-start) · [工作流](#工作流) · [案例](#案例) · [TODO](#todo) · [Prompt 生成](https://sidiangongyuan.github.io/paper-figure-to-figma/)
+[![Prompt 生成](https://img.shields.io/badge/Prompt%20%E7%94%9F%E6%88%90-%E6%89%93%E5%BC%80-236d4c?style=for-the-badge)](https://sidiangongyuan.github.io/paper-figure-to-figma/)
+[![离线 Demo](https://img.shields.io/badge/%E7%A6%BB%E7%BA%BF%20Demo-%E8%AF%95%E7%94%A8-236d4c?style=for-the-badge)](#-demo)
 
-[![AgentThink 原图与可编辑重建结果对比](assets/agentthink-comparison.png)](examples/agentthink/reconstruction.svg)
+[English](README.md) · **简体中文**
 
-AgentThink 复杂案例包含 **59 个可编辑文字层**、**264 个矢量路径节点**，无位图填充。[打开 SVG](examples/agentthink/reconstruction.svg) · [绘图文件](examples/agentthink/agentthink.scene.json) · [来源与还原说明](examples/agentthink/README.md)
+[快速开始](#-快速开始) • [工作原理](#-工作原理) • [案例](#-案例) • [Demo](#-demo) • [常见问题](#-常见问题)
 
-**v0.1.0 · Preview**
+<br>
 
-## Quick Start
+<a href="examples/agentthink/reconstruction.svg"><img src="assets/agentthink-comparison.png" alt="AgentThink 原图与可编辑 Figma 重建结果对比" width="100%"></a>
 
-1. [下载 ZIP](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip)，在支持 Skill 的 AI 助手中打开解压后的仓库。
-2. 让助手读取 `.agents/skills/paper-figure-to-figma/SKILL.md`，或运行 `python tools/install_skill.py` 安装到 Codex 的个人 Skill 目录。
-3. 在助手中授权连接 Figma，上传完整参考图，并附上目标 Figma Design 链接。
+<sub>左：参考原图 · 右：Figma 原生图层重建 · <a href="examples/agentthink/reconstruction.svg">打开 SVG</a> · <a href="examples/agentthink/README.md">案例说明</a></sub>
 
-```text
-使用 $paper-figure-to-figma，将附图重建到这个 Figma 画布，
-检查整图与局部细节，修正后导出可编辑 SVG 和 PDF。
+</div>
+
+<br>
+
+**Paper Figure to Figma** 是一个 Agent Skill，把科研图的图片重建为原生、可编辑的 Figma 图。把图片和 Figma 文件交给 AI 助手，它会把每个标签、形状和连接线绘制成真实图层，在整图与局部两个层面与参考图对照，修正差异，最后导出 SVG 和 PDF。
+
+适合手里只有一张图的场景：源文件丢了、图来自论文截图或生图模型的草稿，但仍然需要继续修改。
+
+## ✨ 特性
+
+- **原生可编辑图层**：文字保持为文字，形状和箭头保持为矢量；只有输入、输出照片保留为图片层。
+- **还原容易丢失的细节**：渐变、局部文字底板、透明度、虚线、贝塞尔曲线和图层叠放顺序。
+- **内置复核闭环**：先查整图，再查局部细节和可编辑性，只修正受影响的元素。
+- **修改无需从头再来**：后续修改直接更新已有 Figma 画板，指定保持不变的元素不受影响。
+- **论文级排版默认值**：正文默认 Times New Roman，并设置清晰的字号层级；均可按需覆盖。
+- **无需额外 API Key**：在 AI 助手及其 Figma 连接中运行，不需要 VLM API Key 或原始生图提示词。
+- **便携输出**：可编辑 SVG、PDF，以及可复用的 `.scene.json` 绘图文件。
+
+## 🚀 快速开始
+
+**准备**
+
+- 支持看图、加载本地 Skill、执行脚本和调用外部工具的 AI 助手（已在 Codex 上验证）。
+- 助手中已连接 Figma，并对目标 Design 文件有编辑权限。
+- Python 3.10+。仅当图中包含照片裁剪时需要 Pillow。
+
+**1. 安装 Skill**
+
+```bash
+git clone https://github.com/sidiangongyuan/paper-figure-to-figma.git
+cd paper-figure-to-figma
+python tools/install_skill.py
 ```
 
-Skill 自行发现并调用 Figma 工具。助手需要支持图片输入、本地 Skill/脚本和外部工具调用。[安装与连接说明](docs/CODEX_QUICKSTART.md)
+默认安装到 `$CODEX_HOME/skills/paper-figure-to-figma`（未设置时为 `~/.codex/skills/paper-figure-to-figma`）。用 `--update` 更新已有安装；其他助手可用 `--dest <技能目录>/paper-figure-to-figma` 指定位置。不想安装时，在助手中打开仓库并让它读取 `.agents/skills/paper-figure-to-figma/SKILL.md` 即可。
 
-可用 [Prompt 页面](https://sidiangongyuan.github.io/paper-figure-to-figma/) 补充字体、配色和修改偏好。
+**2. 连接 Figma**
 
-## 工作流
+在助手中启用 Figma 工具连接并完成账号授权。
 
-提供完整参考图，以及字体、排版或局部修改要求。原始生图提示词和 VLM API 均非必需。
+**3. 重建一张图**
+
+上传完整参考图，发送：
+
+```text
+使用 $paper-figure-to-figma，将附图重建到以下 Figma 画布，
+检查整图与局部细节，修正后导出可编辑 SVG 和 PDF。
+Figma：<你的 Design 文件链接>
+```
+
+需要指定字体、配色或局部修改时，可用 [Prompt 生成页面](https://sidiangongyuan.github.io/paper-figure-to-figma/) 组织指令。
+
+完整安装与连接说明：[docs/CODEX_QUICKSTART.md](docs/CODEX_QUICKSTART.md)
+
+## 🔄 工作原理
 
 ```mermaid
 flowchart LR
@@ -43,84 +92,140 @@ flowchart LR
     E --> F[导出 SVG / PDF]
 ```
 
-Skill 编排看图、图纸生成、原生图层绘制、对照复核和修订。Figma 连接提供实际写入权限。普通聊天窗口仅能输出内容时，需换用具备这些执行能力的助手。[使用说明](docs/CODEX_QUICKSTART.md)
+Skill 读取图片、生成绘图描述、在 Figma 中绘制原生图层，再用真实的 Figma 导出结果与参考图对照。修正顺序为：先内容与连接关系，再可读性，最后外观。
 
-### 整图与局部对照复核
+<details>
+<summary><b>复核检查什么</b></summary>
 
-以参考图、当前 Figma 导出结果和用户修改要求为依据，对同一位置进行相近尺度的比较。用户要求调整的字体或排版纳入目标效果。
-
-```mermaid
-flowchart TB
-    W[整图检查：内容、分组与连接关系] --> D[局部放大：文字、形状与视觉细节]
-    D --> E[检查可编辑性和指定不动的元素]
-    E --> Q{有待修正的问题？}
-    Q -->|有| F[局部修正]
-    F --> D
-    F -. 布局发生变化 .-> W
-    Q -->|无| O[从已复核的 Figma 画板导出]
-```
+<br>
 
 | 检查层次 | 检查内容 | 输出 |
 | --- | --- | --- |
 | 整图 | 内容遗漏、分区布局、相对尺寸、分组及跨区箭头端点 | 定位结构差异 |
 | 局部放大 | 文字准确性与完整显示、间距、曲线、渐变、底板、重复元素和遮挡顺序 | 标明区域、实际差异及修正方式 |
-| 可编辑性 | 可编辑文字、独立矢量元素、合理分组及用户指定保持不变的内容 | 确认可继续修改，并保留受保护元素 |
+| 可编辑性 | 可编辑文字、独立矢量元素、合理分组及受保护内容 | 确认可继续修改，且不影响受保护元素 |
 
-优先修正内容与连接关系，再处理可读性和外观。每次修正后检查受影响区域及受保护元素；布局变化时重新检查整图。检查通过、近似处理和疑点已明确记录后结束复核。尚未确认的科学文字或连接含义仍标为待确认，不能仅凭节点数量认定还原完成。论文最终尺寸已知时，再检查实际使用尺寸下的可读性。
+完整说明：[prompts/02-review.md](prompts/02-review.md)
 
-## 案例
+</details>
 
-### AgentThink
+## 🎨 案例
 
-完整覆盖数据生成、两阶段训练、推理与评估。复杂小插画与品牌符号为矢量近似重绘，原图小卡片中部分占位文字无法辨清。
+<table>
+  <tr>
+    <th width="50%">AgentThink</th>
+    <th width="50%">PlanWAM</th>
+  </tr>
+  <tr>
+    <td><a href="examples/agentthink/README.md"><img src="assets/agentthink-comparison.png" alt="AgentThink 原图与重建结果"></a></td>
+    <td><a href="examples/planwam/README.md"><img src="assets/planwam-comparison.png" alt="PlanWAM 原图与重建结果"></a></td>
+  </tr>
+  <tr>
+    <td>数据生成、两阶段训练、推理与评估的完整流程图。<br><b>59</b> 个文字层 · <b>264</b> 个矢量路径节点 · <b>0</b> 个位图填充</td>
+    <td>四联对比的世界模型规划方法示意图。<br><b>43</b> 个文字层 · <b>334</b> 个矢量对象 · <b>8</b> 处渐变</td>
+  </tr>
+  <tr>
+    <td><a href="https://arxiv.org/abs/2505.15298">论文</a> · <a href="examples/agentthink/reference.png">参考图</a> · <a href="examples/agentthink/reconstruction.svg">SVG</a> · <a href="examples/agentthink/agentthink.scene.json">绘图文件</a></td>
+    <td><a href="https://arxiv.org/abs/2610.11382">论文</a> · <a href="examples/planwam/reference.png">参考图</a> · <a href="examples/planwam/reconstruction.svg">SVG</a> · <a href="examples/planwam/planwam.scene.json">绘图文件</a></td>
+  </tr>
+</table>
 
-![AgentThink 的模型模块、曲线分支和奖励层细节对比](assets/agentthink-details.png)
+<details>
+<summary><b>局部细节对比</b></summary>
 
-[参考图](examples/agentthink/reference.png) · [可编辑 SVG](examples/agentthink/reconstruction.svg) · [绘图文件](examples/agentthink/agentthink.scene.json) · [论文](https://arxiv.org/abs/2505.15298) · [样例说明](examples/agentthink/README.md)
+<br>
 
-### PlanWAM
+**AgentThink**：模型模块、曲线分支和奖励层
 
-[![PlanWAM 原图与可编辑重建结果对比](assets/planwam-comparison.png)](examples/planwam/reconstruction.svg)
+![AgentThink 局部细节对比](assets/agentthink-details.png)
 
-PlanWAM 样例包含 **43 个可编辑文字层**、**334 个矢量对象**和 **8 处渐变**。输入、输出 RGB 图像保留为独立图片层。[打开 SVG](examples/planwam/reconstruction.svg) · [绘图文件](examples/planwam/planwam.scene.json)
+**PlanWAM**：曲线连接、渐变和文字底板
 
-放大对照曲线、渐变和局部文字底板。重建版正文采用 Times New Roman，小车图标为矢量近似重绘。
+![PlanWAM 局部细节对比](assets/planwam-details.png)
 
-![原图与重建结果的曲线、渐变、文字底板细节对比](assets/planwam-details.png)
+</details>
 
-[参考图](examples/planwam/reference.png) · [可编辑 SVG](examples/planwam/reconstruction.svg) · [绘图文件](examples/planwam/planwam.scene.json) · [样例说明](examples/planwam/README.md)
+参考图版权归原作者所有，来源与近似处理见各案例说明。
 
-来源：[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)，Figure 1。原始图片内容归其作者所有。论文中的可读性需按最终尺寸检查。
+## 🎮 Demo
 
-## Demo
+下载仓库后用浏览器打开 **`demo/index.html`**，无需安装，可离线使用。拖动分界线对照原图与重建结果，修改文字、填色和曲线，然后下载编辑后的 SVG。
 
-下载后打开 **`demo/index.html`**。拖动分界线对照原图，修改文字、填色与曲线，下载编辑后的 SVG。支持离线使用。
+![在离线 Demo 中对照原图并编辑 SVG](assets/workflow.gif)
 
-![慢速演示原图对照与 SVG 编辑](assets/workflow.gif)
+Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI 重建。[操作说明](docs/SHOWCASE.md)
 
-这段 13 秒循环展示仓库附带的浏览器演示，开头与结束保留停顿。[操作说明](docs/SHOWCASE.md)
+## 🧭 路线图
 
-## TODO
+- [x] Agent Skill 调用 Figma 完成绘制、复核和导出
+- [x] PlanWAM、AgentThink 可编辑案例及可视化对比
+- [x] Prompt 生成页面与离线 Demo
+- [ ] 按论文最终尺寸检查字号、线宽和间距
+- [ ] 完善局部更新，保留用户在 Figma 中的手动修改
+- [ ] 改善数学符号与公式的还原
+- [ ] 风格迁移：保留内容与结构，调整配色、字体和视觉样式
+- [ ] 兼容 PowerPoint、draw.io 等工具的可编辑导入与导出
+- [ ] 扩充案例，提供可复现的还原质量评估
+- [ ] 扩展更多助手与操作系统的兼容性验证
 
-已完成的能力与后续改进方向；未勾选项为待开发内容。
+## 🚧 局限
 
-- [x] ~~Codex Skill 调用 Figma 完成绘制、复核和导出~~
-- [x] ~~PlanWAM、AgentThink 可编辑案例及可视化对比~~
-- [x] ~~Prompt 生成页面与慢速流程演示~~
-- [ ] 按论文最终尺寸检查字号、线宽和间距。
-- [ ] 完善局部更新，保护用户在 Figma 中的手动修改。
-- [ ] 改善数学符号与公式的还原。
-- [ ] 支持风格迁移，在保留内容与结构的基础上调整配色、字体和视觉样式。
-- [ ] 兼容 PowerPoint、draw.io 等工具，支持可编辑格式的导入与导出。
-- [ ] 扩充案例，并提供可复现的还原质量评估。
-- [ ] 扩展不同 Skill 助手与操作系统的兼容性验证。
+- **不是像素级复刻**：还原度通过整图与局部复核判断，不提供通用的准确率数字。
+- **小插画为近似重绘**：复杂图标、Logo 和细小插图用矢量近似重绘；无法辨认的原文会被标注，不会臆测。
+- **照片裁剪受参考图分辨率限制**：正式排版时优先使用原始数据集图片。
+- **整图重新导入会覆盖托管图层上的手动修改**：重建前先复制一份手动编辑过的图。
+- **已在 Codex 及其 Figma 连接上验证**：其他助手和操作系统尚未全部测试。
+- **最终尺寸可读性需单独检查**：确定论文实际尺寸后再确认字号和线宽。
 
-## 文档
+## ❓ 常见问题
 
-[Quick Start](START_HERE.md) · [Demo 操作](docs/SHOWCASE.md) · [开发文档](docs/DEVELOPMENT.md)
+<details>
+<summary><b>需要 API Key 或原始生图提示词吗？</b></summary>
 
-工作流参考：[Image To Slice](https://github.com/50kg/image-to-slice)。
+不需要。Skill 在 AI 助手内运行，只需要图片本身。
 
-## 许可
+</details>
 
-项目代码采用 [MIT 许可](LICENSE)。参考图片、论文内容及据此重建的示例图保留原有权利和适用条款，来源见各案例说明。
+<details>
+<summary><b>支持哪些 AI 助手？</b></summary>
+
+已在 Codex 上验证。其他助手需要支持图片输入、本地 Skill 与脚本执行以及外部工具调用；安装时用 `--dest` 指向其技能目录。
+
+</details>
+
+<details>
+<summary><b>需要安装 Figma 插件吗？</b></summary>
+
+不需要自定义插件。Skill 使用助手中已连接的 Figma 工具，需要对目标 Design 文件有编辑权限。
+
+</details>
+
+<details>
+<summary><b>Figma 没连上会怎样？</b></summary>
+
+Skill 会先在本地准备绘图文件和 SVG，并说明缺少哪一步（未连接、授权过期、只读权限或无文件访问权限），问题解决后继续写入 Figma。
+
+</details>
+
+<details>
+<summary><b>生成后还能继续改吗？</b></summary>
+
+可以。直接在 Figma 中编辑，或把同一个 Figma 链接和修改要求发给助手，并说明哪些元素需要保持不变。
+
+</details>
+
+## 🤝 参与贡献
+
+欢迎提交 Issue、想法和新案例。
+
+- **问题或效果不符合预期**：提交 Issue，附上参考图（如可公开）、你的指令和所用助手。
+- **新案例**：附上论文来源、可公开分发的参考图、`.scene.json` 和导出的 SVG。
+- **代码修改**：提交 PR 前运行 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) 中的检查。
+
+## 🙏 致谢
+
+工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。
+
+## 📄 许可
+
+代码采用 [MIT 许可](LICENSE)。参考图片、论文内容及据此重建的示例图保留原有权利，来源见各案例说明。

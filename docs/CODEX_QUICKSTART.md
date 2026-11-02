@@ -1,47 +1,48 @@
-# Skill 安装与使用
+# Installation and Usage
 
-## 准备
+## Requirements
 
-使用支持图片输入、本地技能、脚本执行和外部工具调用的 AI 助手。当前已验证 Codex 与已连接的 Figma 工具路径；其他助手需具备等价能力。Figma 账号需对目标 Design 文件有编辑权限。
+- An AI assistant that supports image input, local skills, script execution and external tool calls. The Codex + connected Figma tools path is verified; other assistants need equivalent capabilities.
+- A Figma account with edit access to the target Design file.
+- Python 3.10+ for the bundled helper scripts. Pillow is needed only for cropping photo regions from the reference image. You can ask the assistant to check these dependencies.
 
-Skill 自带辅助脚本，运行环境需要 Python 3.10+；涉及 RGB 图片裁剪时需要 Pillow。可让助手检查这些依赖。
+## Install
 
-## 安装
+Clone or [download](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip) the repository, then run from its root (or ask the assistant to run it):
 
-下载并解压仓库。在仓库目录运行，或让助手执行：
-
-```text
+```bash
 python tools/install_skill.py
 ```
 
-默认安装到 `$CODEX_HOME/skills/paper-figure-to-figma`；未设置该变量时使用 `~/.codex/skills/paper-figure-to-figma`。安装包包含运行文件，可以在其他项目中使用。
+The skill installs to `$CODEX_HOME/skills/paper-figure-to-figma`, or `~/.codex/skills/paper-figure-to-figma` when `CODEX_HOME` is not set. The installed copy is self-contained and works from any project.
 
-更新已有安装：
+| Option | Purpose |
+| --- | --- |
+| `--update` | Replace an existing installation. The old copy is backed up to a `skill-backups` folder next to the skills directory. |
+| `--dest <skills-dir>/paper-figure-to-figma` | Install into another assistant's skill directory. |
+| `--package <file.zip>` | Build a portable ZIP instead of installing. |
+
+Without installing, you can open the repository in the assistant and ask it to read `.agents/skills/paper-figure-to-figma/SKILL.md`.
+
+The skill becomes available on the next turn. If the assistant caches its skill list, start a new conversation.
+
+## Connect Figma
+
+Enable the Figma tool connection in the assistant and complete account authorization. The connection must be able to read, create and modify layers and export. Provide a Design file link you can edit; the skill discovers and calls the Figma tools itself.
+
+If the connection is missing or lacks permission, the assistant names the specific problem and can prepare the local scene file first, then continue writing to the canvas once access is restored.
+
+## Use
+
+Attach the complete reference image and send:
 
 ```text
-python tools/install_skill.py --update
+Use $paper-figure-to-figma to reconstruct this image in the linked Figma canvas.
+Keep text and main structures editable, review the whole figure and details,
+then export SVG and PDF.
+Figma: <your Design file link>
 ```
 
-旧安装自动备份到技能目录外的 `skill-backups` 文件夹。其他助手可用 `--dest <技能目录>/paper-figure-to-figma` 指定安装位置。
+For fonts, colors, figure width or specific changes, compose the request with the [Prompt Builder](https://sidiangongyuan.github.io/paper-figure-to-figma/).
 
-也可直接在助手中打开仓库并读取 `.agents/skills/paper-figure-to-figma/SKILL.md`。安装后在下一轮调用 Skill；如果助手缓存了技能列表，重新打开对话。
-
-## 连接 Figma
-
-在助手中启用 Figma 工具连接，按提示完成账号授权。连接需要支持读取、创建或修改图层及导出。提供具有编辑权限的 Figma Design 链接；Skill 会发现并调用工具。
-
-若连接缺失或权限不足，助手会指出具体问题，并可先准备本地绘图文件。连接恢复后继续写入目标画布。
-
-## 使用
-
-上传完整参考图，发送：
-
-```text
-使用 $paper-figure-to-figma，将附图重建到以下 Figma 画布。
-保持文字和主体结构可编辑，检查整图与局部细节后导出 SVG 和 PDF。
-Figma 地址：填写你的 Design 链接
-```
-
-需要个性化要求时，可使用 [Prompt 页面](../web/index.html)。继续修改时提供原 Figma 链接和修改要求，并指出需要保持不变的元素。
-
-[官方 Skill 说明](https://learn.chatgpt.com/docs/build-skills) · [验证范围](entrypoint-validation.md)
+To revise later, send the same Figma link with your changes and name the elements that must stay unchanged.

@@ -1,5 +1,5 @@
 // Run with node --test tools/test_figma_import.cjs. These are SDK doubles;
-// real Figma smoke-test evidence is recorded separately in docs/entrypoint-validation.md.
+// they do not replace a live smoke test against a real Figma file.
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
