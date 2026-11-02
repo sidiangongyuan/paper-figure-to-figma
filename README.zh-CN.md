@@ -1,6 +1,10 @@
 # Paper Figure to Figma
 
-将科研参考图重建为 Figma 中可编辑的文字、形状、箭头和矢量图标，导出 SVG 或 PDF。
+**高保真重建科研图，自由编辑每一步。**
+
+**你需要的：** 一个支持看图并能输出绘图指令的 VLM，以及 Figma。
+
+**你得到的：** 高质量、可继续编辑的科研矢量图，支持 SVG 和 PDF 导出。
 
 [English](README.md) · [Quick Start](#quick-start) · [工作流](#工作流) · [案例](#案例) · [TODO](#todo) · [Prompt 生成](https://sidiangongyuan.github.io/paper-figure-to-figma/)
 

@@ -1,6 +1,10 @@
 # Paper Figure to Figma
 
-Reconstruct research figures as editable Figma text, shapes, arrows and vector icons. Export SVG or PDF.
+**Rebuild research figures with high fidelity. Keep every step editable.**
+
+**What you need:** A vision-language model that can interpret images and output drawing instructions, plus Figma.
+
+**What you get:** High-quality, editable research vector artwork with SVG and PDF export.
 
 [中文](README.zh-CN.md) · [Quick Start](#quick-start) · [Workflow](#workflow) · [Examples](#examples) · [TODO](#todo) · [Prompt builder](https://sidiangongyuan.github.io/paper-figure-to-figma/)
 
