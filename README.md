@@ -106,6 +106,8 @@ Completed features and possible next improvements; unchecked items are planned w
 - [ ] Add checks for font size, line width and spacing at the final paper dimensions.
 - [ ] Improve selective updates and preservation of manual Figma edits.
 - [ ] Improve mathematical notation and formula reconstruction.
+- [ ] Add style transfer for colors, typography and visual appearance while preserving content and structure.
+- [ ] Support editable import/export with PowerPoint, draw.io and other drawing tools.
 - [ ] Expand the example set and publish reproducible fidelity evaluations.
 - [ ] Complete end-to-end testing of plugin installation and import/export in Figma Desktop.
 
