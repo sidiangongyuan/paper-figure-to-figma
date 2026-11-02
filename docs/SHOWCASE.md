@@ -14,7 +14,7 @@
 
 播放按钮演示参考、图层、对照和编辑四个阶段，使用预先重建的样例。
 
-在 Figma 中编辑：[插件安装](WEB_QUICKSTART.md) · [Codex 使用](CODEX_QUICKSTART.md)
+在 Figma 中编辑：[Skill 安装与使用](CODEX_QUICKSTART.md)
 
 ## 示例
 

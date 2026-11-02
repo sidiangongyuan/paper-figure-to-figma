@@ -1,39 +1,37 @@
 # Development
 
-User-facing entry points: [Start here](../START_HERE.md), [web](WEB_QUICKSTART.md), [Codex](CODEX_QUICKSTART.md).
-
 ## Layout
 
-- `figma-plugin/`: prebuilt plugin plus HTML, CSS and controller sources.
-- `.agents/skills/paper-figure-to-figma/`: repository-scoped reconstruction workflow.
-- `prompts/`: shared model instructions and scene contract.
-- `examples/planwam/`: curated attributed example, reviewed native export and portable project.
-- `demo/`: self-contained interactive preview and its sources.
-- `web/`: dependency-free prompt generator; opens directly or deploys to GitHub Pages.
-- `tools/`: common validation, rendering, image preparation and builders.
+- `.agents/skills/paper-figure-to-figma/`: repository skill entrypoint.
+- `prompts/`: reconstruction contract and review instructions.
+- `tools/`: scene validation, SVG rendering, Figma execution bundles and skill packaging.
+- `examples/`: attributed reference images, portable scenes and reviewed native exports.
+- `demo/`: offline comparison and editing demonstration.
+- `web/`: optional prompt builder.
 
-The UI and demo are dependency-free. Python3.10+ is sufficient for the builders. Node is used for JS checks. Pillow is optional for image crops and media authoring.
+Python 3.10+ runs the core tools. Pillow is needed for image preparation and showcase assets; Node runs the JavaScript checks.
 
-## Build and check
+## Checks
 
 ```text
-python tools/build_plugin.py
-python tools/build_demo.py
-python tools/build_plugin.py --check
-python tools/build_demo.py --check
-python tools/build_showcase_assets.py
 python -m unittest discover -s tools -p "test_*.py" -v
 node --test tools/test_figma_import.cjs
 node --check demo/app.js
 node --check web/app.js
-node --check figma-plugin/ui.js
+python tools/build_demo.py --check
 ```
 
-Commit both the sources and the generated `figma-plugin/code.js`, `ui.html` and `demo/index.html`. End users open these built files directly.
+The Python and JavaScript tests cover scene contracts, gradients, curves, text, raster boundaries, partial updates, failed-update recovery, portable installation and backups. See [validation scope](entrypoint-validation.md) for live evidence and limits.
 
-`build_showcase_assets.py` lays out the committed PlanWAM and AgentThink references and native Figma previews as overview and detail comparisons. Rebuild these assets after updating their source images. `make_demo_gif.py <frame-directory> <output.gif>` uses 360 ms per frame, with 1.2 s opening and 2.8 s closing holds. To slow an existing recording while preserving its frames, pass the GIF as the first argument and use `--slowdown 2`.
+## Package
 
-## Scene tools
+```text
+python tools/install_skill.py --package local-outputs/paper-figure-to-figma-0.1.0.zip
+```
+
+The ZIP contains one self-contained skill directory, its runtime, MIT license and version. It excludes working outputs and reference-image collections. A fresh installation can render and bundle the included minimal scene from an unrelated working directory.
+
+## Figure execution
 
 ```text
 python tools/scene_to_svg.py examples/minimal.scene.json local-outputs/example.svg
@@ -41,16 +39,8 @@ python tools/bundle_figma.py examples/minimal.scene.json local-outputs/example.f
 python tools/prepare_scene.py input.scene.json local-outputs/prepared --reference reference.png
 ```
 
-The optional preparation step uses original reference pixels for allowed input/output RGB crops; it can substitute original files with `--asset ID=PATH`. Upload those files through actual Figma asset tools, map each asset ID to its returned hash string, and pass `--image-hashes` to the bundler. MCP bundles retain the host's50,000-character cap. Split by panel, or split a large panel with `--node-range 0:80`, `--node-range 80:160` and so on (end exclusive, after panel filtering). Preserve original order and continue with the latest returned root ID. All batches must complete before final verification.
+Upload allowed RGB assets through the connected Figma tools before executing a bundle. Split large bundles with `--panel` or `--node-range`; continue with the latest returned root ID. Full reimports stage a replacement, while partial imports retain absent nodes. Inspect existing artwork before editing.
 
-The plugin and MCP embed `scene_validate.js` and `figma_import.js`. Full-scene updates stage a clone and replace managed nodes, so native IDs change while logical IDs remain stable. Partial panel updates retain absent nodes. Read [the validation scope](entrypoint-validation.md) before interpreting test results.
+## Showcase
 
-## Showcase provenance
-
-`prepare_showcase.py --pilot <local pilot directory>` curates the reviewed PlanWAM run, normalizes its stable IDs and converts xlink references to SVG2 href for reliable HTML embedding. It checks that all398 authored elements exist in the native export. `build_demo.py` packages the resulting example into an offline page. Public example files contain no account IDs, access tokens or signed export URLs.
-
-The GIF and preview screenshots show this real browser interaction. They are product demonstrations rather than recordings of model inference or native desktop-plugin execution.
-
-## Internal records
-
-[Decisions](decisions.md) · [Workflow](workflow-proposal.md) · [First pilot](pilot-01.md) · [Visual corrections](visual-review.md) · [Reference repository](reference-project.md)
+`build_demo.py` rebuilds `demo/index.html`; commit it with its template and sources. `build_showcase_assets.py` rebuilds the two example comparison sheets. `make_demo_gif.py` uses slower frame timing and opening/closing holds. The GIF demonstrates the offline editor, not model inference time.

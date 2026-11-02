@@ -2,7 +2,7 @@
 
 **Rebuild research figures with high fidelity. Keep every step editable.**
 
-**What you need:** A vision-language model that can interpret images and output drawing instructions, plus Figma.
+**What you need:** An AI assistant with image understanding, skill support and tool execution, plus an authorized Figma connection with write access.
 
 **What you get:** High-quality, editable research vector artwork with SVG and PDF export.
 
@@ -12,38 +12,22 @@
 
 AgentThink: **59 editable text layers**, **264 vector path nodes**, **0 bitmap fills**. [Open SVG](examples/agentthink/reconstruction.svg) · [Project file](examples/agentthink/agentthink.scene.json) · [Source and reconstruction notes](examples/agentthink/README.md)
 
+**v0.1.0 · Preview**
+
 ## Quick Start
 
-[Download ZIP](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip) and unzip it. The plugin and demo are ready to use.
-
-### Web model + Figma plugin
-
-Requires Figma Desktop and a web model that accepts images and returns text or files.
-
-1. In a Figma Design file, open **Plugins → Development → Import plugin from manifest…** and select `figma-plugin/manifest.json`.
-2. Run **Paper Figure to Figma (local)**. Click **加载 PlanWAM 示例 → 生成到 Figma** to try the included figure.
-3. For your own figure, select the full reference image in the plugin. Copy the drawing instructions and send them with the image to your web model.
-4. Import the returned `.json` file, compare the result, then export SVG or PDF.
-
-[Installation and usage](docs/WEB_QUICKSTART.md)
-
-### Codex
-
-1. Open the unzipped repository folder in Codex and start a new chat.
-2. Attach the full reference image and send:
+1. [Download ZIP](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip), unzip it and open the repository in a skill-capable AI assistant.
+2. Ask the assistant to read `.agents/skills/paper-figure-to-figma/SKILL.md`, or run `python tools/install_skill.py` to install in your personal Codex skill directory.
+3. Authorize the assistant's Figma connection, attach the full reference image and provide a target Figma Design link.
 
 ```text
-Use $paper-figure-to-figma to reconstruct this full figure,
-review the rendered result, and export the editable artwork.
+Use $paper-figure-to-figma to reconstruct this image in the linked Figma canvas,
+review the whole figure and details, then export editable SVG and PDF.
 ```
 
-The skill uses connected Figma tools automatically. Connect your Figma account when prompted; include a Design link to edit an existing file.
+The skill discovers and calls connected Figma tools. The host needs image input, local skill/script execution and external tool support. [Installation and connection](docs/CODEX_QUICKSTART.md)
 
-[Codex setup](docs/CODEX_QUICKSTART.md)
-
-### Prompt
-
-Open [web/index.html](web/index.html), choose a template and add your preferences. Copy the prompt and send it with the full reference image to Codex. [Usage and GitHub Pages](docs/PROMPT_PAGE.md).
+Use the [prompt builder](https://sidiangongyuan.github.io/paper-figure-to-figma/) for font, color and editing preferences.
 
 ## Workflow
 
@@ -51,21 +35,15 @@ Start with a complete reference image and any font, layout or editing preference
 
 ```mermaid
 flowchart LR
-    A[Reference image + preferences] --> B[Web vision model]
-    A --> C[Codex + skill]
-    B --> D[Scene JSON]
-    D --> E[Import with Figma plugin]
-    C --> F[Connected Figma tools]
-    E --> G[Editable Figma artwork]
-    F --> G
-    G --> H[Compare whole figure and details]
-    H -->|Revise| G
-    H --> I[Export SVG / PDF]
+    A[Reference image + preferences] --> B[AI assistant executes skill]
+    B --> C[Connected Figma tools]
+    C --> D[Editable Figma artwork]
+    D --> E[Compare whole figure and details]
+    E -->|Revise affected elements| D
+    E --> F[Export SVG / PDF]
 ```
 
-The model interprets the image and produces the drawing instructions. The web path uses manual file transfer; the Codex path can write to Figma through the connected tools. Both paths preserve editable text and vector elements, then review layout, typography, gradients, curves and layer order against the reference. Check readability at the intended paper size before publication.
-
-[Web workflow](docs/WEB_QUICKSTART.md) · [Codex workflow](docs/CODEX_QUICKSTART.md)
+The skill coordinates image interpretation, scene authoring, native layers, comparison and revision. The Figma connection supplies write access. A chat-only interface needs a host with these execution capabilities to complete the canvas work. [Usage guide](docs/CODEX_QUICKSTART.md)
 
 ### Compare whole figure and details
 
@@ -126,7 +104,6 @@ This 13-second loop shows the included browser demo, with pauses at the start an
 
 Completed features and possible next improvements; unchecked items are planned work.
 
-- [x] ~~Web-model prompts and a local Figma import plugin~~
 - [x] ~~Codex skill with connected Figma drawing, review and export~~
 - [x] ~~PlanWAM and AgentThink examples with editable files and visual comparisons~~
 - [x] ~~Prompt builder and a slower workflow demonstration~~
@@ -136,7 +113,7 @@ Completed features and possible next improvements; unchecked items are planned w
 - [ ] Add style transfer for colors, typography and visual appearance while preserving content and structure.
 - [ ] Support editable import/export with PowerPoint, draw.io and other drawing tools.
 - [ ] Expand the example set and publish reproducible fidelity evaluations.
-- [ ] Complete end-to-end testing of plugin installation and import/export in Figma Desktop.
+- [ ] Expand compatibility testing across skill-capable assistants and operating systems.
 
 ## Documentation
 

@@ -2,7 +2,7 @@
 
 **高保真重建科研图，自由编辑每一步。**
 
-**你需要的：** 一个支持看图并能输出绘图指令的 VLM，以及 Figma。
+**你需要的：** 一个支持看图、加载 Skill 和执行工具的 AI 助手，以及已授权写入的 Figma 连接。
 
 **你得到的：** 高质量、可继续编辑的科研矢量图，支持 SVG 和 PDF 导出。
 
@@ -12,38 +12,22 @@
 
 AgentThink 复杂案例包含 **59 个可编辑文字层**、**264 个矢量路径节点**，无位图填充。[打开 SVG](examples/agentthink/reconstruction.svg) · [绘图文件](examples/agentthink/agentthink.scene.json) · [来源与还原说明](examples/agentthink/README.md)
 
+**v0.1.0 · Preview**
+
 ## Quick Start
 
-[下载 ZIP](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip) 并解压。插件和演示可直接使用。
-
-### 网页模型 + Figma 插件
-
-准备：Figma 桌面版，以及支持看图、输出文字或文件的网页模型账号。
-
-1. 在 Figma Design 文件中打开 **Plugins → Development → Import plugin from manifest…**，选择 `figma-plugin/manifest.json`。
-2. 运行 **Paper Figure to Figma (local)**，点击 **加载 PlanWAM 示例 → 生成到 Figma**，试用附带样例。
-3. 制作自己的图：在插件中选择完整参考图，将图片和复制的绘图指令一起发给网页模型。
-4. 导入模型返回的 `.json` 文件，对照修改后导出 SVG 或 PDF。
-
-[安装与使用详情](docs/WEB_QUICKSTART.md)
-
-### Codex
-
-1. 在 Codex 中打开解压后的仓库文件夹，新建对话。
-2. 上传完整参考图，发送：
+1. [下载 ZIP](https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip)，在支持 Skill 的 AI 助手中打开解压后的仓库。
+2. 让助手读取 `.agents/skills/paper-figure-to-figma/SKILL.md`，或运行 `python tools/install_skill.py` 安装到 Codex 的个人 Skill 目录。
+3. 在助手中授权连接 Figma，上传完整参考图，并附上目标 Figma Design 链接。
 
 ```text
-使用 $paper-figure-to-figma 复现这张整图，
-完成 Figma 绘制、预览复核和导出。
+使用 $paper-figure-to-figma，将附图重建到这个 Figma 画布，
+检查整图与局部细节，修正后导出可编辑 SVG 和 PDF。
 ```
 
-Skill 自动调用已连接的 Figma 工具。首次使用按提示连接账号；修改已有文件时附上 Design 链接。
+Skill 自行发现并调用 Figma 工具。助手需要支持图片输入、本地 Skill/脚本和外部工具调用。[安装与连接说明](docs/CODEX_QUICKSTART.md)
 
-[Codex 安装与使用详情](docs/CODEX_QUICKSTART.md)
-
-### Prompt
-
-打开 [web/index.html](web/index.html)，选择模板并补充个性化要求。复制 Prompt，连同完整参考图发给 Codex。[使用与 GitHub Pages 部署](docs/PROMPT_PAGE.md)。
+可用 [Prompt 页面](https://sidiangongyuan.github.io/paper-figure-to-figma/) 补充字体、配色和修改偏好。
 
 ## 工作流
 
@@ -51,21 +35,15 @@ Skill 自动调用已连接的 Figma 工具。首次使用按提示连接账号�
 
 ```mermaid
 flowchart LR
-    A[参考图与个性化要求] --> B[支持看图的网页模型]
-    A --> C[Codex + Skill]
-    B --> D[Scene JSON 绘图文件]
-    D --> E[通过 Figma 插件导入]
-    C --> F[调用已连接的 Figma 工具]
-    E --> G[可编辑 Figma 图]
-    F --> G
-    G --> H[整图与局部对照复核]
-    H -->|修改| G
-    H --> I[导出 SVG / PDF]
+    A[参考图与个性化要求] --> B[AI 助手执行 Skill]
+    B --> C[调用已连接的 Figma 工具]
+    C --> D[可编辑 Figma 图]
+    D --> E[整图与局部对照复核]
+    E -->|局部修正| D
+    E --> F[导出 SVG / PDF]
 ```
 
-模型理解图片并生成绘图指令。网页路径由用户传递文件，Codex 路径可通过已连接的工具直接写入 Figma。两种路径均保留可编辑文字和矢量元素，再对照原图检查布局、字体、渐变、曲线与图层顺序。论文使用前，按最终版面尺寸检查可读性。
-
-[网页路径详情](docs/WEB_QUICKSTART.md) · [Codex 路径详情](docs/CODEX_QUICKSTART.md)
+Skill 编排看图、图纸生成、原生图层绘制、对照复核和修订。Figma 连接提供实际写入权限。普通聊天窗口仅能输出内容时，需换用具备这些执行能力的助手。[使用说明](docs/CODEX_QUICKSTART.md)
 
 ### 整图与局部对照复核
 
@@ -126,7 +104,6 @@ PlanWAM 样例包含 **43 个可编辑文字层**、**334 个矢量对象**和 *
 
 已完成的能力与后续改进方向；未勾选项为待开发内容。
 
-- [x] ~~网页模型绘图指令与本地 Figma 导入插件~~
 - [x] ~~Codex Skill 调用 Figma 完成绘制、复核和导出~~
 - [x] ~~PlanWAM、AgentThink 可编辑案例及可视化对比~~
 - [x] ~~Prompt 生成页面与慢速流程演示~~
@@ -136,7 +113,7 @@ PlanWAM 样例包含 **43 个可编辑文字层**、**334 个矢量对象**和 *
 - [ ] 支持风格迁移，在保留内容与结构的基础上调整配色、字体和视觉样式。
 - [ ] 兼容 PowerPoint、draw.io 等工具，支持可编辑格式的导入与导出。
 - [ ] 扩充案例，并提供可复现的还原质量评估。
-- [ ] 完成 Figma 桌面端插件安装、导入和导出的端到端测试。
+- [ ] 扩展不同 Skill 助手与操作系统的兼容性验证。
 
 ## 文档
 
