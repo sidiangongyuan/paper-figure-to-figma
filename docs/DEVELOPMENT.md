@@ -21,6 +21,7 @@ python tools/build_plugin.py
 python tools/build_demo.py
 python tools/build_plugin.py --check
 python tools/build_demo.py --check
+python tools/build_showcase_assets.py
 python -m unittest discover -s tools -p "test_*.py" -v
 node --test tools/test_figma_import.cjs
 node --check demo/app.js
@@ -29,6 +30,8 @@ node --check figma-plugin/ui.js
 ```
 
 Commit both the sources and the generated `figma-plugin/code.js`, `ui.html` and `demo/index.html`. End users open these built files directly.
+
+`build_showcase_assets.py` lays out the committed PlanWAM and AgentThink references and native Figma previews as overview and detail comparisons. Rebuild these assets after updating their source images. `make_demo_gif.py <frame-directory> <output.gif>` uses 360 ms per frame, with 1.2 s opening and 2.8 s closing holds. To slow an existing recording while preserving its frames, pass the GIF as the first argument and use `--slowdown 2`.
 
 ## Scene tools
 

@@ -2,7 +2,11 @@
 
 Reconstruct research figures as editable Figma text, shapes, arrows and vector icons. Export SVG or PDF.
 
-[中文](README.zh-CN.md) · [Quick Start](START_HERE.md) · [Demo](#demo)
+[中文](README.zh-CN.md) · [Quick Start](#quick-start) · [Examples](#examples) · [Demo](#demo) · [Prompt builder](https://sidiangongyuan.github.io/paper-figure-to-figma/)
+
+[![AgentThink reference beside its editable reconstruction](assets/agentthink-comparison.png)](examples/agentthink/reconstruction.svg)
+
+AgentThink: **59 editable text layers**, **264 vector path nodes**, **0 bitmap fills**. [Open SVG](examples/agentthink/reconstruction.svg) · [Project file](examples/agentthink/agentthink.scene.json) · [Source and reconstruction notes](examples/agentthink/README.md)
 
 ## Quick Start
 
@@ -37,15 +41,37 @@ The skill uses connected Figma tools automatically. Connect your Figma account w
 
 Open [web/index.html](web/index.html), choose a template and add your preferences. Copy the prompt and send it with the full reference image to Codex. [Usage and GitHub Pages](docs/PROMPT_PAGE.md).
 
-## Demo
+## Examples
 
-Open **`demo/index.html`** in a browser. Compare the reference, edit text, fills and curves, and download the edited SVG. The demo works offline.
+### AgentThink
 
-![Reference comparison and SVG editing](assets/workflow.gif)
+The complete data generation, two-stage training, inference and evaluation workflow. Complex small illustrations and brand symbols are approximate vector redraws; some placeholder strings in the source's small cards are unreadable.
+
+![AgentThink model blocks, curved branches and reward layers compared with the reference](assets/agentthink-details.png)
+
+[Reference](examples/agentthink/reference.png) · [Editable SVG](examples/agentthink/reconstruction.svg) · [Project file](examples/agentthink/agentthink.scene.json) · [Paper](https://arxiv.org/abs/2505.15298) · [Example notes](examples/agentthink/README.md)
+
+### PlanWAM
+
+[![PlanWAM reference beside its editable reconstruction](assets/planwam-comparison.png)](examples/planwam/reconstruction.svg)
+
+PlanWAM: **43 editable text layers**, **334 vector objects**, **8 gradients**. Input/output RGB crops remain separate image layers. [Open SVG](examples/planwam/reconstruction.svg) · [Project file](examples/planwam/planwam.scene.json)
+
+Curves, gradients and local text backings are shown at a closer scale below. Body text uses Times New Roman; the car icons are approximate vector redraws.
+
+![Reference and reconstruction details: curved connections, gradients and text backings](assets/planwam-details.png)
 
 [Reference](examples/planwam/reference.png) · [Editable SVG](examples/planwam/reconstruction.svg) · [Project file](examples/planwam/planwam.scene.json) · [Example notes](examples/planwam/README.md)
 
-Figure source: **[PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382)**, Xu et al., 2026, Figure 1. The reconstruction uses Times New Roman body text and redrawn vector car icons. Original material belongs to its authors.
+Source: [PlanWAM: Planning-Shaped Future Representations for End-to-End Autonomous Driving](https://arxiv.org/abs/2610.11382), Figure 1. Original content belongs to its authors. Check readability at the intended paper size.
+
+## Demo
+
+Open **`demo/index.html`** after downloading the repository. Drag the comparison divider, edit text, fills and curves, and download the edited SVG. The demo works offline.
+
+![Slow demonstration of reference comparison and SVG editing](assets/workflow.gif)
+
+This 13-second loop shows the included browser demo, with pauses at the start and finish. [Demo controls](docs/SHOWCASE.md)
 
 ## Documentation
 
