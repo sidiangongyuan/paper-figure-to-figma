@@ -67,6 +67,29 @@ The model interprets the image and produces the drawing instructions. The web pa
 
 [Web workflow](docs/WEB_QUICKSTART.md) · [Codex workflow](docs/CODEX_QUICKSTART.md)
 
+### Compare whole figure and details
+
+Review uses the reference image, the current Figma export and the requested changes. Compare matching regions at comparable scales, treating requested typography or layout changes as part of the target.
+
+```mermaid
+flowchart TB
+    W[Whole figure: content, grouping and connections] --> D[Enlarged details: text, shapes and visual effects]
+    D --> E[Editability and protected elements]
+    E --> Q{Issues to fix?}
+    Q -->|Yes| F[Revise affected elements]
+    F --> D
+    F -. Layout changed .-> W
+    Q -->|No| O[Export the reviewed Figma frame]
+```
+
+| Review | What to check | Result |
+| --- | --- | --- |
+| Whole figure | Missing content, panel arrangement, relative sizes, grouping and cross-panel arrow endpoints | Locate structural differences |
+| Enlarged details | Text accuracy and fit, spacing, curves, gradients, backings, repeated elements and layer order | Identify the region, observed difference and correction |
+| Editability | Editable text, independent vector elements, useful groups and user-protected content | Confirm the result can be revised without disturbing protected elements |
+
+Fix content and connection errors first, then readability, then appearance. After each correction, inspect the affected region and protected elements; revisit the whole figure when layout changes. End the review when these checks pass, with approximations and uncertainties documented. Unconfirmed scientific text or connections remain pending, and node counts alone do not establish fidelity. Check publication-size readability separately when the final dimensions are known.
+
 ## Examples
 
 ### AgentThink
