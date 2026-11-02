@@ -2,7 +2,7 @@
 
 Reconstruct research figures as editable Figma text, shapes, arrows and vector icons. Export SVG or PDF.
 
-[中文](README.zh-CN.md) · [Quick Start](#quick-start) · [Examples](#examples) · [Demo](#demo) · [Prompt builder](https://sidiangongyuan.github.io/paper-figure-to-figma/)
+[中文](README.zh-CN.md) · [Quick Start](#quick-start) · [Workflow](#workflow) · [Examples](#examples) · [TODO](#todo) · [Prompt builder](https://sidiangongyuan.github.io/paper-figure-to-figma/)
 
 [![AgentThink reference beside its editable reconstruction](assets/agentthink-comparison.png)](examples/agentthink/reconstruction.svg)
 
@@ -41,6 +41,28 @@ The skill uses connected Figma tools automatically. Connect your Figma account w
 
 Open [web/index.html](web/index.html), choose a template and add your preferences. Copy the prompt and send it with the full reference image to Codex. [Usage and GitHub Pages](docs/PROMPT_PAGE.md).
 
+## Workflow
+
+Start with a complete reference image and any font, layout or editing preferences. You can use this workflow without an original generation prompt or VLM API key.
+
+```mermaid
+flowchart LR
+    A[Reference image + preferences] --> B[Web vision model]
+    A --> C[Codex + skill]
+    B --> D[Scene JSON]
+    D --> E[Import with Figma plugin]
+    C --> F[Connected Figma tools]
+    E --> G[Editable Figma artwork]
+    F --> G
+    G --> H[Compare whole figure and details]
+    H -->|Revise| G
+    H --> I[Export SVG / PDF]
+```
+
+The model interprets the image and produces the drawing instructions. The web path uses manual file transfer; the Codex path can write to Figma through the connected tools. Both paths preserve editable text and vector elements, then review layout, typography, gradients, curves and layer order against the reference. Check readability at the intended paper size before publication.
+
+[Web workflow](docs/WEB_QUICKSTART.md) · [Codex workflow](docs/CODEX_QUICKSTART.md)
+
 ## Examples
 
 ### AgentThink
@@ -73,8 +95,26 @@ Open **`demo/index.html`** after downloading the repository. Drag the comparison
 
 This 13-second loop shows the included browser demo, with pauses at the start and finish. [Demo controls](docs/SHOWCASE.md)
 
+## TODO
+
+Completed features and possible next improvements; unchecked items are planned work.
+
+- [x] ~~Web-model prompts and a local Figma import plugin~~
+- [x] ~~Codex skill with connected Figma drawing, review and export~~
+- [x] ~~PlanWAM and AgentThink examples with editable files and visual comparisons~~
+- [x] ~~Prompt builder and a slower workflow demonstration~~
+- [ ] Add checks for font size, line width and spacing at the final paper dimensions.
+- [ ] Improve selective updates and preservation of manual Figma edits.
+- [ ] Improve mathematical notation and formula reconstruction.
+- [ ] Expand the example set and publish reproducible fidelity evaluations.
+- [ ] Complete end-to-end testing of plugin installation and import/export in Figma Desktop.
+
 ## Documentation
 
 [Quick Start](START_HERE.md) · [Demo controls](docs/SHOWCASE.md) · [Development](docs/DEVELOPMENT.md)
 
-Workflow reference: [Image To Slice](https://github.com/50kg/image-to-slice). Code license: pending.
+Workflow reference: [Image To Slice](https://github.com/50kg/image-to-slice).
+
+## License
+
+Project code is licensed under [MIT](LICENSE). Reference figures, paper content and figure-derived example assets retain their original rights and applicable terms; see the source attribution in each example.
