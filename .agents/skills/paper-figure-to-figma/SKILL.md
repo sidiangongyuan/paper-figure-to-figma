@@ -12,6 +12,7 @@ Work from the repository containing this skill. Its root is three directories ab
 - Use the supplied content and explicit change requests as the scope. Preserve scientific wording, grouping and relationships. Record which elements the user wants unchanged and carry those constraints into subsequent revisions.
 - Body text defaults to Times New Roman, with editor font size >=16 unless the user specifies otherwise. Set a clear size and line-height hierarchy for titles, subtitles, labels and annotations. Fit text by wrapping, widening its text box and backing, or using more canvas space; recheck neighboring elements after reflow. Keep the user's fixed font sizes and positions. Paper-size readability is checked separately.
 - For follow-up edits, inspect the current Figma frame and modify the affected nodes in place when supported. Preserve protected elements, unrelated artwork and user edits. Use scene reimport when needed, following the replacement precautions below.
+- Choose representation per object: use matching source vectors when available; construct text, regular shapes and connections natively; complex local artwork may be vector-traced from the reference, cleaned and grouped by editable object. Follow the scene contract's local-tracing guidance and compare recognizable contours and details before accepting a simplification.
 
 ## Automatic Figma execution
 
