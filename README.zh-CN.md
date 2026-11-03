@@ -224,7 +224,7 @@ Skill 会先在本地准备绘图文件和 SVG，并说明缺少哪一步（未�
 
 ## 🙏 致谢
 
-工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。
+工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice) 和 [Linux.do 讨论：AI 与设计工作流参考](https://linux.do/t/topic/2314994/53)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。
 
 ## 📄 许可
 

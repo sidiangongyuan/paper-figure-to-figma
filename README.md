@@ -224,7 +224,7 @@ Issues, ideas and new examples are welcome.
 
 ## 🙏 Acknowledgements
 
-The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice). Example figures come from [AgentThink](https://github.com/curryqka/AgentThink) and [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/).
+The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice) and the [Linux.do discussion on AI and design workflows](https://linux.do/t/topic/2314994/53). Example figures come from [AgentThink](https://github.com/curryqka/AgentThink) and [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/).
 
 ## 📄 License
 
