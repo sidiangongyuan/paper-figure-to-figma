@@ -1,5 +1,10 @@
 # Changelog
 
+## Documentation update — 2026-11-04
+
+- Updated all main AgentThink artwork and downloads to the current reconstruction. The first image compares the reference, screenshot reconstruction and reconstruction with original source assets.
+- Simplified showcase labels around inputs and editable results. Earlier versions are retained only in history comparisons. PlanWAM artwork and demo remain unchanged.
+
 ## 0.2.0 — 2026-11-04
 
 ### Reconstruction

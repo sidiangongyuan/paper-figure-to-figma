@@ -22,9 +22,9 @@
 
 <br>
 
-<a href="examples/agentthink-v2/README.md"><img src="assets/agentthink-v1-v2.png" alt="Actual AgentThink V1 and V2 Figma reconstructions" width="100%"></a>
+<a href="examples/agentthink/README.md"><img src="assets/agentthink-reconstruction.png" alt="Reference, screenshot reconstruction and source-assisted reconstruction" width="100%"></a>
 
-<sub>Left: V1 · Right: complete screenshot V2 · <a href="assets/agentthink-v2-routes.png">Source-assisted comparison</a> · <a href="assets/agentthink-v1-v2-details.png">Enlarged details</a></sub>
+<sub>Reference · From a screenshot · With original source assets · <a href="examples/agentthink/README.md">Example and files</a> · <a href="assets/agentthink-reconstruction-details.png">Enlarged details</a></sub>
 
 </div>
 
@@ -121,17 +121,22 @@ Full instructions: [prompts/02-review.md](prompts/02-review.md)
 
 ## 🎨 Examples
 
-### V2: Screenshot and source-assisted reconstruction
+### AgentThink
 
-The AgentThink comparison includes the reference, the preserved V1, a complete screenshot-only V2 redraw, and reconstruction with original paper assets. V2 rebuilds all four regions, including compound icons, native lettering, gradients and curved connections.
+Rebuild the text, modules, illustrations and connections in a screenshot as editable layers. A matching paper or original asset source can provide additional detail.
 
-![Reference, V1, screenshot V2 and source-assisted full figures](assets/agentthink-v2-routes.png)
+![Reference and screenshot reconstruction details](assets/agentthink-v2-focus.png)
 
-The detail comparisons cover compound training icons, maps and vehicles, frozen/trainable symbols, evaluation badges and character contours.
+<details>
+<summary><b>Compare details from both reconstruction routes</b></summary>
 
-![Reference, V1, screenshot V2 and source-assisted details](assets/agentthink-v1-v2-details.png)
+![Reference, screenshot reconstruction and source-assisted details](assets/agentthink-reconstruction-details.png)
 
-Source-assisted reconstruction has access to additional original-image detail. These examples show different input conditions and workflow choices, not a universal fidelity score. [Case files, scope and attribution](examples/agentthink-v2/README.md)
+The comparison covers training illustrations, maps and vehicles, frozen/trainable symbols, evaluation icons and character contours.
+
+</details>
+
+[Example files and attribution](examples/agentthink/README.md) · [Version history comparison](examples/agentthink-v2/README.md)
 
 <table>
   <tr>
@@ -143,7 +148,7 @@ Source-assisted reconstruction has access to additional original-image detail. T
     <td><a href="examples/planwam/README.md"><img src="assets/planwam-comparison.png" alt="PlanWAM reference and reconstruction"></a></td>
   </tr>
   <tr>
-    <td>Data generation, two-stage training, inference and evaluation pipeline.<br><b>59</b> text layers · <b>264</b> vector path nodes · <b>0</b> bitmap fills</td>
+    <td>Data generation, two-stage training, inference and evaluation pipeline.<br>Editable text, illustrations and connections</td>
     <td>Four-panel comparison of world-model planning approaches.<br><b>43</b> text layers · <b>334</b> vector objects · <b>8</b> gradients</td>
   </tr>
   <tr>
@@ -183,7 +188,7 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 - [x] PlanWAM and AgentThink examples with editable files and visual comparisons
 - [x] Prompt Builder and offline demo
 - [x] ~~Source-assisted retrieval, PDF image extraction and screenshot reconstruction~~
-- [x] ~~Complete AgentThink V2 redraw with whole-figure and multi-region detail comparisons~~
+- [x] ~~Complete AgentThink redraw with whole-figure and multi-region detail comparisons~~
 - [x] ~~Offline SVG catalog with colored and outline assets, provenance and licenses~~
 - [ ] Improve low-resolution character contours, small accessories and background cleanup
 - [ ] Extract reusable native vector and text objects from source PDFs

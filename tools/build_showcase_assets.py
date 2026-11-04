@@ -57,7 +57,7 @@ def build_agentthink():
     d.text((820,62),'EDITABLE RECONSTRUCTION',font=font(18,True),fill='#176f77')
     for x in [24,814]:d.rounded_rectangle((x,94,x+762,520),radius=10,fill='white',outline='#dbe2ea')
     place(canvas,reference,(30,100,750,414));place(canvas,result,(820,100,750,414))
-    d.text((30,534),'59 editable text layers  /  264 vector path nodes  /  0 bitmap fills',font=font(16),fill='#58687c')
+    d.text((30,534),'Editable text, shapes and connections',font=font(16),fill='#58687c')
     canvas.save(ROOT/'assets/agentthink-comparison.png',optimize=True)
     regions=[('Editable model blocks',(265,432,538,555)),
              ('Branching paths',(565,325,730,408)),

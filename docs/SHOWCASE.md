@@ -1,13 +1,22 @@
 # Demo
 
-## V2 comparisons
+## AgentThink
 
-The [AgentThink V2 case](../examples/agentthink-v2/README.md) includes a complete screenshot redraw and a separate source-assisted reconstruction. Both are displayed alongside the reference and preserved V1, with actual Figma previews at matching scale.
+The [AgentThink example](../examples/agentthink/README.md) compares the original image with editable reconstructions made from the screenshot and from original source assets.
+
+- [Original image and both reconstruction routes](../assets/agentthink-reconstruction.png)
+- [Enlarged details](../assets/agentthink-reconstruction-details.png)
+- [Editable reconstruction preview](../examples/agentthink/preview.png)
+- [Compound icons and evaluation badges](../assets/agentthink-v2-focus.png)
+
+<details>
+<summary>Version history comparisons</summary>
 
 - [V1/V2 overview](../assets/agentthink-v1-v2.png)
 - [Four-way whole-figure comparison](../assets/agentthink-v2-routes.png)
 - [Five groups of enlarged details](../assets/agentthink-v1-v2-details.png)
-- [Compound icons and evaluation badges](../assets/agentthink-v2-focus.png)
+
+</details>
 
 Run `python tools/build_v2_showcase.py` to rebuild these sheets from the curated examples. Input conditions and attribution are recorded in the case notes.
 

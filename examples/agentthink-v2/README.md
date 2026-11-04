@@ -1,6 +1,6 @@
-# AgentThink: V1, V2 and source-assisted reconstruction
+# AgentThink V2 and version comparisons
 
-The same [AgentThink framework figure](../agentthink/reference.png) reconstructed under two input conditions. The reference is from [AgentThink](https://arxiv.org/abs/2505.15298) and belongs to the paper's authors.
+The [current AgentThink V2 example](../agentthink/README.md) is a complete screenshot reconstruction. This page compares it with the preserved V1 and a source-assisted result using the same [reference](../agentthink/reference.png). The reference is from [AgentThink](https://arxiv.org/abs/2505.15298) and belongs to the paper's authors.
 
 ![Reference, V1, complete screenshot V2 and source-assisted reconstruction](../../assets/agentthink-v2-routes.png)
 
@@ -13,7 +13,7 @@ The same [AgentThink framework figure](../agentthink/reference.png) reconstructe
 | Native text layers | 59 | 72 | 64 |
 | Bitmap fills in the reconstructed figure | 0 | 0 | 0 |
 
-V1 is the preserved initial reconstruction used for this comparison. The earlier [AgentThink example](../agentthink/README.md) is a separate run. V2 is a complete new drawing, including all panels, text, icons, connections and local visual effects. The source-assisted result uses bitmap objects extracted from page 4 of the matching paper PDF, then vector reconstruction and native lettering; the extracted objects were not original SVGs.
+V1 is retained as a comparison baseline. V2 is the current main example, including all panels, text, icons, connections and local visual effects. The source-assisted result uses bitmap objects extracted from page 4 of the matching paper PDF, then vector reconstruction and native lettering; the extracted objects were not original SVGs.
 
 ## Details
 

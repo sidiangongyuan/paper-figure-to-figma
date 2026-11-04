@@ -22,9 +22,9 @@
 
 <br>
 
-<a href="examples/agentthink-v2/README.md"><img src="assets/agentthink-v1-v2.png" alt="AgentThink V1 与 V2 的真实 Figma 结果对比" width="100%"></a>
+<a href="examples/agentthink/README.md"><img src="assets/agentthink-reconstruction.png" alt="原图、截图重建与有来源重建的效果对比" width="100%"></a>
 
-<sub>左：V1 · 右：截图完整重绘 V2 · <a href="assets/agentthink-v2-routes.png">有来源重建对比</a> · <a href="assets/agentthink-v1-v2-details.png">放大细节</a></sub>
+<sub>原图 · 截图重建 · 有来源重建 · <a href="examples/agentthink/README.md">案例与文件</a> · <a href="assets/agentthink-reconstruction-details.png">放大细节</a></sub>
 
 </div>
 
@@ -121,17 +121,22 @@ flowchart LR
 
 ## 🎨 案例
 
-### V2：截图重建与有来源重建
+### AgentThink
 
-AgentThink 案例展示原图、保留的 V1、仅使用截图完整重绘的 V2，以及使用论文原始素材的重建。V2 覆盖全部四个区域，包括复合图标、可编辑文字、渐变和曲线连接。
+将截图中的文字、模块、图标和连线重建为可编辑图层；提供匹配的论文或原始素材时，还可以利用其中保留的更多细节。
 
-![原图、V1、截图 V2 与有来源重建的整图对比](assets/agentthink-v2-routes.png)
+![原图与截图重建的细节对比](assets/agentthink-v2-focus.png)
 
-细节对比覆盖训练素材图标、地图与车辆、冻结与训练标记、评估徽章及角色轮廓。
+<details>
+<summary><b>放大查看两种重建方式的细节</b></summary>
 
-![原图、V1、截图 V2 与有来源重建的细节对比](assets/agentthink-v1-v2-details.png)
+![原图、截图重建与有来源重建的细节对比](assets/agentthink-reconstruction-details.png)
 
-有来源重建能够利用原始素材保留的更多细节。案例用于展示不同输入条件和处理方法，不代表通用的还原率。[案例文件、处理范围与来源](examples/agentthink-v2/README.md)
+对比覆盖训练素材、地图与车辆、冻结与训练标记、评估图标及角色轮廓。
+
+</details>
+
+[案例文件与来源](examples/agentthink/README.md) · [历史版本对比](examples/agentthink-v2/README.md)
 
 <table>
   <tr>
@@ -143,7 +148,7 @@ AgentThink 案例展示原图、保留的 V1、仅使用截图完整重绘的 V2
     <td><a href="examples/planwam/README.md"><img src="assets/planwam-comparison.png" alt="PlanWAM 原图与重建结果"></a></td>
   </tr>
   <tr>
-    <td>数据生成、两阶段训练、推理与评估的完整流程图。<br><b>59</b> 个文字层 · <b>264</b> 个矢量路径节点 · <b>0</b> 个位图填充</td>
+    <td>数据生成、两阶段训练、推理与评估的完整流程图。<br>文字、图形与连线均可独立编辑</td>
     <td>四联对比的世界模型规划方法示意图。<br><b>43</b> 个文字层 · <b>334</b> 个矢量对象 · <b>8</b> 处渐变</td>
   </tr>
   <tr>
@@ -183,7 +188,7 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 - [x] PlanWAM、AgentThink 可编辑案例及可视化对比
 - [x] Prompt 生成页面与离线 Demo
 - [x] ~~来源获取、PDF 图片提取与截图重建流程~~
-- [x] ~~AgentThink 完整 V2 重绘、整图及多区域细节对比~~
+- [x] ~~AgentThink 完整重建、整图及多区域细节对比~~
 - [x] ~~内置彩色与线性 SVG 素材，保留来源记录和许可~~
 - [ ] 改善低分辨率角色轮廓、小配件及背景残边的处理
 - [ ] 从原始 PDF 提取可复用的矢量与文字对象
