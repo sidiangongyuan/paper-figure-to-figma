@@ -7,7 +7,7 @@
 ### Rebuild research figures with high fidelity. Keep every step editable.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](#-roadmap)
+[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](CHANGELOG.md)
 [![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
 [![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
@@ -18,7 +18,7 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Quick Start](#-quick-start) • [How it works](#-how-it-works) • [Examples](#-examples) • [Demo](#-demo) • [Changelog](CHANGELOG.md) • [FAQ](#-faq)
+[Quick Start](#-quick-start) • [How it works](#-how-it-works) • [Examples](#-examples) • [Demo](#-demo) • [Updates](#recent-updates) • [FAQ](#-faq)
 
 <br>
 
@@ -33,6 +33,24 @@
 **Paper Figure to Figma** is an agent skill that turns an image of a research figure into native, editable Figma artwork. Give your AI assistant the figure and a Figma file: it redraws every label, shape and connection as real layers, compares the result with the reference at whole-figure and detail level, fixes what differs, and delivers an editable Figma frame. File exports are available on request.
 
 Provide a screenshot, or add a paper link, PDF or original asset source. The assistant retrieves accessible matching originals when available and continues from the screenshot when no usable source exists.
+
+## Recent updates
+
+**0.2.0 · November 4, 2026** — [Full changelog](CHANGELOG.md)
+
+- **Optional source recovery:** provide a paper link, PDF or project source to retrieve and verify matching original assets.
+- **Improved screenshot reconstruction:** preserve compound icon shapes and colors, repair noisy contours, and review every region of the figure.
+- **Updated examples:** complete AgentThink reconstruction with whole-figure and enlarged-detail comparisons for both input routes.
+- **Delivery change:** the default result is an editable Figma frame; request SVG/PDF files when needed.
+
+To upgrade an existing installation, run from your repository folder:
+
+```bash
+git pull --ff-only
+python tools/install_skill.py --update
+```
+
+The previous installation is backed up automatically. ZIP users can download the updated repository and run the same installer with `--update`.
 
 ## ✨ Features
 

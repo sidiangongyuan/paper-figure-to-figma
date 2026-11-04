@@ -7,7 +7,7 @@
 ### 高保真重建科研图，自由编辑每一步。
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](#-路线图)
+[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](CHANGELOG.md)
 [![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
 [![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
@@ -18,7 +18,7 @@
 
 [English](README.md) · **简体中文**
 
-[快速开始](#-快速开始) • [工作原理](#-工作原理) • [案例](#-案例) • [Demo](#-demo) • [更新记录](CHANGELOG.md) • [常见问题](#-常见问题)
+[快速开始](#-快速开始) • [工作原理](#-工作原理) • [案例](#-案例) • [Demo](#-demo) • [最近更新](#最近更新) • [常见问题](#-常见问题)
 
 <br>
 
@@ -33,6 +33,24 @@
 **Paper Figure to Figma** 是一个 Agent Skill，把科研图的图片重建为原生、可编辑的 Figma 图。把图片和 Figma 文件交给 AI 助手，它会把每个标签、形状和连接线绘制成真实图层，在整图与局部两个层面与参考图对照，修正差异，默认交付可编辑 Figma 画板；需要文件时再导出。
 
 提供截图即可开始，也可以补充论文链接、PDF 或原始素材来源。助手会自行获取可访问且与参考图匹配的素材；没有可用来源时，继续按截图重建。
+
+## 最近更新
+
+**0.2.0 · 2026 年 11 月 4 日** — [完整更新日志](CHANGELOG.md)
+
+- **新增可选来源获取**：提供论文链接、PDF 或项目来源，即可获取并核对匹配的原始素材。
+- **改进截图重建**：保留复合图标的外形与配色，修复描摹碎边，并覆盖整张图逐区检查。
+- **更新效果展示**：完整 AgentThink 重建，增加两种输入条件下的整图与放大细节对比。
+- **交付方式调整**：默认提供可编辑 Figma 画板，需要 SVG/PDF 时再提出导出要求。
+
+已有安装可在仓库目录运行：
+
+```bash
+git pull --ff-only
+python tools/install_skill.py --update
+```
+
+旧安装会自动备份。通过 ZIP 安装的用户，可下载新版仓库后运行同一安装命令，并加上 `--update`。
 
 ## ✨ 特性
 

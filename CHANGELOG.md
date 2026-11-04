@@ -1,5 +1,7 @@
 # Changelog
 
+[English update summary](README.md#recent-updates) · [中文更新摘要与升级方法](README.zh-CN.md#最近更新)
+
 ## Documentation update — 2026-11-04
 
 - Updated all main AgentThink artwork and downloads to the current reconstruction. The first image compares the reference, screenshot reconstruction and reconstruction with original source assets.
@@ -26,4 +28,13 @@
 - 25 Python tests and 7 JavaScript tests pass, covering scene validation, Figma imports, SVG assets, tracing, PDF extraction and portable skill installation.
 - Verified the PDF extraction helper against the AgentThink paper and checked relative documentation links and the packaged runtime.
 
-To update an installed skill, run `python tools/install_skill.py --update` from the updated repository. The previous installation is backed up automatically.
+### Upgrading
+
+From an existing clone:
+
+```bash
+git pull --ff-only
+python tools/install_skill.py --update
+```
+
+If installed from a ZIP, download the updated repository and run `python tools/install_skill.py --update` from that folder. The previous installation is backed up automatically. Existing Figma drawings are not changed by the skill upgrade.
