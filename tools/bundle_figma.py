@@ -18,6 +18,11 @@ def main():
     args=parser.parse_args()
     scene=json.loads(args.scene.read_text(encoding='utf-8'))
     validate_scene(scene)
+    # Provenance stays in the portable scene; it is not needed by the canvas importer.
+    scene.pop('assetSources', None)
+    scene.pop('revisionNotes', None)
+    for node in scene['nodes']:
+        node.pop('iconSource', None)
     options={'name':args.name,'imageHashes':json.loads(args.image_hashes.read_text(encoding='utf-8')) if args.image_hashes else {},
              'allowedRasterIds':[n['id'] for n in scene['nodes'] if n['type']=='image']}
     if not isinstance(options['imageHashes'],dict):

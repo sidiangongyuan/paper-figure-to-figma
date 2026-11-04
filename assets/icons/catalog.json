@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "providers": {
+    "lucide": {
+      "repository": "lucide-icons/lucide",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "directory": "icons",
+      "license": "ISC; Feather-derived icons MIT"
+    },
+    "lobe": {
+      "repository": "lobehub/lobe-icons",
+      "revision": "ea434b96e75813517b377825e01c0df61dee8836",
+      "directory": "packages/static-svg/icons",
+      "license": "MIT"
+    }
+  },
+  "icons": [
+    {
+      "id": "lucide:snowflake",
+      "path": "lucide/snowflake.svg",
+      "keywords": [
+        "frozen",
+        "freeze",
+        "cold",
+        "冻结",
+        "雪花"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/snowflake.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "9b77c3f6fbd49a7669cc530f8e9d6216ff652457c16e27b2c4eb4d81ac7c4bdd"
+    },
+    {
+      "id": "lucide:flame",
+      "path": "lucide/flame.svg",
+      "keywords": [
+        "trainable",
+        "fire",
+        "训练",
+        "火焰"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/flame.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "cede1462a46a7a3b3daf9d101f0b59484b1d882a4c42a75670810a6d4f8d42fb"
+    },
+    {
+      "id": "lucide:images",
+      "path": "lucide/images.svg",
+      "keywords": [
+        "image",
+        "multimodal",
+        "图片",
+        "多模态"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/images.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "f853679adfac703296d71cf0a55945af93144927bc50c9ce72eac809300aad8c"
+    },
+    {
+      "id": "lucide:notebook-pen",
+      "path": "lucide/notebook-pen.svg",
+      "keywords": [
+        "notes",
+        "data",
+        "数据",
+        "笔记"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/notebook-pen.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "56705c35e839977bd6f133d7ca4e9c93a6eea563c89e4be125efd0a32e1fa041"
+    },
+    {
+      "id": "lucide:wrench",
+      "path": "lucide/wrench.svg",
+      "keywords": [
+        "tool",
+        "工具"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/wrench.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "b5f3bf792743edb9e81b543dd1b13ccc26d3afe1d33500a1cd8dee2e052d6197"
+    },
+    {
+      "id": "lucide:clipboard-check",
+      "path": "lucide/clipboard-check.svg",
+      "keywords": [
+        "evaluation",
+        "accuracy",
+        "评估",
+        "准确率"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/clipboard-check.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "e2bac86a6b24caa0d7d0dcc2719ec6b7870ec5eef2d21afae498d8cb5eefda96"
+    },
+    {
+      "id": "lucide:clipboard-list",
+      "path": "lucide/clipboard-list.svg",
+      "keywords": [
+        "document",
+        "checklist",
+        "文档"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/clipboard-list.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "2b91abc2e8ee8ba4c2e0f77d506a47a7a9774b0d4de3fa4b27e822a6376ab892"
+    },
+    {
+      "id": "lucide:lightbulb",
+      "path": "lucide/lightbulb.svg",
+      "keywords": [
+        "inference",
+        "answer",
+        "推理",
+        "答案"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/lightbulb.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "e33bbec15b1e64cca958e086850f951c0dc2201cd5778bb3695fda3cb6ea457d"
+    },
+    {
+      "id": "lucide:target",
+      "path": "lucide/target.svg",
+      "keywords": [
+        "alignment",
+        "目标",
+        "对齐"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/target.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "96a6b16628825a1a207a77e9a5818f74c3e74ea3664783ff5c2a44e6347b90df"
+    },
+    {
+      "id": "lucide:badge-check",
+      "path": "lucide/badge-check.svg",
+      "keywords": [
+        "quality",
+        "质量"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/badge-check.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "a83b36e35ed35be896c5e5d39d0a63ba4368735ac22f09a26a31726259467775"
+    },
+    {
+      "id": "lucide:circle-check",
+      "path": "lucide/circle-check.svg",
+      "keywords": [
+        "complete",
+        "completeness",
+        "完整性"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/circle-check.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "9711e045a5999f8a3b0782eb88e09b04e0559bc7b379dcc0a4ae645223e10345"
+    },
+    {
+      "id": "lucide:car-front",
+      "path": "lucide/car-front.svg",
+      "keywords": [
+        "car",
+        "vehicle",
+        "汽车"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/car-front.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "9a0f210d67464e67dcf0bb17efced326ebe9df662905336428d720c071f9f739"
+    },
+    {
+      "id": "lucide:map-pin",
+      "path": "lucide/map-pin.svg",
+      "keywords": [
+        "map",
+        "location",
+        "地图"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/map-pin.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "16f1042a62f1bda20ebab8bfc1cb79c0be285c980dea6c2c733a17902631405b"
+    },
+    {
+      "id": "lucide:shield-check",
+      "path": "lucide/shield-check.svg",
+      "keywords": [
+        "verification",
+        "验证"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/shield-check.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "8d4fcdbde5bba4abb1a2f6fe53e37ceb6343a1d5449a9d88f6f97c1971d26c4e"
+    },
+    {
+      "id": "lucide:users-round",
+      "path": "lucide/users-round.svg",
+      "keywords": [
+        "people",
+        "人群"
+      ],
+      "source": "https://raw.githubusercontent.com/lucide-icons/lucide/aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558/icons/users-round.svg",
+      "license": "ISC; Feather-derived icons MIT",
+      "revision": "aa0b77386c07630e5f1a9f877fd3ba4b2a4a1558",
+      "sha256": "8b41ee3ada1609e25a410d64056aa333952cf27d770f0c379a100065270de7f7"
+    },
+    {
+      "id": "lobe:qwen",
+      "path": "lobe/qwen.svg",
+      "keywords": [
+        "qwen",
+        "通义千问"
+      ],
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/ea434b96e75813517b377825e01c0df61dee8836/packages/static-svg/icons/qwen.svg",
+      "license": "MIT",
+      "revision": "ea434b96e75813517b377825e01c0df61dee8836",
+      "sha256": "b2c16efc3bd32b88a941842d41222e1e1e0e40441222218b725afc0aef6d9a36"
+    },
+    {
+      "id": "lobe:openai",
+      "path": "lobe/openai.svg",
+      "keywords": [
+        "openai",
+        "chatgpt"
+      ],
+      "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/ea434b96e75813517b377825e01c0df61dee8836/packages/static-svg/icons/openai.svg",
+      "license": "MIT",
+      "revision": "ea434b96e75813517b377825e01c0df61dee8836",
+      "sha256": "a595df6b423920c67a7f8f73c063e4bfb72d415948097b6cac063a2366bb5186"
+    },
+    {
+      "id": "fluent:snowflake",
+      "path": "fluent/snowflake.svg",
+      "keywords": [
+        "frozen",
+        "snowflake",
+        "colored",
+        "filled"
+      ],
+      "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Snowflake/Flat/snowflake_flat.svg",
+      "license": "MIT",
+      "revision": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+      "sha256": "bbe0ff7fbfbd17f02d26aa59d4f961c6470af1cff9474047b7b031a81c4915ab"
+    },
+    {
+      "id": "fluent:fire",
+      "path": "fluent/fire.svg",
+      "keywords": [
+        "trainable",
+        "fire",
+        "colored",
+        "filled"
+      ],
+      "source": "https://raw.githubusercontent.com/microsoft/fluentui-emoji/1ffb34c752ecf5d402f04cfb4b392c77f57c54bc/assets/Fire/Flat/fire_flat.svg",
+      "license": "MIT",
+      "revision": "1ffb34c752ecf5d402f04cfb4b392c77f57c54bc",
+      "sha256": "00184d516421223782fc5efd67af64641ee8044af9613a3674ce5899cd38583d"
+    },
+    {
+      "id": "noto:snowflake",
+      "path": "noto/snowflake.svg",
+      "keywords": [
+        "frozen",
+        "snowflake",
+        "colored",
+        "filled"
+      ],
+      "source": "https://raw.githubusercontent.com/googlefonts/noto-emoji/99701e07d3d1fe1bdbcdb14964547f0fd592966f/2D/svg/emoji_u2744.svg",
+      "license": "Apache-2.0",
+      "revision": "99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+      "sha256": "55c9ed52bd0ed4595b07ab0f0695b418256ebc963c214fc3d19efff58f44b419"
+    },
+    {
+      "id": "noto:fire",
+      "path": "noto/fire.svg",
+      "keywords": [
+        "trainable",
+        "fire",
+        "colored",
+        "filled"
+      ],
+      "source": "https://raw.githubusercontent.com/googlefonts/noto-emoji/99701e07d3d1fe1bdbcdb14964547f0fd592966f/2D/svg/emoji_u1f525.svg",
+      "license": "Apache-2.0",
+      "revision": "99701e07d3d1fe1bdbcdb14964547f0fd592966f",
+      "sha256": "dbea451b6cba787df0bb9bc84ceec1bed96e499e8b876b80682ce323f83b1a1b"
+    }
+  ]
+}

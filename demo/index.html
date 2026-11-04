@@ -28,7 +28,7 @@
   <section class="hero wrap">
     <div class="hero-copy">
       <h1>Paper Figure to Figma</h1>
-      <p class="hero-description">将科研参考图重建为可编辑的 Figma 图层，导出 SVG 或 PDF。</p>
+      <p class="hero-description">将科研参考图重建为可编辑的 Figma 图层，按需导出 SVG 或 PDF。</p>
       <div class="hero-actions"><a class="button primary" href="https://github.com/sidiangongyuan/paper-figure-to-figma/archive/refs/heads/main.zip">下载 ZIP ↓</a><a class="button text-button" href="#demo" id="hero-play">播放 Demo ↗</a></div>
     </div>
   </section>
@@ -36,7 +36,7 @@
     <h2 id="start-heading">Quick Start</h2>
     <div class="start-grid">
       <article class="start-card"><h3>使用 Skill</h3><p class="section-description">准备支持看图、Skill 和工具调用的 AI 助手。</p>
-        <ol><li><span>1</span><div><strong>加载 Skill</strong><p>在支持技能和工具调用的 AI 助手中打开仓库，读取 paper-figure-to-figma。</p></div></li><li><span>2</span><div><strong>连接 Figma</strong><p>授权助手访问目标 Figma Design 文件，并提供画布链接。</p></div></li><li><span>3</span><div><strong>上传参考图</strong><p>让 Skill 绘制整图、对照复核并导出可编辑 SVG 或 PDF。</p></div></li></ol>
+        <ol><li><span>1</span><div><strong>加载 Skill</strong><p>在支持技能和工具调用的 AI 助手中打开仓库，读取 paper-figure-to-figma。</p></div></li><li><span>2</span><div><strong>连接 Figma</strong><p>授权助手访问目标 Figma Design 文件，并提供画布链接。</p></div></li><li><span>3</span><div><strong>上传参考图</strong><p>让 Skill 绘制整图、对照复核并交付可编辑画板链接。</p></div></li></ol>
         <a class="under-link" href="../docs/CODEX_QUICKSTART.md">安装与使用详情 ↗</a>
       </article>
       <article class="start-card codex-card"><h3>Codex</h3><p class="section-description">仓库已包含所需 Skill。</p>
@@ -1007,7 +1007,7 @@ $('download-project').onclick=()=>{download(JSON.stringify(scene,null,2),'applic
 $('replay').onclick=replay;
 $('hero-play').onclick=()=>{setTimeout(replay,450);};
 $('copy-codex').onclick=async()=>{
-  const text='使用 $paper-figure-to-figma 复现我上传的整张科研图，完成 Figma 绘制、预览复核和导出。';
+  const text='使用 $paper-figure-to-figma 复现我上传的整张科研图，完成 Figma 绘制和预览复核，交付可编辑画板链接。';
   try{await navigator.clipboard.writeText(text);toast('指令已复制。');}
   catch(_){$('copy-text').value=text;$('copy-dialog').showModal();$('copy-text').select();}
 };

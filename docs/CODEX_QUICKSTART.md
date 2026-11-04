@@ -4,7 +4,7 @@
 
 - An AI assistant that supports image input, local skills, script execution and external tool calls. The Codex + connected Figma tools path is verified; other assistants need equivalent capabilities.
 - A Figma account with edit access to the target Design file.
-- Python 3.10+ for the bundled helper scripts. Pillow is needed only for cropping photo regions from the reference image. You can ask the assistant to check these dependencies.
+- Python 3.10+ for the bundled helper scripts. Pillow is used for image preparation, Pillow + VTracer for local tracing, and Pillow + PyMuPDF for PDF image extraction. These dependencies are optional and selected for the task; the assistant can check what is available.
 
 ## Install
 
@@ -39,10 +39,15 @@ Attach the complete reference image and send:
 ```text
 Use $paper-figure-to-figma to reconstruct this image in the linked Figma canvas.
 Keep text and main structures editable, review the whole figure and details,
-then export SVG and PDF.
+then share the editable Figma frame link.
 Figma: <your Design file link>
+Source (optional): <paper link, PDF or original asset location>
 ```
 
 For fonts, colors, figure width or specific changes, compose the request with the [Prompt Builder](https://sidiangongyuan.github.io/paper-figure-to-figma/).
+
+The default delivery is the Figma artwork. Ask for SVG, PNG or PDF explicitly when files are needed. Common icons are available offline; complex local tracing optionally needs Pillow and VTracer in the task environment.
+
+With a supplied source, the assistant retrieves accessible matching originals, verifies the figure/version and reconstructs the relevant objects. Without a usable source, it rebuilds the screenshot's visible shapes, colors and compound artwork. Source information is optional; title-only discovery normally has a short time budget. Both routes review the whole figure and enlarged details. See [source routing](../prompts/04-source-routing.md) and the [V2 comparisons](../examples/agentthink-v2/README.md).
 
 To revise later, send the same Figma link with your changes and name the elements that must stay unchanged.

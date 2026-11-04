@@ -104,7 +104,7 @@ $('download-project').onclick=()=>{download(JSON.stringify(scene,null,2),'applic
 $('replay').onclick=replay;
 $('hero-play').onclick=()=>{setTimeout(replay,450);};
 $('copy-codex').onclick=async()=>{
-  const text='使用 $paper-figure-to-figma 复现我上传的整张科研图，完成 Figma 绘制、预览复核和导出。';
+  const text='使用 $paper-figure-to-figma 复现我上传的整张科研图，完成 Figma 绘制和预览复核，交付可编辑画板链接。';
   try{await navigator.clipboard.writeText(text);toast('指令已复制。');}
   catch(_){$('copy-text').value=text;$('copy-dialog').showModal();$('copy-text').select();}
 };

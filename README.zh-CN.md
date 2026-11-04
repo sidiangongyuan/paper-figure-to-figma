@@ -7,7 +7,7 @@
 ### 高保真重建科研图，自由编辑每一步。
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0%20preview-e8a33d?style=flat-square)](#-路线图)
+[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](#-路线图)
 [![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
 [![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
@@ -18,21 +18,21 @@
 
 [English](README.md) · **简体中文**
 
-[快速开始](#-快速开始) • [工作原理](#-工作原理) • [案例](#-案例) • [Demo](#-demo) • [常见问题](#-常见问题)
+[快速开始](#-快速开始) • [工作原理](#-工作原理) • [案例](#-案例) • [Demo](#-demo) • [更新记录](CHANGELOG.md) • [常见问题](#-常见问题)
 
 <br>
 
-<a href="examples/agentthink/reconstruction.svg"><img src="assets/agentthink-comparison.png" alt="AgentThink 原图与可编辑 Figma 重建结果对比" width="100%"></a>
+<a href="examples/agentthink-v2/README.md"><img src="assets/agentthink-v1-v2.png" alt="AgentThink V1 与 V2 的真实 Figma 结果对比" width="100%"></a>
 
-<sub>左：参考原图 · 右：Figma 原生图层重建 · <a href="examples/agentthink/reconstruction.svg">打开 SVG</a> · <a href="examples/agentthink/README.md">案例说明</a></sub>
+<sub>左：V1 · 右：截图完整重绘 V2 · <a href="assets/agentthink-v2-routes.png">有来源重建对比</a> · <a href="assets/agentthink-v1-v2-details.png">放大细节</a></sub>
 
 </div>
 
 <br>
 
-**Paper Figure to Figma** 是一个 Agent Skill，把科研图的图片重建为原生、可编辑的 Figma 图。把图片和 Figma 文件交给 AI 助手，它会把每个标签、形状和连接线绘制成真实图层，在整图与局部两个层面与参考图对照，修正差异，最后导出 SVG 和 PDF。
+**Paper Figure to Figma** 是一个 Agent Skill，把科研图的图片重建为原生、可编辑的 Figma 图。把图片和 Figma 文件交给 AI 助手，它会把每个标签、形状和连接线绘制成真实图层，在整图与局部两个层面与参考图对照，修正差异，默认交付可编辑 Figma 画板；需要文件时再导出。
 
-适合手里只有一张图的场景：源文件丢了、图来自论文截图或生图模型的草稿，但仍然需要继续修改。
+提供截图即可开始，也可以补充论文链接、PDF 或原始素材来源。助手会自行获取可访问且与参考图匹配的素材；没有可用来源时，继续按截图重建。
 
 ## ✨ 特性
 
@@ -42,7 +42,9 @@
 - **修改无需从头再来**：后续修改直接更新已有 Figma 画板，指定保持不变的元素不受影响。
 - **论文级排版默认值**：正文默认 Times New Roman，并设置清晰的字号层级；均可按需覆盖。
 - **无需额外 API Key**：在 AI 助手及其 Figma 连接中运行，不需要 VLM API Key 或原始生图提示词。
-- **便携输出**：可编辑 SVG、PDF，以及可复用的 `.scene.json` 绘图文件。
+- **按需导出**：默认交付 Figma 画板；需要时可导出 SVG、PDF 和可复用的 `.scene.json`。
+- **两条重建流程**：有来源时获取、核对并使用原始素材；无来源时完成整张截图的重建。
+- **按外观选择方法**：通过匹配的 SVG、几何重建或局部描摹，保留轮廓、配色与可辨认的组成部分。
 
 ## 🚀 快速开始
 
@@ -50,7 +52,7 @@
 
 - 支持看图、加载本地 Skill、执行脚本和调用外部工具的 AI 助手（已在 Codex 上验证）。
 - 助手中已连接 Figma，并对目标 Design 文件有编辑权限。
-- Python 3.10+。仅当图中包含照片裁剪时需要 Pillow。
+- Python 3.10+。图片处理、描摹和 PDF 提取按任务使用可选依赖。
 
 **1. 安装 Skill**
 
@@ -72,8 +74,9 @@ python tools/install_skill.py
 
 ```text
 使用 $paper-figure-to-figma，将附图重建到以下 Figma 画布，
-检查整图与局部细节，修正后导出可编辑 SVG 和 PDF。
+检查整图与局部细节，修正后给我可编辑画板链接。
 Figma：<你的 Design 文件链接>
+来源（可选）：<论文链接、PDF 或原始素材位置>
 ```
 
 需要指定字体、配色或局部修改时，可用 [Prompt 生成页面](https://sidiangongyuan.github.io/paper-figure-to-figma/) 组织指令。
@@ -84,15 +87,22 @@ Figma：<你的 Design 文件链接>
 
 ```mermaid
 flowchart LR
-    A[参考图与个性化要求] --> B[AI 助手执行 Skill]
-    B --> C[调用已连接的 Figma 工具]
-    C --> D[可编辑 Figma 图]
-    D --> E[整图与局部对照复核]
-    E -->|局部修正| D
-    E --> F[导出 SVG / PDF]
+    A[参考图与可选来源] --> B{有匹配的可用来源?}
+    B -->|有| C[获取并核对原始素材]
+    B -->|无| D[识别截图中的可见特征]
+    C --> E[重建文字、几何与局部轮廓]
+    D --> E
+    E --> F[可编辑 Figma 图]
+    F --> G[整图与局部对照复核]
+    G -->|修正差异| F
+    G --> H[交付 Figma 画板]
 ```
 
-Skill 读取图片、生成绘图描述、在 Figma 中绘制原生图层，再用真实的 Figma 导出结果与参考图对照。修正顺序为：先内容与连接关系，再可读性，最后外观。
+**有来源重建**：根据论文、PDF 或项目来源自行获取可访问的素材，确认与参考图匹配，再提取并重建相关对象。提取到的位图仍需进行矢量重建。
+
+**截图重建**：保留能辨认的轮廓、配色和组成关系，规则部分用几何形状重建，不规则轮廓按需描摹，再修复碎边和失真。处理范围覆盖整张图。
+
+来源为可选信息。只有标题时，默认将查找控制在约 90 秒；来源无法访问或不匹配时继续使用截图。两条流程都检查实际 Figma 结果，先核对整图，再放大细节；修正顺序为内容与连接关系、可读性、外观。[完整流程](prompts/04-source-routing.md)
 
 <details>
 <summary><b>复核检查什么</b></summary>
@@ -110,6 +120,18 @@ Skill 读取图片、生成绘图描述、在 Figma 中绘制原生图层，再�
 </details>
 
 ## 🎨 案例
+
+### V2：截图重建与有来源重建
+
+AgentThink 案例展示原图、保留的 V1、仅使用截图完整重绘的 V2，以及使用论文原始素材的重建。V2 覆盖全部四个区域，包括复合图标、可编辑文字、渐变和曲线连接。
+
+![原图、V1、截图 V2 与有来源重建的整图对比](assets/agentthink-v2-routes.png)
+
+细节对比覆盖训练素材图标、地图与车辆、冻结与训练标记、评估徽章及角色轮廓。
+
+![原图、V1、截图 V2 与有来源重建的细节对比](assets/agentthink-v1-v2-details.png)
+
+有来源重建能够利用原始素材保留的更多细节。案例用于展示不同输入条件和处理方法，不代表通用的还原率。[案例文件、处理范围与来源](examples/agentthink-v2/README.md)
 
 <table>
   <tr>
@@ -160,6 +182,11 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 - [x] Agent Skill 调用 Figma 完成绘制、复核和导出
 - [x] PlanWAM、AgentThink 可编辑案例及可视化对比
 - [x] Prompt 生成页面与离线 Demo
+- [x] ~~来源获取、PDF 图片提取与截图重建流程~~
+- [x] ~~AgentThink 完整 V2 重绘、整图及多区域细节对比~~
+- [x] ~~内置彩色与线性 SVG 素材，保留来源记录和许可~~
+- [ ] 改善低分辨率角色轮廓、小配件及背景残边的处理
+- [ ] 从原始 PDF 提取可复用的矢量与文字对象
 - [ ] 按论文最终尺寸检查字号、线宽和间距
 - [ ] 完善局部更新，保留用户在 Figma 中的手动修改
 - [ ] 改善数学符号与公式的还原
@@ -171,7 +198,7 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 ## 🚧 局限
 
 - **不是像素级复刻**：还原度通过整图与局部复核判断，不提供通用的准确率数字。
-- **小插画为近似重绘**：复杂图标、Logo 和细小插图用矢量近似重绘；无法辨认的原文会被标注，不会臆测。
+- **小插画为近似重绘**：图库替换和局部描摹可能与原图存在差异；无法辨认的原文会被标注，不会臆测。
 - **照片裁剪受参考图分辨率限制**：正式排版时优先使用原始数据集图片。
 - **整图重新导入会覆盖托管图层上的手动修改**：重建前先复制一份手动编辑过的图。
 - **已在 Codex 及其 Figma 连接上验证**：其他助手和操作系统尚未全部测试。
@@ -182,7 +209,7 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 <details>
 <summary><b>需要 API Key 或原始生图提示词吗？</b></summary>
 
-不需要。Skill 在 AI 助手内运行，只需要图片本身。
+不需要。Skill 在 AI 助手内运行，只需要图片本身。论文链接、PDF 或原始来源为可选信息，可帮助找回更清晰的素材。
 
 </details>
 
@@ -224,8 +251,8 @@ Skill 会先在本地准备绘图文件和 SVG，并说明缺少哪一步（未�
 
 ## 🙏 致谢
 
-工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice) 和 [Linux.do 讨论：AI 与设计工作流参考](https://linux.do/t/topic/2314994/53)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。
+工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice) 和 [Linux.do 讨论：AI 与设计工作流参考](https://linux.do/t/topic/2314994/53)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。局部描摹流程参考了 [ScanSci SVG](https://github.com/Rimagination/scansci-svg)，图标来源与许可见 [素材目录](assets/icons/catalog.json)。
 
 ## 📄 许可
 
-代码采用 [MIT 许可](LICENSE)。参考图片、论文内容及据此重建的示例图保留原有权利，来源见各案例说明。
+代码采用 [MIT 许可](LICENSE)。参考图片、论文内容及据此重建的示例图保留原有权利，来源见各案例说明。内置图标按 [素材目录](assets/icons/catalog.json) 中的来源与许可分发。

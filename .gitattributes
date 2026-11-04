@@ -8,3 +8,6 @@
 *.jpeg binary
 *.pdf binary
 *.zip binary
+
+# Preserve upstream SVG bytes for the hashes recorded in the icon catalog.
+assets/icons/**/*.svg -text whitespace=-blank-at-eol

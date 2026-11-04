@@ -7,7 +7,7 @@
 ### Rebuild research figures with high fidelity. Keep every step editable.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0%20preview-e8a33d?style=flat-square)](#-roadmap)
+[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](#-roadmap)
 [![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
 [![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
@@ -18,21 +18,21 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-[Quick Start](#-quick-start) • [How it works](#-how-it-works) • [Examples](#-examples) • [Demo](#-demo) • [FAQ](#-faq)
+[Quick Start](#-quick-start) • [How it works](#-how-it-works) • [Examples](#-examples) • [Demo](#-demo) • [Changelog](CHANGELOG.md) • [FAQ](#-faq)
 
 <br>
 
-<a href="examples/agentthink/reconstruction.svg"><img src="assets/agentthink-comparison.png" alt="AgentThink reference figure beside its editable Figma reconstruction" width="100%"></a>
+<a href="examples/agentthink-v2/README.md"><img src="assets/agentthink-v1-v2.png" alt="Actual AgentThink V1 and V2 Figma reconstructions" width="100%"></a>
 
-<sub>Left: reference figure · Right: native Figma reconstruction · <a href="examples/agentthink/reconstruction.svg">Open SVG</a> · <a href="examples/agentthink/README.md">Example notes</a></sub>
+<sub>Left: V1 · Right: complete screenshot V2 · <a href="assets/agentthink-v2-routes.png">Source-assisted comparison</a> · <a href="assets/agentthink-v1-v2-details.png">Enlarged details</a></sub>
 
 </div>
 
 <br>
 
-**Paper Figure to Figma** is an agent skill that turns an image of a research figure into native, editable Figma artwork. Give your AI assistant the figure and a Figma file: it redraws every label, shape and connection as real layers, compares the result with the reference at whole-figure and detail level, fixes what differs, and exports SVG and PDF.
+**Paper Figure to Figma** is an agent skill that turns an image of a research figure into native, editable Figma artwork. Give your AI assistant the figure and a Figma file: it redraws every label, shape and connection as real layers, compares the result with the reference at whole-figure and detail level, fixes what differs, and delivers an editable Figma frame. File exports are available on request.
 
-It is built for the moment when all you have is the image — a lost source file, a figure from a paper, or a draft from an image generator — and you still need to edit it.
+Provide a screenshot, or add a paper link, PDF or original asset source. The assistant retrieves accessible matching originals when available and continues from the screenshot when no usable source exists.
 
 ## ✨ Features
 
@@ -42,7 +42,9 @@ It is built for the moment when all you have is the image — a lost source file
 - **Revise without starting over** — follow-up requests update the existing Figma frame and leave the elements you protect untouched.
 - **Paper-ready typography** — Times New Roman body text and a clear size hierarchy by default; override any of it.
 - **No extra API key** — runs inside your assistant with its Figma connection. No VLM API key or original generation prompt needed.
-- **Portable output** — editable SVG, PDF and a reusable `.scene.json` project file.
+- **Export when needed** — Figma artwork by default; SVG, PDF and reusable `.scene.json` files on request.
+- **Two reconstruction routes** — source-assisted recovery with version and content checks, or a complete reconstruction from the supplied screenshot.
+- **Appearance-aware artwork** — preserve silhouette, color and recognizable parts through matching SVGs, geometric reconstruction or cleaned local tracing.
 
 ## 🚀 Quick Start
 
@@ -50,7 +52,7 @@ It is built for the moment when all you have is the image — a lost source file
 
 - An AI assistant that can view images, load local skills, run scripts and call external tools (verified with Codex).
 - A Figma connection in that assistant with edit access to the target Design file.
-- Python 3.10+. Pillow is needed only when the figure contains photo crops.
+- Python 3.10+. Image preparation, tracing and PDF extraction use optional task-specific dependencies.
 
 **1. Install the skill**
 
@@ -72,8 +74,9 @@ Attach the complete reference image and send:
 
 ```text
 Use $paper-figure-to-figma to reconstruct this image in the linked Figma canvas,
-review the whole figure and details, then export editable SVG and PDF.
+review the whole figure and details, then share the editable frame link.
 Figma: <your Design file link>
+Source (optional): <paper link, PDF or original asset location>
 ```
 
 Need specific fonts, colors or edits? Compose the request with the [Prompt Builder](https://sidiangongyuan.github.io/paper-figure-to-figma/).
@@ -84,15 +87,22 @@ Full installation and connection guide: [docs/CODEX_QUICKSTART.md](docs/CODEX_QU
 
 ```mermaid
 flowchart LR
-    A[Reference image + preferences] --> B[AI assistant runs the skill]
-    B --> C[Connected Figma tools]
-    C --> D[Editable Figma artwork]
-    D --> E[Compare whole figure and details]
-    E -->|Revise affected elements| D
-    E --> F[Export SVG / PDF]
+    A[Figure + optional source] --> B{Matching source available?}
+    B -->|Yes| C[Retrieve and inspect original assets]
+    B -->|No| D[Inspect screenshot features]
+    C --> E[Rebuild text, geometry and local contours]
+    D --> E
+    E --> F[Editable Figma artwork]
+    F --> G[Compare whole figure and details]
+    G -->|Correct differences| F
+    G --> H[Deliver Figma frame]
 ```
 
-The skill reads the figure, writes a scene description, draws it as native Figma layers, then reviews real Figma exports against the reference. Content and connection errors are fixed first, then readability, then appearance.
+**Source-assisted reconstruction:** retrieve accessible assets from a supplied paper, PDF or project source; verify they match the reference, then extract and reconstruct the relevant objects. An extracted bitmap still needs vector reconstruction.
+
+**Screenshot reconstruction:** preserve visible shapes, colors and component relationships. Rebuild regular parts geometrically, trace irregular contours where useful, and repair noisy results. The method covers the whole figure.
+
+Source information is optional. A title-only lookup is normally limited to about 90 seconds; inaccessible or unmatched sources fall back to the supplied image. Both routes review actual Figma results at whole-figure and enlarged-detail scales. Content and connection errors are fixed first, then readability, then appearance. [Workflow details](prompts/04-source-routing.md)
 
 <details>
 <summary><b>What the review checks</b></summary>
@@ -110,6 +120,18 @@ Full instructions: [prompts/02-review.md](prompts/02-review.md)
 </details>
 
 ## 🎨 Examples
+
+### V2: Screenshot and source-assisted reconstruction
+
+The AgentThink comparison includes the reference, the preserved V1, a complete screenshot-only V2 redraw, and reconstruction with original paper assets. V2 rebuilds all four regions, including compound icons, native lettering, gradients and curved connections.
+
+![Reference, V1, screenshot V2 and source-assisted full figures](assets/agentthink-v2-routes.png)
+
+The detail comparisons cover compound training icons, maps and vehicles, frozen/trainable symbols, evaluation badges and character contours.
+
+![Reference, V1, screenshot V2 and source-assisted details](assets/agentthink-v1-v2-details.png)
+
+Source-assisted reconstruction has access to additional original-image detail. These examples show different input conditions and workflow choices, not a universal fidelity score. [Case files, scope and attribution](examples/agentthink-v2/README.md)
 
 <table>
   <tr>
@@ -160,6 +182,11 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 - [x] Agent skill with connected Figma drawing, review and export
 - [x] PlanWAM and AgentThink examples with editable files and visual comparisons
 - [x] Prompt Builder and offline demo
+- [x] ~~Source-assisted retrieval, PDF image extraction and screenshot reconstruction~~
+- [x] ~~Complete AgentThink V2 redraw with whole-figure and multi-region detail comparisons~~
+- [x] ~~Offline SVG catalog with colored and outline assets, provenance and licenses~~
+- [ ] Improve low-resolution character contours, small accessories and background cleanup
+- [ ] Extract reusable native vector and text objects from source PDFs
 - [ ] Check font size, line width and spacing at the final paper dimensions
 - [ ] Better selective updates that preserve manual Figma edits
 - [ ] Better mathematical notation and formula reconstruction
@@ -171,7 +198,7 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 ## 🚧 Limitations
 
 - **Not pixel-identical.** Fidelity is judged through the whole-figure and detail review, not a universal accuracy score.
-- **Small illustrations are approximations.** Complex icons, logos and tiny drawings are vector redraws; unreadable source text is flagged rather than guessed.
+- **Small illustrations are approximations.** Library substitutions and local tracing can differ from the reference; unreadable source text is flagged rather than guessed.
 - **Photo crops follow the reference resolution.** Use original dataset images for final layouts when available.
 - **Full reimports can overwrite manual edits** to managed layers. Duplicate hand-edited artwork before a full rebuild.
 - **Verified with Codex** and its Figma connection; other assistants and operating systems are not yet fully tested.
@@ -182,7 +209,7 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 <details>
 <summary><b>Do I need an API key or the original generation prompt?</b></summary>
 
-No. The skill runs inside your AI assistant and works from the image alone.
+No. The skill runs inside your AI assistant and works from the image alone. A paper link, PDF or original source is optional and can help recover clearer assets.
 
 </details>
 
@@ -224,8 +251,8 @@ Issues, ideas and new examples are welcome.
 
 ## 🙏 Acknowledgements
 
-The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice) and the [Linux.do discussion on AI and design workflows](https://linux.do/t/topic/2314994/53). Example figures come from [AgentThink](https://github.com/curryqka/AgentThink) and [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/).
+The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice) and the [Linux.do discussion on AI and design workflows](https://linux.do/t/topic/2314994/53). Example figures come from [AgentThink](https://github.com/curryqka/AgentThink) and [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/). Local-tracing guidance also draws on [ScanSci SVG](https://github.com/Rimagination/scansci-svg); icon sources and licenses are recorded in the [asset catalog](assets/icons/catalog.json).
 
 ## 📄 License
 
-Code is released under the [MIT License](LICENSE). Reference figures, paper content and figure-derived example assets retain their original rights; see the source attribution in each example.
+Code is released under the [MIT License](LICENSE). Reference figures, paper content and figure-derived example assets retain their original rights; see the source attribution in each example. Bundled icons retain the source licenses recorded in the [asset catalog](assets/icons/catalog.json).

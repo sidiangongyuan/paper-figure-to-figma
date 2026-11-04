@@ -1,0 +1,68 @@
+{
+  "reference": {
+    "file": "../agentthink/reference.png",
+    "paper": "https://arxiv.org/abs/2505.15298",
+    "sha256": "4e6a98c005b525589ed0cb8d418a94b7de18f225a8a7d97af824a7887c7650c5"
+  },
+  "v1": {
+    "scope": "preserved initial full reconstruction"
+  },
+  "v2": {
+    "input": "supplied screenshot",
+    "scope": "complete fresh redraw of all four panels",
+    "methods": [
+      "native text and geometry",
+      "compound colored icons reconstructed from visible screenshot features",
+      "local contour tracing and cleanup for characters"
+    ],
+    "paperAssetsUsed": false,
+    "tracedObjects": [
+      {
+        "name": "character",
+        "crop": [
+          144,
+          437,
+          198,
+          496
+        ]
+      },
+      {
+        "name": "detective",
+        "crop": [
+          1023,
+          171,
+          1056,
+          207
+        ]
+      }
+    ],
+    "libraryAssets": [
+      {
+        "id": "lobe:openai",
+        "path": "lobe/openai.svg",
+        "keywords": [
+          "openai",
+          "chatgpt"
+        ],
+        "source": "https://raw.githubusercontent.com/lobehub/lobe-icons/ea434b96e75813517b377825e01c0df61dee8836/packages/static-svg/icons/openai.svg",
+        "license": "MIT",
+        "revision": "ea434b96e75813517b377825e01c0df61dee8836",
+        "sha256": "a595df6b423920c67a7f8f73c063e4bfb72d415948097b6cac063a2366bb5186"
+      }
+    ]
+  },
+  "sourceAssisted": {
+    "input": "matching original embedded bitmap objects from paper PDF",
+    "source": "https://arxiv.org/pdf/2505.15298",
+    "page": 4,
+    "scope": "existing layout retained; 36 icon instances reconstructed using extracted originals",
+    "methods": [
+      "PDF image extraction with alpha masks",
+      "local vector tracing and cleanup",
+      "native icon lettering"
+    ],
+    "sourceObjectsAreVectors": false,
+    "documentSha256": "cf2cb57a6d78b3dc780596233f5fc83c512d5858ca810882c820dad988a5a1ed"
+  },
+  "comparison": "Different input conditions and reconstruction choices; qualitative comparison, not a controlled model benchmark."
+}

@@ -13,6 +13,9 @@ class InstallationTests(unittest.TestCase):
             subprocess.run([sys.executable,str(r/'tools/bundle_figma.py'),str(r/'examples/minimal.scene.json'),str(working/'draw.js')],cwd=working,check=True,capture_output=True)
             self.assertIn('<text', (working/'preview.svg').read_text('utf-8'))
             self.assertIn('importFigureScene', (working/'draw.js').read_text('utf-8'))
+            subprocess.run([sys.executable,str(r/'tools/icon_assets.py'),'prepare','--icon','lucide:snowflake','--output',str(working/'frozen.svg')],cwd=working,check=True,capture_output=True)
+            self.assertIn('#33464d',(working/'frozen.svg').read_text('utf-8'))
+            self.assertTrue((working/'frozen.source.json').is_file())
     def test_update_requires_opt_in_and_preserves_backup(self):
         with tempfile.TemporaryDirectory() as temp:
             dest=Path(temp)/'skills'/NAME;install(dest)
@@ -30,6 +33,10 @@ class InstallationTests(unittest.TestCase):
                 self.assertIn(NAME+'/SKILL.md',names)
                 self.assertIn(NAME+'/runtime/tools/scene_validate.js',names)
                 self.assertIn(NAME+'/LICENSE',names)
+                self.assertIn(NAME+'/runtime/assets/icons/lucide/LICENSE',names)
+                self.assertIn(NAME+'/runtime/prompts/03-vector-assets.md',names)
+                self.assertIn(NAME+'/runtime/prompts/04-source-routing.md',names)
+                self.assertIn(NAME+'/runtime/tools/extract_pdf_assets.py',names)
                 self.assertFalse(any('figma-plugin/' in n for n in names))
 
 if __name__=='__main__':unittest.main()
