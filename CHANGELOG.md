@@ -4,6 +4,8 @@
 
 ## Documentation update — 2026-11-04
 
+- Added Aurora Figure 1 with independently completed screenshot and source-assisted reconstructions, actual Figma previews, whole-figure comparisons and four enlarged detail groups.
+- Added paper authors, the exact source version/page/figure, BibTeX and reconstruction provenance beside the Aurora case study. Paper citations are kept with examples, separate from workflow acknowledgements.
 - Updated all main AgentThink artwork and downloads to the current reconstruction. The first image compares the reference, screenshot reconstruction and reconstruction with original source assets.
 - Simplified showcase labels around inputs and editable results. Earlier versions are retained only in history comparisons. PlanWAM artwork and demo remain unchanged.
 

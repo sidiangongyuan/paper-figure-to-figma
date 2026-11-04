@@ -1,0 +1,236 @@
+{
+  "paper": {
+    "title": "Aurora: Towards Universal Generative Multimodal Time Series Forecasting",
+    "authors": [
+      "Xingjian Wu",
+      "Jianxin Jin",
+      "Wanghui Qiu",
+      "Peng Chen",
+      "Yang Shu",
+      "Bin Yang",
+      "Chenjuan Guo"
+    ],
+    "url": "https://arxiv.org/abs/2509.22295",
+    "versionUrl": "https://arxiv.org/abs/2509.22295v6",
+    "pdfUrl": "https://arxiv.org/pdf/2509.22295v6",
+    "figure": 1,
+    "pdfPage": 2,
+    "versionDate": "2026-03-09",
+    "doi": "10.48550/arXiv.2509.22295",
+    "distributionLicense": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "pdfSha256": "4d5d0a1f57b78ce1ba92a1c0ce65ddf0c8b33951ddbee6e631149d5d29e26d18"
+  },
+  "reference": {
+    "file": "reference.png",
+    "input": "user-supplied screenshot",
+    "width": 1092,
+    "height": 998,
+    "sha256": "6eaddaedb6945eb9d8459114fd3bddff352bb9a0ba4acab2192beb2976635a53"
+  },
+  "reconstructions": [
+    {
+      "preview": "screenshot.png",
+      "previewOrigin": "actual Figma screenshot",
+      "previewSize": [
+        2184,
+        1996
+      ],
+      "sha256": "b879bbdc73a227b19bc74e390cd82a1164785a874c13dacfd47accf244bfa254",
+      "figmaUrl": "https://www.figma.com/design/znKenlNrxW7VLMcQQfEP6Q/?node-id=87-2",
+      "method": "Screenshot-only reconstruction, completed before reading the PDF; geometry, icon redraws and recovered visible plot strokes.",
+      "textLayers": 61,
+      "vectorLayers": 302,
+      "imageLayers": 0
+    },
+    {
+      "preview": "source-assisted.png",
+      "previewOrigin": "actual Figma screenshot",
+      "previewSize": [
+        2184,
+        1996
+      ],
+      "sha256": "99cc3e4eb062114c57a1556561452f8c81f8ba4867d82b1d177078f9d16bdd2c",
+      "figmaUrl": "https://www.figma.com/design/znKenlNrxW7VLMcQQfEP6Q/?node-id=91-2",
+      "method": "Source-assisted reconstruction; extracted native PDF curves and shapes, native labels, geometric backings and cleaned vector traces of original embedded icon bitmaps.",
+      "textLayers": 83,
+      "vectorLayers": 688,
+      "imageLayers": 0
+    }
+  ],
+  "sourceIconAssets": [
+    {
+      "xref": 1178,
+      "name": "Analytics",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1179,
+      "name": "Finance",
+      "sourcePixels": [
+        58,
+        56
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1180,
+      "name": "Web",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1181,
+      "name": "Weather",
+      "sourcePixels": [
+        66,
+        55
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1182,
+      "name": "Healthcare",
+      "sourcePixels": [
+        60,
+        59
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1183,
+      "name": "Cloud servers",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1184,
+      "name": "Transport",
+      "sourcePixels": [
+        69,
+        56
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1185,
+      "name": "Energy",
+      "sourcePixels": [
+        75,
+        73
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1186,
+      "name": "Environment",
+      "sourcePixels": [
+        58,
+        56
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1187,
+      "name": "Time series clock",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 5
+    },
+    {
+      "xref": 1188,
+      "name": "Text document",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 3
+    },
+    {
+      "xref": 1190,
+      "name": "Frozen",
+      "sourcePixels": [
+        59,
+        59
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1191,
+      "name": "Trainable",
+      "sourcePixels": [
+        55,
+        55
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1192,
+      "name": "Image modality",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1193,
+      "name": "Aurora sunrise",
+      "sourcePixels": [
+        512,
+        512
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1195,
+      "name": "Trainable",
+      "sourcePixels": [
+        55,
+        55
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    },
+    {
+      "xref": 1197,
+      "name": "Frozen",
+      "sourcePixels": [
+        59,
+        59
+      ],
+      "method": "original PDF bitmap extracted with alpha and locally vectorized",
+      "instances": 1
+    }
+  ],
+  "rights": "Original paper and figure-derived artwork retain original rights; the repository MIT license applies to code.",
+  "review": "Actual Figma whole-figure and enlarged-detail previews inspected; native text/vector layers audited; no image layers.",
+  "typography": "Times New Roman replaces original Comic Sans body text. Curved words use individual editable characters; small lettering in some source icons is outlined.",
+  "paperSizeReadability": "Not assessed: intended physical print dimensions were not supplied."
+}

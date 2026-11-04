@@ -40,7 +40,7 @@
 
 - **新增可选来源获取**：提供论文链接、PDF 或项目来源，即可获取并核对匹配的原始素材。
 - **改进截图重建**：保留复合图标的外形与配色，修复描摹碎边，并覆盖整张图逐区检查。
-- **更新效果展示**：完整 AgentThink 重建，增加两种输入条件下的整图与放大细节对比。
+- **更新效果展示**：AgentThink 与 Aurora 重建，展示两种输入条件下的整图与放大细节对比。[Aurora 案例](examples/aurora/README.md)
 - **交付方式调整**：默认提供可编辑 Figma 画板，需要 SVG/PDF 时再提出导出要求。
 
 已有安装可在仓库目录运行：
@@ -190,6 +190,23 @@ flowchart LR
 
 </details>
 
+### Aurora
+
+同一张时间序列科研图，分别根据截图和匹配的论文 PDF 重建。对照原图，查看弧形文字、序列曲线、领域插画和模态图标的还原效果。
+
+![Aurora 原图、截图重建与有来源重建](assets/aurora-reconstruction.png)
+
+<details>
+<summary><b>放大查看 Aurora 细节</b></summary>
+
+![Aurora 局部细节对比](assets/aurora-reconstruction-details.png)
+
+</details>
+
+来源：Wu 等，*[Aurora: Towards Universal Generative Multimodal Time Series Forecasting](https://arxiv.org/abs/2509.22295)*，Figure 1，PDF 第 2 页（arXiv v6）。两版均保留可编辑文字和矢量，无图片图层；正文使用新罗马字体。
+
+[案例说明与论文引用](examples/aurora/README.md) · [截图重建结果](examples/aurora/screenshot.png) · [论文来源重建结果](examples/aurora/source-assisted.png)
+
 参考图版权归原作者所有，来源与近似处理见各案例说明。
 
 ## 🎮 Demo
@@ -204,6 +221,7 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 
 - [x] Agent Skill 调用 Figma 完成绘制、复核和导出
 - [x] PlanWAM、AgentThink 可编辑案例及可视化对比
+- [x] ~~Aurora 截图与有来源重建，配套整图及局部细节对比~~
 - [x] Prompt 生成页面与离线 Demo
 - [x] ~~来源获取、PDF 图片提取与截图重建流程~~
 - [x] ~~AgentThink 完整重建、整图及多区域细节对比~~
@@ -276,7 +294,7 @@ Skill 会先在本地准备绘图文件和 SVG，并说明缺少哪一步（未�
 
 **本开源项目已链接并认可 [LINUX DO 社区](https://linux.do/)。** 感谢社区在 AI 与设计工作流方面的分享和交流。
 
-工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice) 和 [Linux.do 讨论：AI 与设计工作流参考](https://linux.do/t/topic/2314994/53)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。局部描摹流程参考了 [ScanSci SVG](https://github.com/Rimagination/scansci-svg)，图标来源与许可见 [素材目录](assets/icons/catalog.json)。
+工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice) 和 [Linux.do 讨论：AI 与设计工作流参考](https://linux.do/t/topic/2314994/53)。局部描摹流程参考了 [ScanSci SVG](https://github.com/Rimagination/scansci-svg)，图标来源与许可见 [素材目录](assets/icons/catalog.json)。
 
 ## 📄 许可
 

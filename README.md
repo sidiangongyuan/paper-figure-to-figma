@@ -40,7 +40,7 @@ Provide a screenshot, or add a paper link, PDF or original asset source. The ass
 
 - **Optional source recovery:** provide a paper link, PDF or project source to retrieve and verify matching original assets.
 - **Improved screenshot reconstruction:** preserve compound icon shapes and colors, repair noisy contours, and review every region of the figure.
-- **Updated examples:** complete AgentThink reconstruction with whole-figure and enlarged-detail comparisons for both input routes.
+- **Updated examples:** AgentThink and Aurora reconstructions with whole-figure and enlarged-detail comparisons for both input routes. [Aurora case study](examples/aurora/README.md)
 - **Delivery change:** the default result is an editable Figma frame; request SVG/PDF files when needed.
 
 To upgrade an existing installation, run from your repository folder:
@@ -190,6 +190,23 @@ The comparison covers training illustrations, maps and vehicles, frozen/trainabl
 
 </details>
 
+### Aurora
+
+The same time-series figure rebuilt from a screenshot and from its matching paper PDF. Compare the curved labels, series strokes, domain illustrations and modality symbols across all three images.
+
+![Aurora reference, screenshot reconstruction and source-assisted reconstruction](assets/aurora-reconstruction.png)
+
+<details>
+<summary><b>Compare Aurora details</b></summary>
+
+![Aurora enlarged detail comparisons](assets/aurora-reconstruction-details.png)
+
+</details>
+
+Source: Wu et al., *[Aurora: Towards Universal Generative Multimodal Time Series Forecasting](https://arxiv.org/abs/2509.22295)*, Figure 1, PDF page 2 (arXiv v6). Both results use editable text and vectors, with no image layers. Body text uses Times New Roman.
+
+[Case study and citation](examples/aurora/README.md) · [Screenshot result](examples/aurora/screenshot.png) · [Source-assisted result](examples/aurora/source-assisted.png)
+
 Reference figures belong to their original authors; see each example's notes for sources and approximations.
 
 ## 🎮 Demo
@@ -204,6 +221,7 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 
 - [x] Agent skill with connected Figma drawing, review and export
 - [x] PlanWAM and AgentThink examples with editable files and visual comparisons
+- [x] ~~Aurora screenshot and source-assisted reconstructions with whole-figure and detail comparisons~~
 - [x] Prompt Builder and offline demo
 - [x] ~~Source-assisted retrieval, PDF image extraction and screenshot reconstruction~~
 - [x] ~~Complete AgentThink redraw with whole-figure and multi-region detail comparisons~~
@@ -276,7 +294,7 @@ Issues, ideas and new examples are welcome.
 
 **This open-source project acknowledges and links to the [LINUX DO community](https://linux.do/).** Thank you to the community for sharing ideas and practical experience with AI and design workflows.
 
-The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice) and the [Linux.do discussion on AI and design workflows](https://linux.do/t/topic/2314994/53). Example figures come from [AgentThink](https://github.com/curryqka/AgentThink) and [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/). Local-tracing guidance also draws on [ScanSci SVG](https://github.com/Rimagination/scansci-svg); icon sources and licenses are recorded in the [asset catalog](assets/icons/catalog.json).
+The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice) and the [Linux.do discussion on AI and design workflows](https://linux.do/t/topic/2314994/53). Local-tracing guidance also draws on [ScanSci SVG](https://github.com/Rimagination/scansci-svg); icon sources and licenses are recorded in the [asset catalog](assets/icons/catalog.json).
 
 ## 📄 License
 

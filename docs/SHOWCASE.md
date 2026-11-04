@@ -20,6 +20,16 @@ The [AgentThink example](../examples/agentthink/README.md) compares the original
 
 Run `python tools/build_v2_showcase.py` to rebuild these sheets from the curated examples. Input conditions and attribution are recorded in the case notes.
 
+## Aurora
+
+The [Aurora case study](../examples/aurora/README.md) reconstructs Figure 1 from a screenshot and from the matching paper PDF. Both results are actual Figma previews with editable text and vectors and no image layers.
+
+- [Reference and both complete reconstructions](../assets/aurora-reconstruction.png)
+- [Domain illustrations, curves, modality symbols and Aurora illustration](../assets/aurora-reconstruction-details.png)
+- [Paper citation and source record](../examples/aurora/README.md#citation-and-rights)
+
+Run `python tools/build_aurora_showcase.py` to rebuild these sheets from the curated images.
+
 ## Offline editor
 
 Download the repository and open **`demo/index.html`** in a browser. The demo works offline and uses a pre-built reconstruction of PlanWAM Figure 1.
