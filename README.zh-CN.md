@@ -274,6 +274,8 @@ Skill 会先在本地准备绘图文件和 SVG，并说明缺少哪一步（未�
 
 ## 🙏 致谢
 
+**本开源项目已链接并认可 [LINUX DO 社区](https://linux.do/)。** 感谢社区在 AI 与设计工作流方面的分享和交流。
+
 工作流参考了 [Image To Slice](https://github.com/50kg/image-to-slice) 和 [Linux.do 讨论：AI 与设计工作流参考](https://linux.do/t/topic/2314994/53)。案例图片来自 [AgentThink](https://github.com/curryqka/AgentThink) 与 [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/)。局部描摹流程参考了 [ScanSci SVG](https://github.com/Rimagination/scansci-svg)，图标来源与许可见 [素材目录](assets/icons/catalog.json)。
 
 ## 📄 许可

@@ -274,6 +274,8 @@ Issues, ideas and new examples are welcome.
 
 ## 🙏 Acknowledgements
 
+**This open-source project acknowledges and links to the [LINUX DO community](https://linux.do/).** Thank you to the community for sharing ideas and practical experience with AI and design workflows.
+
 The workflow draws on [Image To Slice](https://github.com/50kg/image-to-slice) and the [Linux.do discussion on AI and design workflows](https://linux.do/t/topic/2314994/53). Example figures come from [AgentThink](https://github.com/curryqka/AgentThink) and [PlanWAM](https://jinchan9.github.io/PlanWAM_project_page/). Local-tracing guidance also draws on [ScanSci SVG](https://github.com/Rimagination/scansci-svg); icon sources and licenses are recorded in the [asset catalog](assets/icons/catalog.json).
 
 ## 📄 License
