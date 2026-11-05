@@ -1,0 +1,14 @@
+{
+  "nativeText": 69,
+  "nativeShapes": 122,
+  "svgObjects": 13,
+  "totalObjects": 204,
+  "preview": "PowerPoint slide export",
+  "selectionScreenshot": "User-provided PowerPoint screenshot with objects selected",
+  "validation": {
+    "savedAndReopened": true,
+    "textEditPreservedGeometry": true,
+    "wholeFigureAndDetailsReviewed": true
+  },
+  "svgEditability": "Independent SVG objects support moving, scaling and replacement; internal path conversion is not guaranteed."
+}

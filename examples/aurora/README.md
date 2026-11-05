@@ -27,6 +27,16 @@ The comparison covers the domain illustrations, series curves and rotated labels
 
 Several original PDF icons are only 55–75 pixels wide, so their fine contours remain approximate even with the paper source. The larger clock, document, web and server assets provide clearer evidence. Final paper-size readability must be checked at the intended physical dimensions.
 
+## PowerPoint
+
+[Download Aurora.pptx](Aurora.pptx) · [Clean PowerPoint preview](powerpoint.png) · [Selected objects](powerpoint-selected.png) · [Object counts](powerpoint.json)
+
+![Aurora reference and native PowerPoint result](../../assets/aurora-powerpoint.png)
+
+The PowerPoint reconstruction uses the matching paper-source artwork: **83 native text boxes, 64 native shapes and paths, and 27 independent SVG objects**. Body text, curved-label characters, backbone boxes and series curves can be edited as PowerPoint objects. SVG illustrations can be moved, resized and replaced; their internal paths are not guaranteed to convert faithfully into native shapes.
+
+The presentation was saved, reopened and rendered with desktop PowerPoint on Windows. The object-selection screenshot shows these objects selected in PowerPoint. The original paper attribution below applies to this example too.
+
 ## Citation and rights
 
 Please cite the original paper when using its scientific content or adapting its figure:

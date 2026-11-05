@@ -2,6 +2,26 @@
 
 [English update summary](README.md#recent-updates) · [中文更新摘要与升级方法](README.zh-CN.md#最近更新)
 
+## 0.2.5 — 2026-11-05
+
+### PowerPoint
+
+- Added native PowerPoint output to the existing skill. Request PPTX to create editable text boxes, regular shapes and paths, with complex illustrations as separate SVG objects. Figma remains the default output.
+- Added a Windows renderer using installed desktop PowerPoint and pywin32. It saves and reopens the deck, exports an actual PowerPoint preview, checks text-edit geometry and records results for visual review.
+- Added explicit coordinate scaling, minimum font-size checks, rotated text and subscript/superscript runs. Existing presentations are preserved and output files are never overwritten.
+- Packaged the PowerPoint workflow and renderer with the globally installed skill. Added PowerPoint to the Prompt Builder.
+
+### Examples
+
+- Added downloadable Aurora and P-GenRM PPTX files, clean reference/result comparisons and real PowerPoint object-selection screenshots.
+- Documented native text/shape counts and independent SVG illustrations beside each example. Editable SVG objects do not imply lossless conversion to individual PowerPoint paths.
+- Added P-GenRM paper attribution and BibTeX: *Personalized Generative Reward Model with Test-time User-based Scaling*, ICLR 2026 Oral. This example was reconstructed from the supplied screenshot; citation verification happened afterward.
+- Added a PowerPoint support badge, refreshed both READMEs and marked the delivered PowerPoint work complete in the roadmap.
+
+### Requirements and upgrade
+
+PowerPoint generation and verification currently require Windows, installed desktop PowerPoint and `pywin32`. No Figma connection is needed for this route. Run `git pull --ff-only` and `python tools/install_skill.py --update` to upgrade; the previous skill installation is backed up automatically.
+
 ## Documentation update — 2026-11-04
 
 - Added Aurora Figure 1 with independently completed screenshot and source-assisted reconstructions, actual Figma previews, whole-figure comparisons and four enlarged detail groups.

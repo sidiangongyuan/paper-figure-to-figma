@@ -39,7 +39,7 @@
     if (width.value && (!Number.isFinite(Number(width.value)) || Number(width.value) < 1)) {
       width.setCustomValidity('请填写大于或等于 1 的图宽，单位为 mm。');
     }
-    if (url.value.trim()) {
+    if (!url.disabled && url.value.trim()) {
       try {
         const parsed = new URL(url.value.trim());
         const isFigma = parsed.hostname === 'figma.com' || parsed.hostname.endsWith('.figma.com');
@@ -65,7 +65,7 @@
   function render() {
     syncCustomField('font');
     syncCustomField('color');
-    const localOnly = byId('delivery').value === 'local';
+    const localOnly = ['local', 'pptx'].includes(byId('delivery').value);
     byId('figma-url').disabled = localOnly;
     byId('figma-hint').hidden = !localOnly;
     const data = new FormData(form);
@@ -88,8 +88,9 @@
     }
     if (data.get('delivery') === 'paper') lines.push('交付：Figma 可编辑图层、SVG 和 PDF。');
     if (data.get('delivery') === 'local') lines.push('交付：仅本地 SVG 和 PDF。');
+    if (data.get('delivery') === 'pptx') lines.push('交付：可编辑 PPTX 和 PowerPoint 实际预览。文字和主要图形使用原生对象，复杂插画保留独立 SVG。');
     const destination = (data.get('figmaUrl') || '').trim();
-    if (destination) lines.push(`Figma 目标文件：${destination}`);
+    if (!localOnly && destination) lines.push(`Figma 目标文件：${destination}`);
     if (data.get('changes').trim()) lines.push(`补充要求：\n${data.get('changes').trim()}`);
 
     prompt.value = lines.join('\n');

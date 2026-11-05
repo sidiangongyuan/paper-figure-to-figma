@@ -24,6 +24,8 @@ class InstallationTests(unittest.TestCase):
             _,backup=install(dest,update=True)
             self.assertEqual((backup/'personal-note.txt').read_text('utf-8'),'keep')
             self.assertTrue((dest/'runtime/tools/figma_import.js').exists())
+            self.assertTrue((dest/'runtime/tools/ppt_native.py').exists())
+            self.assertIn('runtime/prompts/05-powerpoint.md',(dest/'SKILL.md').read_text(encoding='utf-8'))
     def test_portable_zip_is_self_contained(self):
         with tempfile.TemporaryDirectory() as temp:
             path=package(Path(temp)/'skill.zip')
@@ -37,6 +39,8 @@ class InstallationTests(unittest.TestCase):
                 self.assertIn(NAME+'/runtime/prompts/03-vector-assets.md',names)
                 self.assertIn(NAME+'/runtime/prompts/04-source-routing.md',names)
                 self.assertIn(NAME+'/runtime/tools/extract_pdf_assets.py',names)
+                self.assertIn(NAME+'/runtime/tools/ppt_native.py',names)
+                self.assertIn(NAME+'/runtime/prompts/05-powerpoint.md',names)
                 self.assertFalse(any('figma-plugin/' in n for n in names))
 
 if __name__=='__main__':unittest.main()

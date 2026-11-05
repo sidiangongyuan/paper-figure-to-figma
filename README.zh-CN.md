@@ -7,10 +7,11 @@
 ### 高保真重建科研图，自由编辑每一步。
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.5-236d4c?style=flat-square)](CHANGELOG.md)
 [![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
 [![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
+[![PowerPoint](assets/powerpoint-badge.svg)](#powerpoint)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](docs/DEVELOPMENT.md)
 
 [![Prompt 生成](https://img.shields.io/badge/Prompt%20%E7%94%9F%E6%88%90-%E6%89%93%E5%BC%80-236d4c?style=for-the-badge)](https://sidiangongyuan.github.io/paper-figure-to-figma/)
@@ -30,18 +31,18 @@
 
 <br>
 
-**Paper Figure to Figma** 是一个 Agent Skill，把科研图的图片重建为原生、可编辑的 Figma 图。把图片和 Figma 文件交给 AI 助手，它会把每个标签、形状和连接线绘制成真实图层，在整图与局部两个层面与参考图对照，修正差异，默认交付可编辑 Figma 画板；需要文件时再导出。
+**Paper Figure to Figma** 是一个 Agent Skill，把科研图片重建为可编辑的 **Figma 图或 PowerPoint 文件**。提供参考图并指定输出方式，助手会重建文字、形状和连接线，对照整图与局部的实际渲染结果，修正后交付。
 
 提供截图即可开始，也可以补充论文链接、PDF 或原始素材来源。助手会自行获取可访问且与参考图匹配的素材；没有可用来源时，继续按截图重建。
 
 ## 最近更新
 
-**0.2.0 · 2026 年 11 月 4 日** — [完整更新日志](CHANGELOG.md)
+**0.2.5（V2.5）· 2026 年 11 月 5 日** — [完整更新日志](CHANGELOG.md)
 
-- **新增可选来源获取**：提供论文链接、PDF 或项目来源，即可获取并核对匹配的原始素材。
-- **改进截图重建**：保留复合图标的外形与配色，修复描摹碎边，并覆盖整张图逐区检查。
-- **更新效果展示**：AgentThink 与 Aurora 重建，展示两种输入条件下的整图与放大细节对比。[Aurora 案例](examples/aurora/README.md)
-- **交付方式调整**：默认提供可编辑 Figma 画板，需要 SVG/PDF 时再提出导出要求。
+- **新增 PowerPoint 输出**：文字框、主要形状和曲线原生可编辑，复杂插画作为独立 SVG 对象保留。
+- **自动检查实际 PPT**：在 Windows＋本机 PowerPoint 中完成保存、重新打开、渲染和文字编辑后的尺寸检查。
+- **两个 PPTX 案例可下载**：Aurora 与 P-GenRM，附干净成图和实际选中对象截图。[查看 PowerPoint 案例](#powerpoint)
+- **一个 Skill，两种输出**：指定 Figma 或 PPT 即可，未指定时仍默认 Figma。
 
 已有安装可在仓库目录运行：
 
@@ -59,8 +60,8 @@ python tools/install_skill.py --update
 - **内置复核闭环**：先查整图，再查局部细节和可编辑性，只修正受影响的元素。
 - **修改无需从头再来**：后续修改直接更新已有 Figma 画板，指定保持不变的元素不受影响。
 - **论文级排版默认值**：正文默认 Times New Roman，并设置清晰的字号层级；均可按需覆盖。
-- **无需额外 API Key**：在 AI 助手及其 Figma 连接中运行，不需要 VLM API Key 或原始生图提示词。
-- **按需导出**：默认交付 Figma 画板；需要时可导出 SVG、PDF 和可复用的 `.scene.json`。
+- **无需额外 API Key**：在 AI 助手及所选绘图工具中运行，不需要 VLM API Key 或原始生图提示词。
+- **Figma 或 PowerPoint**：默认交付 Figma 画板，也可直接生成原生 `.pptx`；SVG/PDF 按需导出。
 - **两条重建流程**：有来源时获取、核对并使用原始素材；无来源时完成整张截图的重建。
 - **按外观选择方法**：通过匹配的 SVG、几何重建或局部描摹，保留轮廓、配色与可辨认的组成部分。
 
@@ -69,7 +70,8 @@ python tools/install_skill.py --update
 **准备**
 
 - 支持看图、加载本地 Skill、执行脚本和调用外部工具的 AI 助手（已在 Codex 上验证）。
-- 助手中已连接 Figma，并对目标 Design 文件有编辑权限。
+- **Figma 输出**：助手已连接 Figma，并对目标 Design 文件有编辑权限。
+- **PPT 输出**：Windows、本机已安装 PowerPoint，助手的 Python 环境中有 `pywin32`。生成 PPT 无需连接 Figma。
 - Python 3.10+。图片处理、描摹和 PDF 提取按任务使用可选依赖。
 
 **1. 安装 Skill**
@@ -82,9 +84,9 @@ python tools/install_skill.py
 
 默认安装到 `$CODEX_HOME/skills/paper-figure-to-figma`（未设置时为 `~/.codex/skills/paper-figure-to-figma`）。用 `--update` 更新已有安装；其他助手可用 `--dest <技能目录>/paper-figure-to-figma` 指定位置。不想安装时，在助手中打开仓库并让它读取 `.agents/skills/paper-figure-to-figma/SKILL.md` 即可。
 
-**2. 连接 Figma**
+**2. 选择输出方式**
 
-在助手中启用 Figma 工具连接并完成账号授权。
+使用 Figma 时，在助手中启用连接并授权。使用 PPT 时，准备 Windows 和本机 PowerPoint，并安装 Python 连接组件：`python -m pip install pywin32`。
 
 **3. 重建一张图**
 
@@ -95,6 +97,14 @@ python tools/install_skill.py
 检查整图与局部细节，修正后给我可编辑画板链接。
 Figma：<你的 Design 文件链接>
 来源（可选）：<论文链接、PDF 或原始素材位置>
+```
+
+生成 PowerPoint 时，上传图片并发送：
+
+```text
+使用 $paper-figure-to-figma，将附图重建为可编辑 PPTX。
+文字和主要图形使用原生对象，检查 PowerPoint 实际渲染，
+修正后交付 PPTX 和预览。
 ```
 
 需要指定字体、配色或局部修改时，可用 [Prompt 生成页面](https://sidiangongyuan.github.io/paper-figure-to-figma/) 组织指令。
@@ -110,17 +120,20 @@ flowchart LR
     B -->|无| D[识别截图中的可见特征]
     C --> E[重建文字、几何与局部轮廓]
     D --> E
-    E --> F[可编辑 Figma 图]
+    E --> T{输出方式}
+    T --> F[可编辑 Figma 图]
+    T --> P[原生 PowerPoint 对象]
     F --> G[整图与局部对照复核]
-    G -->|修正差异| F
-    G --> H[交付 Figma 画板]
+    P --> G
+    G -->|修正差异| E
+    G --> H[交付 Figma 画板或 PPTX]
 ```
 
 **有来源重建**：根据论文、PDF 或项目来源自行获取可访问的素材，确认与参考图匹配，再提取并重建相关对象。提取到的位图仍需进行矢量重建。
 
 **截图重建**：保留能辨认的轮廓、配色和组成关系，规则部分用几何形状重建，不规则轮廓按需描摹，再修复碎边和失真。处理范围覆盖整张图。
 
-来源为可选信息。只有标题时，默认将查找控制在约 90 秒；来源无法访问或不匹配时继续使用截图。两条流程都检查实际 Figma 结果，先核对整图，再放大细节；修正顺序为内容与连接关系、可读性、外观。[完整流程](prompts/04-source-routing.md)
+来源为可选信息。只有标题时，默认将查找控制在约 90 秒；来源无法访问或不匹配时继续使用截图。两条流程都检查实际 Figma 或 PowerPoint 结果，先核对整图，再放大细节；修正顺序为内容与连接关系、可读性、外观。[完整流程](prompts/04-source-routing.md)
 
 <details>
 <summary><b>复核检查什么</b></summary>
@@ -138,6 +151,30 @@ flowchart LR
 </details>
 
 ## 🎨 案例
+
+### PowerPoint
+
+文字可以直接改，模块、箭头和曲线使用原生形状，复杂插画保留为独立 SVG。下面展示的是 PowerPoint 中实际选中对象的状态。
+
+![PowerPoint 原生可编辑对象展示](assets/powerpoint-showcase.png)
+
+| Aurora | P-GenRM |
+| --- | --- |
+| [**下载 PPTX**](examples/aurora/Aurora.pptx) · [案例说明](examples/aurora/README.md#powerpoint) | [**下载 PPTX**](examples/pgenrm/P-GenRM.pptx) · [案例说明](examples/pgenrm/README.md) |
+| 83 个文字框 · 64 个原生形状 · 27 个 SVG 对象 | 69 个文字框 · 122 个原生形状 · 13 个 SVG 对象 |
+| [干净成图](examples/aurora/powerpoint.png) · [选中对象](examples/aurora/powerpoint-selected.png) | [干净成图](examples/pgenrm/powerpoint.png) · [选中对象](examples/pgenrm/powerpoint-selected.png) |
+
+<details>
+<summary><b>对比原图与 PowerPoint 重建结果</b></summary>
+
+![Aurora 原图与 PowerPoint 结果](assets/aurora-powerpoint.png)
+
+![P-GenRM 原图与 PowerPoint 结果](assets/pgenrm-powerpoint.png)
+
+</details>
+
+PPT 生成与自动验收当前支持 Windows＋本机 PowerPoint。论文引用和重建条件放在各案例说明中。[PowerPoint 环境配置](docs/CODEX_QUICKSTART.md#powerpoint)
+
 
 ### AgentThink
 
@@ -232,7 +269,10 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 - [ ] 完善局部更新，保留用户在 Figma 中的手动修改
 - [ ] 改善数学符号与公式的还原
 - [ ] 风格迁移：保留内容与结构，调整配色、字体和视觉样式
-- [ ] 兼容 PowerPoint、draw.io 等工具的可编辑导入与导出
+- [x] ~~原生 PowerPoint 科研图与自动渲染、可编辑性检查~~
+- [x] ~~Aurora、P-GenRM PPTX 示例和选中对象截图~~
+- [ ] 扩展更多平台的 PPT 生成与验收
+- [ ] 兼容 draw.io 等工具的可编辑导入与导出
 - [ ] 扩充案例，提供可复现的还原质量评估
 - [ ] 扩展更多助手与操作系统的兼容性验证
 
@@ -242,7 +282,8 @@ Demo 使用预先重建好的 PlanWAM 样例展示可编辑效果，不执行 AI
 - **小插画为近似重绘**：图库替换和局部描摹可能与原图存在差异；无法辨认的原文会被标注，不会臆测。
 - **照片裁剪受参考图分辨率限制**：正式排版时优先使用原始数据集图片。
 - **整图重新导入会覆盖托管图层上的手动修改**：重建前先复制一份手动编辑过的图。
-- **已在 Codex 及其 Figma 连接上验证**：其他助手和操作系统尚未全部测试。
+- **已在 Codex 的 Figma 连接，以及 Windows＋本机 PowerPoint 上验证**：其他助手和 PPT 平台尚未全部测试。
+- **PPT 复杂插画保留为 SVG 对象**：可移动、缩放和替换，不保证拆开后内部路径仍能完整编辑。
 - **最终尺寸可读性需单独检查**：确定论文实际尺寸后再确认字号和线宽。
 
 ## ❓ 常见问题

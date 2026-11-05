@@ -3,7 +3,8 @@
 ## Requirements
 
 - An AI assistant that supports image input, local skills, script execution and external tool calls. The Codex + connected Figma tools path is verified; other assistants need equivalent capabilities.
-- A Figma account with edit access to the target Design file.
+- For Figma output: a connected Figma account with edit access to the target Design file.
+- For PowerPoint output: Windows with desktop PowerPoint and Python with `pywin32`. A Figma connection is not required.
 - Python 3.10+ for the bundled helper scripts. Pillow is used for image preparation, Pillow + VTracer for local tracing, and Pillow + PyMuPDF for PDF image extraction. These dependencies are optional and selected for the task; the assistant can check what is available.
 
 ## Install
@@ -25,6 +26,26 @@ The skill installs to `$CODEX_HOME/skills/paper-figure-to-figma`, or `~/.codex/s
 Without installing, you can open the repository in the assistant and ask it to read `.agents/skills/paper-figure-to-figma/SKILL.md`.
 
 The skill becomes available on the next turn. If the assistant caches its skill list, start a new conversation.
+
+## PowerPoint
+
+Install the Python bridge in the environment used by your assistant:
+
+```bash
+python -m pip install pywin32
+```
+
+Attach the complete reference image and send:
+
+```text
+Use $paper-figure-to-figma to reconstruct this image as an editable PPTX.
+Use native text boxes and shapes, compare the actual PowerPoint preview
+with the whole reference and enlarged details, and deliver the PPTX and preview.
+```
+
+The assistant creates a new presentation, verifies save/reopen and text editing, inspects the rendered result and corrects differences. Text, regular shapes and connections use native objects. Complex illustrations remain independent SVG objects that can be moved, resized and replaced. Converting their internal paths to PowerPoint shapes is not guaranteed to preserve appearance.
+
+The current renderer is verified on Windows with installed desktop PowerPoint. The same skill continues to use Figma by default when no other output is requested. [Aurora PPTX](../examples/aurora/Aurora.pptx) · [P-GenRM PPTX](../examples/pgenrm/P-GenRM.pptx) · [PowerPoint workflow](../prompts/05-powerpoint.md)
 
 ## Connect Figma
 

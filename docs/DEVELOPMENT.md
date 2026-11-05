@@ -26,7 +26,7 @@ The Python and JavaScript tests cover scene contracts, gradients, curves, text, 
 ## Package
 
 ```text
-python tools/install_skill.py --package local-outputs/paper-figure-to-figma-0.2.0.zip
+python tools/install_skill.py --package local-outputs/paper-figure-to-figma-0.2.5.zip
 ```
 
 The ZIP contains one self-contained skill directory, its runtime, MIT license and version. It excludes working outputs and reference-image collections. A fresh installation can render and bundle the included minimal scene from an unrelated working directory.
@@ -41,9 +41,21 @@ python tools/prepare_scene.py input.scene.json local-outputs/prepared --referenc
 
 Upload allowed RGB assets through the connected Figma tools before executing a bundle. Split large bundles with `--panel` or `--node-range`; continue with the latest returned root ID. Full reimports stage a replacement, while partial imports retain absent nodes. Inspect existing artwork before editing.
 
+## PowerPoint
+
+`ppt_native.py` requires Windows, installed desktop PowerPoint and `pywin32`. It builds native text, rectangles and flat path geometry, embeds independent SVG illustrations, saves/reopens the deck and exports a preview for visual review. It refuses existing output paths and preserves unrelated open presentations.
+
+```text
+python tools/ppt_native.py examples/pgenrm/pgenrm.scene.json local-outputs/pgenrm.pptx
+```
+
+Portable unit tests cover geometry conversion and preflight validation. Actual PowerPoint execution and visual review are separate checks; an XML-valid file alone does not establish rendering fidelity. See [PowerPoint authoring](../prompts/05-powerpoint.md).
+
 ## Showcase
 
 `build_demo.py` rebuilds `demo/index.html`; commit it with its template and sources. `build_showcase_assets.py` rebuilds the two example comparison sheets. `make_demo_gif.py` uses slower frame timing and opening/closing holds. The GIF demonstrates the offline editor, not model inference time.
+
+`build_ppt_showcase.py` builds the PowerPoint overview and clean reference/result comparison sheets from the curated previews and supplied object-selection screenshots. The screenshots show actual editable objects; object counts are recorded beside the examples.
 
 ## Vector assets
 

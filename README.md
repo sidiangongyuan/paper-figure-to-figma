@@ -7,10 +7,11 @@
 ### Rebuild research figures with high fidelity. Keep every step editable.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-236d4c?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-236d4c?style=flat-square)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.5-236d4c?style=flat-square)](CHANGELOG.md)
 [![GitHub stars](https://img.shields.io/github/stars/sidiangongyuan/paper-figure-to-figma?style=flat-square&logo=github&color=236d4c)](https://github.com/sidiangongyuan/paper-figure-to-figma/stargazers)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-Codex-1f2328?style=flat-square)](.agents/skills/paper-figure-to-figma/SKILL.md)
 [![Figma](https://img.shields.io/badge/Figma-native%20layers-F24E1E?style=flat-square&logo=figma&logoColor=white)](https://www.figma.com/)
+[![PowerPoint](assets/powerpoint-badge.svg)](#powerpoint)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white)](docs/DEVELOPMENT.md)
 
 [![Prompt Builder](https://img.shields.io/badge/Prompt%20Builder-Open-236d4c?style=for-the-badge)](https://sidiangongyuan.github.io/paper-figure-to-figma/)
@@ -30,18 +31,18 @@
 
 <br>
 
-**Paper Figure to Figma** is an agent skill that turns an image of a research figure into native, editable Figma artwork. Give your AI assistant the figure and a Figma file: it redraws every label, shape and connection as real layers, compares the result with the reference at whole-figure and detail level, fixes what differs, and delivers an editable Figma frame. File exports are available on request.
+**Paper Figure to Figma** is an agent skill that rebuilds research figures as editable **Figma artwork or PowerPoint files**. Give your assistant a reference image and choose the output. It reconstructs text, shapes and connections, reviews the actual result at whole-figure and detail scales, and corrects differences before delivery.
 
 Provide a screenshot, or add a paper link, PDF or original asset source. The assistant retrieves accessible matching originals when available and continues from the screenshot when no usable source exists.
 
 ## Recent updates
 
-**0.2.0 · November 4, 2026** — [Full changelog](CHANGELOG.md)
+**0.2.5 (V2.5) · November 5, 2026** — [Full changelog](CHANGELOG.md)
 
-- **Optional source recovery:** provide a paper link, PDF or project source to retrieve and verify matching original assets.
-- **Improved screenshot reconstruction:** preserve compound icon shapes and colors, repair noisy contours, and review every region of the figure.
-- **Updated examples:** AgentThink and Aurora reconstructions with whole-figure and enlarged-detail comparisons for both input routes. [Aurora case study](examples/aurora/README.md)
-- **Delivery change:** the default result is an editable Figma frame; request SVG/PDF files when needed.
+- **Native PowerPoint output:** editable text boxes, shapes and paths; complex illustrations remain independent SVG objects.
+- **Verified in PowerPoint:** save, reopen, render and check text-edit geometry automatically on Windows with installed PowerPoint.
+- **Two downloadable PPTX examples:** Aurora and P-GenRM, with clean previews and real object-selection screenshots. [Explore PowerPoint](#powerpoint)
+- **One skill, two destinations:** request Figma or PPT explicitly. Figma remains the default.
 
 To upgrade an existing installation, run from your repository folder:
 
@@ -59,8 +60,8 @@ The previous installation is backed up automatically. ZIP users can download the
 - **Built-in review loop** — checks the whole figure, then enlarged details and editability, and revises only the affected elements.
 - **Revise without starting over** — follow-up requests update the existing Figma frame and leave the elements you protect untouched.
 - **Paper-ready typography** — Times New Roman body text and a clear size hierarchy by default; override any of it.
-- **No extra API key** — runs inside your assistant with its Figma connection. No VLM API key or original generation prompt needed.
-- **Export when needed** — Figma artwork by default; SVG, PDF and reusable `.scene.json` files on request.
+- **No extra API key** — runs inside your assistant with the selected drawing tools. No VLM API key or original generation prompt needed.
+- **Figma or PowerPoint** — editable Figma artwork by default, or a native `.pptx` on request. SVG/PDF exports remain optional.
 - **Two reconstruction routes** — source-assisted recovery with version and content checks, or a complete reconstruction from the supplied screenshot.
 - **Appearance-aware artwork** — preserve silhouette, color and recognizable parts through matching SVGs, geometric reconstruction or cleaned local tracing.
 
@@ -69,7 +70,8 @@ The previous installation is backed up automatically. ZIP users can download the
 **Requirements**
 
 - An AI assistant that can view images, load local skills, run scripts and call external tools (verified with Codex).
-- A Figma connection in that assistant with edit access to the target Design file.
+- **Figma output:** a Figma connection with edit access to the target Design file.
+- **PPT output:** Windows, installed desktop PowerPoint and `pywin32` in the assistant’s Python environment. No Figma connection is needed for PPT.
 - Python 3.10+. Image preparation, tracing and PDF extraction use optional task-specific dependencies.
 
 **1. Install the skill**
@@ -82,9 +84,9 @@ python tools/install_skill.py
 
 This installs to `$CODEX_HOME/skills/paper-figure-to-figma` (default `~/.codex/skills/paper-figure-to-figma`). Use `--update` to upgrade an existing install, or `--dest <skills-dir>/paper-figure-to-figma` for another assistant. To skip installation, open the repository in your assistant and ask it to read `.agents/skills/paper-figure-to-figma/SKILL.md`.
 
-**2. Connect Figma**
+**2. Choose the output**
 
-Enable the Figma tool connection in your assistant and authorize your account.
+For Figma, enable its tool connection and authorize your account. For PPT, use Windows with PowerPoint and install its Python bridge: `python -m pip install pywin32`.
 
 **3. Rebuild a figure**
 
@@ -95,6 +97,14 @@ Use $paper-figure-to-figma to reconstruct this image in the linked Figma canvas,
 review the whole figure and details, then share the editable frame link.
 Figma: <your Design file link>
 Source (optional): <paper link, PDF or original asset location>
+```
+
+For PowerPoint, attach the image and send:
+
+```text
+Use $paper-figure-to-figma to reconstruct this image as an editable PPTX.
+Use native text boxes and shapes, review the actual PowerPoint rendering,
+and deliver the PPTX with a preview.
 ```
 
 Need specific fonts, colors or edits? Compose the request with the [Prompt Builder](https://sidiangongyuan.github.io/paper-figure-to-figma/).
@@ -110,17 +120,20 @@ flowchart LR
     B -->|No| D[Inspect screenshot features]
     C --> E[Rebuild text, geometry and local contours]
     D --> E
-    E --> F[Editable Figma artwork]
+    E --> T{Output destination}
+    T --> F[Editable Figma artwork]
+    T --> P[Native PowerPoint objects]
     F --> G[Compare whole figure and details]
-    G -->|Correct differences| F
-    G --> H[Deliver Figma frame]
+    P --> G
+    G -->|Correct differences| E
+    G --> H[Deliver Figma frame or PPTX]
 ```
 
 **Source-assisted reconstruction:** retrieve accessible assets from a supplied paper, PDF or project source; verify they match the reference, then extract and reconstruct the relevant objects. An extracted bitmap still needs vector reconstruction.
 
 **Screenshot reconstruction:** preserve visible shapes, colors and component relationships. Rebuild regular parts geometrically, trace irregular contours where useful, and repair noisy results. The method covers the whole figure.
 
-Source information is optional. A title-only lookup is normally limited to about 90 seconds; inaccessible or unmatched sources fall back to the supplied image. Both routes review actual Figma results at whole-figure and enlarged-detail scales. Content and connection errors are fixed first, then readability, then appearance. [Workflow details](prompts/04-source-routing.md)
+Source information is optional. A title-only lookup is normally limited to about 90 seconds; inaccessible or unmatched sources fall back to the supplied image. Both routes review actual Figma or PowerPoint results at whole-figure and enlarged-detail scales. Content and connection errors are fixed first, then readability, then appearance. [Workflow details](prompts/04-source-routing.md)
 
 <details>
 <summary><b>What the review checks</b></summary>
@@ -138,6 +151,30 @@ Full instructions: [prompts/02-review.md](prompts/02-review.md)
 </details>
 
 ## 🎨 Examples
+
+### PowerPoint
+
+Text stays editable. Modules, arrows and curves are native shapes; complex illustrations remain independent SVG objects. The screenshots below show real PowerPoint objects selected on the slide.
+
+![Native PowerPoint figures with editable objects selected](assets/powerpoint-showcase.png)
+
+| Aurora | P-GenRM |
+| --- | --- |
+| [**Download PPTX**](examples/aurora/Aurora.pptx) · [Case study](examples/aurora/README.md#powerpoint) | [**Download PPTX**](examples/pgenrm/P-GenRM.pptx) · [Case study](examples/pgenrm/README.md) |
+| 83 text boxes · 64 native shapes · 27 SVG objects | 69 text boxes · 122 native shapes · 13 SVG objects |
+| [Clean PowerPoint preview](examples/aurora/powerpoint.png) · [Selected objects](examples/aurora/powerpoint-selected.png) | [Clean PowerPoint preview](examples/pgenrm/powerpoint.png) · [Selected objects](examples/pgenrm/powerpoint-selected.png) |
+
+<details>
+<summary><b>Compare the references and native PowerPoint results</b></summary>
+
+![Aurora reference and PowerPoint result](assets/aurora-powerpoint.png)
+
+![P-GenRM reference and PowerPoint result](assets/pgenrm-powerpoint.png)
+
+</details>
+
+PPT generation and verification currently require Windows with desktop PowerPoint. Paper sources and reconstruction conditions are documented beside each example. [PowerPoint setup](docs/CODEX_QUICKSTART.md#powerpoint)
+
 
 ### AgentThink
 
@@ -232,7 +269,10 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 - [ ] Better selective updates that preserve manual Figma edits
 - [ ] Better mathematical notation and formula reconstruction
 - [ ] Style transfer for colors, typography and appearance while keeping content and structure
-- [ ] Editable import/export with PowerPoint, draw.io and other drawing tools
+- [x] ~~Native PowerPoint figures with automatic rendering and editability checks~~
+- [x] ~~Aurora and P-GenRM PPTX examples with selected-object screenshots~~
+- [ ] PowerPoint generation and verification on additional platforms
+- [ ] Editable import/export with draw.io and other drawing tools
 - [ ] More examples and reproducible fidelity evaluations
 - [ ] Compatibility testing across more assistants and operating systems
 
@@ -242,7 +282,8 @@ The demo uses a pre-built PlanWAM reconstruction to show the editable result; it
 - **Small illustrations are approximations.** Library substitutions and local tracing can differ from the reference; unreadable source text is flagged rather than guessed.
 - **Photo crops follow the reference resolution.** Use original dataset images for final layouts when available.
 - **Full reimports can overwrite manual edits** to managed layers. Duplicate hand-edited artwork before a full rebuild.
-- **Verified with Codex** and its Figma connection; other assistants and operating systems are not yet fully tested.
+- **Verified with Codex** using connected Figma tools, and on Windows with desktop PowerPoint. Other assistants and PPT platforms are not yet fully tested.
+- **PPT illustrations remain SVG objects.** They can be moved, resized and replaced; internal path conversion is not guaranteed.
 - **Check readability at the final paper size** once the physical dimensions are known.
 
 ## ❓ FAQ

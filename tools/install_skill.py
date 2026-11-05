@@ -4,7 +4,7 @@ import argparse, datetime, os, shutil, tempfile, zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 NAME = 'paper-figure-to-figma'
-RUNTIME = ['prompts/01-reconstruct.md', 'prompts/02-review.md', 'prompts/03-vector-assets.md', 'prompts/04-source-routing.md',
+RUNTIME = ['prompts/01-reconstruct.md', 'prompts/02-review.md', 'prompts/03-vector-assets.md', 'prompts/04-source-routing.md', 'prompts/05-powerpoint.md', 'tools/ppt_native.py',
            'tools/icon_assets.py', 'tools/trace_icon.py', 'tools/extract_pdf_assets.py',
            'tools/scene_to_svg.py', 'tools/prepare_scene.py', 'tools/bundle_figma.py',
            'tools/scene_validate.js', 'tools/figma_import.js', 'examples/minimal.scene.json']
@@ -22,6 +22,7 @@ def build_skill(target):
         text = text.replace('python tools/' + tool, 'python "RUNTIME/tools/' + tool + '"')
     text = text.replace('../../../prompts/03-vector-assets.md', 'runtime/prompts/03-vector-assets.md')
     text = text.replace('../../../prompts/04-source-routing.md', 'runtime/prompts/04-source-routing.md')
+    text = text.replace('../../../prompts/05-powerpoint.md', 'runtime/prompts/05-powerpoint.md')
     (target / 'SKILL.md').write_text(text, encoding='utf-8', newline='\n')
     for rel in RUNTIME:
         dest = target / 'runtime' / rel

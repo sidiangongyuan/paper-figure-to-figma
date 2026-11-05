@@ -1,5 +1,14 @@
 # Demo
 
+## PowerPoint
+
+![Editable PowerPoint figures](../assets/powerpoint-showcase.png)
+
+- **Aurora:** [PPTX](../examples/aurora/Aurora.pptx) · [reference/result comparison](../assets/aurora-powerpoint.png) · [selected objects](../examples/aurora/powerpoint-selected.png) · [case and citation](../examples/aurora/README.md#powerpoint).
+- **P-GenRM:** [PPTX](../examples/pgenrm/P-GenRM.pptx) · [reference/result comparison](../assets/pgenrm-powerpoint.png) · [selected objects](../examples/pgenrm/powerpoint-selected.png) · [case and citation](../examples/pgenrm/README.md).
+
+Native text boxes, shapes and paths remain editable. Complex illustrations are independent SVG objects. Previews are exported from desktop PowerPoint; selection screenshots show the actual presentation objects. Rebuild the showcase with `python tools/build_ppt_showcase.py`.
+
 ## AgentThink
 
 The [AgentThink example](../examples/agentthink/README.md) compares the original image with editable reconstructions made from the screenshot and from original source assets.
